@@ -13,35 +13,36 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <style>
-/* Style for the dropdown menu */
-.dropdown {
-  position: relative;
-}
+    /* Style for the dropdown menu */
+    .dropdown {
+      position: relative;
+    }
 
-.dropdown .dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 10px;
-  list-style: none;
-  margin-top: 5px;
-  width: 250px;
-}
+    .dropdown .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      list-style: none;
+      margin-top: 5px;
+      width: 250px;
+    }
 
-/* Reduce padding between dropdown items */
-.dropdown .dropdown-menu li {
-  padding: 3px 0; /* Adjust vertical padding here */
-}
+    /* Reduce padding between dropdown items */
+    .dropdown .dropdown-menu li {
+      padding: 3px 0;
+      /* Adjust vertical padding here */
+    }
 
-/* Reduce font size for menu items */
-.dropdown .dropdown-menu li a {
-  font-size: 14px;
-}
+    /* Reduce font size for menu items */
+    .dropdown .dropdown-menu li a {
+      font-size: 14px;
+    }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
   </style>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
   </script>
@@ -56,7 +57,17 @@
       M.Sidenav.init(elems, {});
     });
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HHYH36RY42');
+  </script>
 </head>
+
 <body>
   <div class="navbar-fixed">
     <nav class="white" role="navigation">
@@ -81,7 +92,7 @@
       </div>
     </nav>
   </div>
-  
+
   <!-- Mobile Navigation Menu -->
   <ul class="sidenav" id="mobile-nav">
     <li><a href="index.html" class="indigo-text">Home</a></li>
@@ -100,24 +111,24 @@
   </ul>
   <!-- Your existing navigation code here -->
 
-<!-- Mobile Navigation Menu -->
-<ul class="sidenav" id="mobile-nav">
-  <li><a href="index.html" class="indigo-text">Home</a></li>
-  <!-- Other navigation items... -->
-</ul>
+  <!-- Mobile Navigation Menu -->
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="index.html" class="indigo-text">Home</a></li>
+    <!-- Other navigation items... -->
+  </ul>
 
-<!-- Include Materialize CSS library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Include Materialize CSS library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<!-- Initialize side navigation -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems, {});
-  });
-</script>
-  
+  <!-- Initialize side navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {});
+    });
+  </script>
+
   <div class="fixed-action-btn">
     <a href="https://wa.me/+27766108815"><img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
@@ -137,7 +148,8 @@
             </li>
             <h1 class=" white-text left-align"></h1>
             <div class="left-align ">
-              <a href="mailto:semtexagency@gmail.com" class="waves-effect waves-light btn-small #64b5f6 blue lighten-2"><i
+              <a href="mailto:semtexagency@gmail.com"
+                class="waves-effect waves-light btn-small #64b5f6 blue lighten-2"><i
                   class="material-icons left">launch</i>Get in touch</a>
             </div>
             </li>
@@ -156,7 +168,8 @@
           <div class="icon-block">
             <h2 class="center indigo-text"><i class="material-icons">color_lens</i></h2>
             <h5 class="center indigo-text">Creative Excellence</h5>
-            <a class="center black-text">Our team of talented graphic designers brings forth a blend of creativity and expertise, ensuring every design is a masterpiece.</a>
+            <a class="center black-text">Our team of talented graphic designers brings forth a blend of creativity and
+              expertise, ensuring every design is a masterpiece.</a>
           </div>
         </div>
 
@@ -164,14 +177,16 @@
           <div class="icon-block">
             <h2 class="center indigo-text"><i class="material-icons">settings</i></h2>
             <h5 class="center indigo-text">Tailored Solutions</h5>
-            <a class="center black-text">We understand that each project is unique. That's why we collaborate closely with you to develop customized design strategies that align with your brand identity and objectives.</a>
+            <a class="center black-text">We understand that each project is unique. That's why we collaborate closely
+              with you to develop customized design strategies that align with your brand identity and objectives.</a>
           </div>
         </div>
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center indigo-text"><i class="material-icons">lightbulb_outline</i></h2>
             <h5 class="center indigo-text">Strategic Approach</h5>
-            <a class="center black-text">Our designs are not just visually appealing; they are strategically crafted to resonate with your target audience and deliver the intended message effectively.</a>
+            <a class="center black-text">Our designs are not just visually appealing; they are strategically crafted to
+              resonate with your target audience and deliver the intended message effectively.</a>
           </div>
         </div>
       </div>
@@ -253,7 +268,8 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="business-people-working-laptop.jpg" alt="Unsplashed background img 3" width="50"></div>
+    <div class="parallax"><img src="business-people-working-laptop.jpg" alt="Unsplashed background img 3" width="50">
+    </div>
   </div>
   <div>
     <div>
@@ -302,11 +318,13 @@
         <div class="col l3 s12">
           <h5 class="white-text">Contact Us</h5>
           <ul>
-            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left">call</i>076 610 8815</a></li>
-        </ul>
-        <ul>
-          <li><a href="mailto:semtexagency@gmail.com" class="white-text"><i class="material-icons left">email</i>semtexagency@gmail.com</a></li>
-        </ul>
+            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left">call</i>076 610 8815</a>
+            </li>
+          </ul>
+          <ul>
+            <li><a href="mailto:semtexagency@gmail.com" class="white-text"><i
+                  class="material-icons left">email</i>semtexagency@gmail.com</a></li>
+          </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect with us</h5>
@@ -337,4 +355,5 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 </body>
+
 </html>
