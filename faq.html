@@ -5,7 +5,7 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us</title>
+  <title>Frequently Asked Questions</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -66,9 +66,13 @@
       font-weight: bold;
     }
 
-    .answer {
+    .answer.hidden {
       display: none;
     }
+
+    /* .answer {
+      display: none;
+    } */
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
@@ -147,15 +151,26 @@
         alt="WhatsApp Button" width="70"></a>
   </div>
 
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h1 class="header col s12 light">Frequently Asked Questions (FAQs)</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax"><img src="frequently-asked-questions-solution-concept.jpg" alt="Unsplashed background img 2"
+        width="30"></div>
+
+  </div>
+
   <section>
     <div class="container">
       <div class="section">
 
       </div>
       <div class="section">
-
-        <h1 class="center indigo-text">Frequently Asked Questions (FAQs)</h1>
-        <hr>
         <div class="faq-item">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">How can I get started with your services?</div>
@@ -279,17 +294,20 @@
           </h4>
 
         </div>
-
-
-
         <!-- Add more FAQ items as needed -->
-
         <script>
-          function toggleAnswer(question) {
-            const answer = question.nextElementSibling;
-            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-          }
+          const questions = document.querySelectorAll('.question');
+
+          questions.forEach(question => {
+            question.addEventListener('click', () => {
+              const answer = question.querySelector('.answer');
+              answer.classList.toggle('hidden');
+            });
+          });
         </script>
+
+
+
 
       </div>
   </section>
@@ -321,15 +339,15 @@
           <h5 class="white-text">Connect with us</h5>
           <ul>
             <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
-                src="https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png" width="30"></a>
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png" width="30"></a>
             <a class="white-text" href="https://twitter.com/agencysemtex"><img
-                src="https://cdn-icons-png.flaticon.com/512/124/124021.png" width="30"></a>
+                src="twitter_x.png" width="34"></a>
             <a class="white-text" href="https://www.instagram.com/semtexagency"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
-                width="30"></a>
+                src="https://assets.stickpng.com/images/5ecec6ef73e4440004f09e75.png"
+                width="45"></a>
             <a class="white-text" href="https://www.youtube.com/@semtexagency"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
-                width="43"></a>
+                src="youtube_black.png"
+                width="33"></a>
           </ul>
         </div>
       </div>
