@@ -66,6 +66,58 @@
 
     gtag('config', 'G-HHYH36RY42');
   </script>
+  <style>
+    #contactModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+    height: auto; /* Allow the height to adjust automatically based on content */
+}
+    /* Style the form container */
+    #contactModal {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Style input fields */
+    #contactModal input[type="text"],
+    #contactModal input[type="email"],
+    #contactModal textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Style the "Send" button */
+    #contactModal button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* Add some hover effect to the button */
+    #contactModal button:hover {
+        background-color: #2980b9;
+    }
+</style>
+
 </head>
 
 <body>
@@ -148,11 +200,42 @@
             </li>
             <h1 class=" white-text left-align"></h1>
             <div class="left-align ">
-              <a href="mailto:semtexagency@gmail.com"
+              <button id="showFormButton" class="waves-effect waves-light btn-small #64b5f6 blue lighten-2">
+                <i class="material-icons left">launch</i>Get in touch
+              </button>
+              <div id="contactModal" class="modal">
+                <div class="modal-content">
+                  <h4 class="black-text center">Get in Touch</h4>
+                  <form method="post">
+                    <!-- <h1 class="center black-text">Get in touch</h1> -->
+                    <!-- <label for="name" class="black-text">Name</label> -->
+                    <!-- <textarea class="#64b5f6 blue lighten-2" type="text" name="name" id="name" placeholder="Please Enter Your Name*" required cols="30" rows="5"></textarea> -->
+                    <input type="text" name="name" id="name" placeholder="Please Enter Your Name*" required>
+                    <br>
+                    <!-- <label for="email" class="black-text">Email</label> -->
+                    <!-- <textarea class="#64b5f6 blue lighten-2" type="email" name="email" id="email" placeholder="Please Enter Your Email*" required cols="30" rows="5"></textarea> -->
+                    <input type="email" name="email" id="email" placeholder="Please Enter Your Email*" required>
+                    <br>
+                    <!-- <label for="subject" class="black-text">Subject</label> -->
+                    <!-- <textarea class="#64b5f6 blue lighten-2" type="text" name="subject" id="subject" placeholder="Please Enter Your Subject" cols="30" rows="5"></textarea> -->
+                    <input type="text" name="subject" id="subject" placeholder="Please Enter Your Subject">
+                    <br>
+                    <!-- <label for="message" class="black-text">Message</label> -->
+                    <textarea class="#64b5f6 blue lighten-2" name="message" id="message"
+                      placeholder="Write Your Message Here*" required cols="30" rows="5"></textarea>
+                    <br>
+                    <button class="indigo" id="btn"><a class="white-text">Send</a></button>
+                    <!-- ... (your form fields and submit button) ... -->
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+                <!-- <a href="mailto:semtexagency@gmail.com"
                 class="waves-effect waves-light btn-small #64b5f6 blue lighten-2"><i
-                  class="material-icons left">launch</i>Get in touch</a>
-            </div>
-            </li>
+                  class="material-icons left">launch</i>Get in touch</a> -->
+              </div>
+              </li>
           </ul>
         </div>
         <br><br>
@@ -160,6 +243,72 @@
     </div>
     <div class="parallax"><img src="IMG-5872.jpg" alt="Unsplashed background img 1" width="50"></div>
   </div>
+  <section id="contactForm" style="display: none;">
+    <!-- form begin here -->
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      var btn = document.getElementById('btn');
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+
+        // Check if any required fields are empty
+        if (!name || !email || !message) {
+          alert("Please fill in all the required fields.");
+          return; // Prevent sending the email if fields are missing
+        }
+
+        var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
+        Email.send({
+          SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+          To: 'messages.semtexagency@outlook.com',
+          From: "semtexagency@gmail.com",
+          Subject: "New Contact Form Enquiry",
+          Body: body
+        }).then(
+          function (message) {
+            alert("Thank you, we will be in touch shortly!");
+
+            // Clear form fields after successful submission
+            setTimeout(function () {
+              document.getElementById('name').value = '';
+              document.getElementById('email').value = '';
+              document.getElementById('subject').value = '';
+              document.getElementById('message').value = '';
+            }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+          }
+        ).catch(
+          function (error) {
+            console.log("Email sending error:", error);
+          }
+        );
+      });
+    </script>
+
+    <!-- form ends here -->
+  </section>
+  <script>
+    // JavaScript to initialize the modal and handle button click
+    document.addEventListener('DOMContentLoaded', function () {
+      const showFormButton = document.getElementById('showFormButton');
+      const contactModal = document.getElementById('contactModal');
+
+      // Initialize the modal
+      M.Modal.init(contactModal);
+
+      showFormButton.addEventListener('click', function () {
+        // Open the modal when the button is clicked
+        const modalInstance = M.Modal.getInstance(contactModal);
+        modalInstance.open();
+      });
+    });
+  </script>
   <div class="section">
     <div class="row">
       <h1 class="center indigo-text">Why Choose Us</h1>
@@ -208,13 +357,13 @@
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4 class="indigo-text">Our Services</h4>
-          <div class="col s12 m4">
+          <div class="col s12 m12 l4">
             <div class="card">
               <div class="card-image">
                 <img src="web dev.png">
               </div>
               <div class="card-content">
-                <span class="card-title indigo-text">Web Development</span>
+                <span class="card-title indigo-text">Website Development</span>
                 <p>Elevate your online presence with our top-tier web development services. We specialize in crafting
                   captivating websites and powerful web applications that not only meet your needs but exceed your
                   expectations.Learn more about the packages we offer.</p>
@@ -224,7 +373,7 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m4">
+          <div class="col s12 m12 l4">
             <div class="card">
               <div class="card-image">
                 <img src="graphic.png">
@@ -240,7 +389,7 @@
               </div>
             </div>
           </div>
-          <div class="col s12 m4">
+          <div class="col s12 m12 l4">
             <div class="card">
               <div class="card-image">
                 <img src="company reg.jpg">
@@ -280,7 +429,8 @@
           <div class="">
             <div class="carousel">
               <div class="carousel-item">
-                <a><img src="clientlogos/vhukhudotravel_logo.jpg" width="200"></a>
+                <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.jpg"
+                    width="200"></a>
               </div>
 
               <div class="carousel-item">
@@ -330,15 +480,12 @@
           <h5 class="white-text">Connect with us</h5>
           <ul>
             <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png" width="30"></a>
-            <a class="white-text" href="https://twitter.com/agencysemtex"><img
-                src="twitter_x.png" width="34"></a>
-            <a class="white-text" href="https://www.instagram.com/semtexagency"><img
-                src="https://assets.stickpng.com/images/5ecec6ef73e4440004f09e75.png"
-                width="45"></a>
-            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img
-                src="youtube_black.png"
-                width="33"></a>
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png"
+                width="37"></a>
+            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="twitter_x.png" width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/semtexagency"><img src="insta.png" width="40"></a>
+            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img src="youtube_black.png"
+                width="40"></a>
           </ul>
         </div>
       </div>
