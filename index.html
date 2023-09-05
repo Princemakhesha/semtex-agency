@@ -117,6 +117,53 @@
         background-color: #2980b9;
     }
 </style>
+<style>
+  /* Keyframes animation for sliding from right to left */
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the h1 element */
+.slide-from-right {
+  animation: slideFromRight 1s ease-in-out;
+}
+
+/* Keyframes animation for sliding from left to right */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the h5 element */
+.slide-from-left {
+  animation: slideFromLeft 1s ease-in-out;
+}
+
+/* Define the initial card scaling */
+.service-card {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Apply the scaling when hovering over the card */
+.service-card:hover {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+}
+
+</style>
 
 </head>
 
@@ -193,10 +240,10 @@
         <div class="row center">
           <ul>
             <li>
-              <h5 class="header col s12  left-align">FOR ALL</h5>
+              <h5 class="header col s12 left-align slide-from-left">FOR ALL</h5>
             </li>
             <li>
-              <h1 class=" white-text left-align ">YOUR MARKETING NEEDS</h1>
+              <h1 class="white-text left-align slide-from-right">YOUR MARKETING NEEDS</h1>
             </li>
             <h1 class=" white-text left-align"></h1>
             <div class="left-align ">
@@ -352,17 +399,17 @@
     <div class="parallax"><img src="back1.png" alt="Unsplashed background img 2" width="30"></div>
   </div>
   <div class="container">
-    <div class="card">
+    <div class="card ">
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4 class="indigo-text">Our Services</h4>
+          <h1 class="indigo-text">Our Services</h1>
           <div class="col s12 m12 l4">
-            <div class="card">
+            <div class="card service-card">
               <div class="card-image">
                 <img src="web dev.png">
               </div>
-              <div class="card-content">
+              <div class="card-content ">
                 <span class="card-title indigo-text">Website Development</span>
                 <p>Elevate your online presence with our top-tier web development services. We specialize in crafting
                   captivating websites and powerful web applications that not only meet your needs but exceed your
@@ -374,7 +421,7 @@
             </div>
           </div>
           <div class="col s12 m12 l4">
-            <div class="card">
+            <div class="card service-card">
               <div class="card-image">
                 <img src="graphic.png">
               </div>
@@ -390,7 +437,7 @@
             </div>
           </div>
           <div class="col s12 m12 l4">
-            <div class="card">
+            <div class="card service-card">
               <div class="card-image">
                 <img src="company reg.jpg">
               </div>
