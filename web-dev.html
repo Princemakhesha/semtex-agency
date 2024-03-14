@@ -58,6 +58,59 @@
 
     gtag('config', 'G-HHYH36RY42');
   </script>
+   <style>
+    #contactModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+    height: auto; /* Allow the height to adjust automatically based on content */
+}
+    /* Style the form container */
+    #contactModal {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Style input fields */
+    #contactModal input[type="text"],
+    #contactModal input[type="email"],
+    #contactModal textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Style the "Send" button */
+    #contactModal button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* Add some hover effect to the button */
+    #contactModal button:hover {
+        background-color: #2980b9;
+    }
+</style>
+
+
 </head>
 
 <body>
@@ -131,7 +184,7 @@
       <div class="container">
         <div class="row center">
           <!-- <h1 class="header col s12 light">Professional</h1> -->
-          <h1 class="header col s12 light center"> Professional Website Packages</h1>
+          <h1 class="header col s12 light center"> Professional Packages</h1>
           <!-- <h4>Non E-Commerce</h4> -->
           <!-- <h5 class="center">Let us transform your vision into a stunning website that not only looks great but also drives results. Whether you're just starting or looking to revamp your online presence, our website development packages have you covered. Contact us today to get started and take that crucial step towards online success.</h5> -->
         </div>
@@ -233,7 +286,7 @@
       <div class="container">
         <div class="row center">
           <!-- <h1 class="header col s12 light">E-Commerce</h1> -->
-          <h1 class="header col s12 light"> E-Commerce Website Packages</h1>
+          <h1 class="header col s12 light"> E-Commerce Packages</h1>
           <!-- <h5 class="center">Let us transform your vision into a stunning website that not only looks great but also drives results. Whether you're just starting or looking to revamp your online presence, our website development packages have you covered. Contact us today to get started and take that crucial step towards online success.</h5> -->
         </div>
       </div>
@@ -345,9 +398,142 @@
       </section>
     </div>
   </div>
+
+  <footer class="page-footer #0d47a1 blue darken-4">
+    <div class="center ">
+      <div class="">
+        <div class="col l6 s12">
+          <div class="col l3 s12">
+            <h2 class="center">Ready?</h2>
+           <h5 class="center">Get your business online today</h5>
+           <br>
+           <button id="showFormButton" class="center btn-large #64b5f6 blue lighten-2">
+            <i class="material-icons left">free_breakfast</i>Let's work on it</button>
+
+           <div class="section no-pad-bot">
+            <div class="container">
+              <div class="row center">
+                <div>
+                  <h1 class=" white-text left-align"></h1>
+                  <div class="left-align ">
+                    
+                    <div id="contactModal" class="modal">
+                      <div class="modal-content">
+                        <h4 class="black-text center">Get in touch</h4>
+                        <form method="post">
+                          <input type="text" name="name" id="name" placeholder="Please Enter Your Name*" required>
+                          <br>
+                          <input type="email" name="email" id="email" placeholder="Please Enter Your Email*" required>
+                          <br>
+                          <input type="text" name="subject" id="subject" placeholder="Please Enter Your Subject">
+                          <br>
+                          <textarea class="#64b5f6 blue lighten-2" name="message" id="message"
+                            placeholder="Write Your Message Here*" required cols="30" rows="5"></textarea>
+                          <br>
+                          <button class="indigo" id="btn"><a class="white-text">Send</a></button>
+                          <!-- ... (your form fields and submit button) ... -->
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                      </div>
+                    </div>
+                    </li>
+                  </div>
+              </div>
+              <br><br>
+            </div>
+            <section id="contactForm" style="display: none;">
+              <!-- form begin here -->
+          
+              <script src="https://smtpjs.com/v3/smtp.js"></script>
+              <script>
+                var btn = document.getElementById('btn');
+                btn.addEventListener('click', function (e) {
+                  e.preventDefault();
+          
+                  var name = document.getElementById('name').value;
+                  var email = document.getElementById('email').value;
+                  var subject = document.getElementById('subject').value;
+                  var message = document.getElementById('message').value;
+          
+                  // Check if any required fields are empty
+                  if (!name || !email || !message) {
+                    alert("Please fill in all the required fields.");
+                    return; // Prevent sending the email if fields are missing
+                  }
+          
+                  var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+          
+                  Email.send({
+                    SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+                    To: 'messages.semtexagency@outlook.com',
+                    From: "semtexagency@gmail.com",
+                    Subject: "New Contact Form Enquiry",
+                    Body: body
+                  }).then(
+                    function (message) {
+                      alert("Thank you, we will be in touch shortly!");
+          
+                      // Clear form fields after successful submission
+                      setTimeout(function () {
+                        document.getElementById('name').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('subject').value = '';
+                        document.getElementById('message').value = '';
+                      }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+                    }
+                  ).catch(
+                    function (error) {
+                      console.log("Email sending error:", error);
+                    }
+                  );
+                });
+              </script>
+          
+              <!-- form ends here -->
+            </section>
+            <script>
+              // JavaScript to initialize the modal and handle button click
+              document.addEventListener('DOMContentLoaded', function () {
+                const showFormButton = document.getElementById('showFormButton');
+                const contactModal = document.getElementById('contactModal');
+          
+                // Initialize the modal
+                M.Modal.init(contactModal);
+          
+                showFormButton.addEventListener('click', function () {
+                  // Open the modal when the button is clicked
+                  const modalInstance = M.Modal.getInstance(contactModal);
+                  modalInstance.open();
+                });
+              });
+            </script>
+            <style>
+              .parallax-container {
+                position: relative;
+                height: 400px; /* Default height for larger screens */
+              }
+          
+              @media screen and (max-width: 600px) {
+                /* Adjust parallax container for small screens */
+                .parallax-container {
+                  height: 200px; /* Adjust the height for small screens */
+                }
+              }
+          
+              .parallax img {
+                display: block;
+                width: 100%;
+                height: auto;
+              }
+            </style>
+                 </div>
+    </div>
+    <div class="page-footer #0d47a1 blue darken-4">
+    </div>
+  </footer>
   
-
-
   <footer class="page-footer #64b5f6 blue lighten-2">
     <div class="container ">
       <div class="row">
