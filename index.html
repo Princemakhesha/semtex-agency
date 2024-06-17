@@ -228,21 +228,34 @@
   </div>
 
   <!-- Mobile Navigation Menu -->
-  <ul class="sidenav" id="mobile-nav">
-    <li><a href="index.html" class="purple-text">Home</a></li>
+  <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
+    
+    <li><a href="index.html" class="black-text">Home</a></li>
     <li class="dropdown">
-      <a href="#" class="indigo-text">Our Services</a>
+      <a href="#" class="white-text">Our Services</a>
       <ul class="dropdown-menu">
         <li><a href="web-dev.html">Web Development</a></li>
         <li><a href="graphic-design.html">Graphic Design</a></li>
         <li><a href="companyreg.html">Company Registration</a></li>
       </ul>
     </li>
-    <li><a href="background.html" class="indigo-text">Our Story</a></li>
+    <li><a href="background.html" class="white-text">Our Story</a></li>
     <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-    <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
-    <li><a href="faq.html" class="indigo-text">FAQs</a></li>
+    <li><a href="contact.html" class="white-text">Contact Us</a></li>
+    <li><a href="faq.html" class="white-text">FAQs</a></li>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+    <div><img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="280"></div>
+    
   </ul>
+
+  
   <!-- Your existing navigation code here -->
 
   <!-- Mobile Navigation Menu -->
@@ -350,10 +363,11 @@
         var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
 
         Email.send({
-          SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+          // SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+          SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
           To: 'messages.semtexagency@outlook.com',
-          From: "semtexagency@gmail.com",
-          Subject: "New Contact Form Enquiry",
+          From: "messages.semtexagency@outlook.com",
+          Subject: "Urgent: A client is trying to get in touch - From Home page",
           Body: body
         }).then(
           function (message) {
