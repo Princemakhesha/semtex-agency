@@ -68,133 +68,140 @@
   </script>
   <style>
     #contactModal textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-    /* Ensure padding doesn't affect width */
-    height: auto; /* Allow the height to adjust automatically based on content */
-}
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+      height: auto;
+      /* Allow the height to adjust automatically based on content */
+    }
+
     /* Style the form container */
     #contactModal {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     /* Style input fields */
     #contactModal input[type="text"],
     #contactModal input[type="email"],
     #contactModal textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #3498db;
-        border-radius: 5px;
-        font-size: 16px;
-        box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
     }
 
     /* Style the "Send" button */
     #contactModal button {
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
     /* Add some hover effect to the button */
     #contactModal button:hover {
-        background-color: #2980b9;
+      background-color: #2980b9;
     }
-</style>
-<style>
-  /* Keyframes animation for sliding from right to left */
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+  </style>
+  <style>
+    /* Keyframes animation for sliding from right to left */
+    @keyframes slideFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
 
-/* Apply the animation to the h1 element */
-.slide-from-right {
-  animation: slideFromRight 1s ease-in-out;
-}
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-/* Keyframes animation for sliding from left to right */
-@keyframes slideFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+    /* Apply the animation to the h1 element */
+    .slide-from-right {
+      animation: slideFromRight 1s ease-in-out;
+    }
 
-/* Apply the animation to the h5 element */
-.slide-from-left {
-  animation: slideFromLeft 1s ease-in-out;
-}
+    /* Keyframes animation for sliding from left to right */
+    @keyframes slideFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
 
-</style>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-#loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
+    /* Apply the animation to the h5 element */
+    .slide-from-left {
+      animation: slideFromLeft 1s ease-in-out;
+    }
+  </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-.loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-}
+    #loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
 
-</style>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
       // Simulate content loading (replace this with your actual loading logic)
-      setTimeout(function() {
-          document.getElementById("loading-container").style.display = "none";
+      setTimeout(function () {
+        document.getElementById("loading-container").style.display = "none";
       }, 2000); // Adjust the timeout based on your content loading time
-  });
-</script>
+    });
+  </script>
 
 
 </head>
@@ -202,7 +209,7 @@
 <body>
   <div id="loading-container">
     <div class="loader"></div>
-</div>
+  </div>
   <div class="navbar-fixed">
     <nav class="white" role="navigation">
       <div class="nav-wrapper container">
@@ -229,33 +236,54 @@
 
   <!-- Mobile Navigation Menu -->
   <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
-    
-    <li><a href="index.html" class="black-text">Home</a></li>
-    <li class="dropdown">
-      <a href="#" class="white-text">Our Services</a>
+    <div><img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="100"></div>
+    <hr>
+    <li><a href="index.html" class="waves-effect waves-light btn-flat black-text">Home<i
+          class="material-icons left black-text">home</i></a></li>
+    <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
+          class="material-icons left white-text">store</i></a></li>
+    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i
+          class="material-icons left white-text">desktop_mac</i></a></li>
+    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
+          class="material-icons left white-text">color_lens</i></a></li>
+    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
+          class="material-icons left white-text">business_center</i></a></li>
+
+    <li><a href="background.html" class="waves-effect waves-light btn-flat white-text">Our Story<i
+          class="material-icons left white-text">local_florist</i></a></li>
+    <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact Us<i
+          class="material-icons left white-text">headset_mic</i></a></li>
+    <hr>
+    <li><a href="faq.html" class="waves-effect waves-light btn-flat white-text">FAQs<i
+          class="material-icons left white-text">question_answer</i></a></li>
+    <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="waves-effect waves-light btn-flat white-text">Send
+        Feedback<i class="material-icons left white-text">feedback</i></a></li>
+    <li><a href="terms.html" class="waves-effect waves-light btn-flat white-text">Ts & Cs<i
+          class="material-icons left white-text">gavel</i></a></li>
+    <li><a href="attributions.html" class="waves-effect waves-light btn-flat white-text">Attributions<i
+          class="material-icons left white-text">favorite_border</i></a></li>
+
+          <br><br>
+
+  </ul>
+
+<!-- old mobile nav below -->
+  <!-- <li><a href="background.html" class="white-text">Our Story</a></li> -->
+  <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
+  <!-- <li><a href="contact.html" class="white-text">Contact Us</a></li> -->
+  <!-- <li><a href="faq.html" class="white-text">FAQs</a></li> -->
+  <!-- <li class="dropdown">
+      <a href="services.html" class="white-text">Our Services</a>
       <ul class="dropdown-menu">
         <li><a href="web-dev.html">Web Development</a></li>
         <li><a href="graphic-design.html">Graphic Design</a></li>
         <li><a href="companyreg.html">Company Registration</a></li>
       </ul>
-    </li>
-    <li><a href="background.html" class="white-text">Our Story</a></li>
-    <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-    <li><a href="contact.html" class="white-text">Contact Us</a></li>
-    <li><a href="faq.html" class="white-text">FAQs</a></li>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br>
-    <div><img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="280"></div>
-    
-  </ul>
+    </li> -->
 
-  
+  <!-- <div><img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="280"></div> -->
+
+
   <!-- Your existing navigation code here -->
 
   <!-- Mobile Navigation Menu -->
@@ -410,13 +438,16 @@
   <style>
     .parallax-container {
       position: relative;
-      height: 400px; /* Default height for larger screens */
+      height: 400px;
+      /* Default height for larger screens */
     }
 
     @media screen and (max-width: 600px) {
+
       /* Adjust parallax container for small screens */
       .parallax-container {
-        height: 200px; /* Adjust the height for small screens */
+        height: 200px;
+        /* Adjust the height for small screens */
       }
     }
 
@@ -479,13 +510,13 @@
               <div class="card-image">
                 <img src="web dev.png">
               </div>
-              <div class="card-content" >
-                <span class="card-title indigo-text" >Website Development</span>
+              <div class="card-content">
+                <span class="card-title indigo-text">Website Development</span>
                 <p>Elevate your online presence with our top-tier web development services. We specialize in crafting
                   captivating websites and powerful web applications that not only meet your needs but exceed your
                   expectations.Learn more about the packages we offer.</p>
               </div>
-              <div class="card-action" >
+              <div class="card-action">
                 <a href="web-dev.html" class="indigo-text">Learn more</a>
               </div>
             </div>
@@ -624,7 +655,8 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        Copyright © 2023-2024 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4" href="terms.html">Terms and Conditions.</a>
+        Copyright © 2023-2024 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4"
+          href="terms.html">Terms and Conditions.</a>
         <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
       </div>
     </div>
