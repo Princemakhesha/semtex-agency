@@ -240,6 +240,7 @@
     <hr>
     <li><a href="index.html" class="waves-effect waves-light btn-flat black-text">Home<i
           class="material-icons left black-text">home</i></a></li>
+
     <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
           class="material-icons left white-text">store</i></a></li>
     <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i
@@ -459,8 +460,9 @@
   </style>
   <div class="section">
     <div class="row">
-      <h1 class="center indigo-text">Why Choose Us</h1>
+      
       <div class="row">
+        <h3 class="center indigo-text">Why Choose Us</h3>
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center indigo-text"><i class="material-icons">color_lens</i></h2>
@@ -504,7 +506,7 @@
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h1 class="indigo-text">Our Services</h1>
+          <h3 class="indigo-text">Our Services</h3>
           <div class="col s12 m12 l4">
             <div class="card service-card">
               <div class="card-image">
@@ -561,22 +563,115 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
+        
         <div class="row center">
+          
         </div>
+        
       </div>
+      
     </div>
+    
     <div class="parallax"><img src="business-people-working-laptop.jpg" alt="Unsplashed background img 3" width="50">
     </div>
   </div>
+
+  <footer class="page-footer #e3f2fd blue lighten-5">
+           <!-- testing counter session -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Waypoints -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+  <!-- Counter Up -->
+  <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+  <style>
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .counter {
+      font-size: 2.5rem;
+      color: #2196F3;
+      text-align: center;
+    }
+    .card1 {
+    background-color: transparent;
+    border: none; /* Optional: Remove border if needed */
+    box-shadow: none; /* Optional: Remove box-shadow if needed */
+  }
+  
+  .card-content {
+    padding: 24px; /* Optional: Adjust padding as needed */
+  }
+</style>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l4">
+        <div class="card1 center">
+          <div class="card-content">
+            <a class=""><img src="desktop icon.png" width="40"></a>
+            <span class="card-title black-text">Websites Designed</span>
+            <h5 class="counter" data-count="10">0</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m12 l4">
+        <div class="card1 center">
+          <div class="card-content">
+            <a class=""><img src="logo icon.png" width="40"></a>
+            <span class="card-title black-text">Graphics Designed</span>
+            <h5 class="counter" data-count="250">0</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m12 l4">
+        <div class="card1 center">
+          <div class="card-content">
+            <a class=""><img src="smiley face.png" width="40"></a>
+            <span class="card-title black-text">Happy Clients</span>
+            <h5 class="counter" data-count="150">0</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $('.counter').each(function () {
+        $(this).prop('Counter', 0).animate({
+          Counter: $(this).data('count')
+        }, {
+          duration: 2000,
+          easing: 'swing',
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          }
+        });
+      });
+    });
+  </script>
+  
+
+  <!-- testing ends here -->
+
+
+  </footer>
   <div>
     <div>
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4 class="indigo-text">Our Clients</h4>
+          
           <div class="">
             <div class="carousel">
-
+              <h4 class="indigo-text">Some of our Clients</h4>
               <div class="carousel-item">
                 <a href="https://www.imaammasangabookrestoration.co.za"><img src="Imaam masanga logo.png"
                     width="200"></a>
