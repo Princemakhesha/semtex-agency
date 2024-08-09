@@ -110,7 +110,111 @@
     #contactModal button:hover {
       background-color: #2980b9;
     }
+
+    /* Style for the search bar */
+#search-bar {
+  background-color: #e3f2fd; /* Light blue background */
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: absolute; /* Ensure it positions correctly */
+  top: 70px; /* Increased from 60px to push it down */
+  left: 0; /* Adjust based on your layout */
+  right: 0; /* Adjust based on your layout */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+  /* Style for the search input */
+  #search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+
+  /* Style for the search results */
+  #search-results {
+    background-color: #ffffff; /* White background for better readability */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%; /* Position below the search input */
+    left: 0;
+    width: 100%; /* Match the width of the search bar */
+    max-height: 300px; /* Limit height for overflow */
+    overflow-y: auto; /* Add scroll if too many results */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+  /* Style for each search result item */
+  #search-results li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  #search-results li a {
+    color: #000; /* Black text color */
+    text-decoration: none; /* Remove underline */
+  }
+
+  #search-results li:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+  }
+
+  html {
+      scroll-behavior: smooth;
+    }
   </style>
+
+<style>
+  /* Base container for each project */
+  .project-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  /* Image container to ensure it covers the full area */
+  .project-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* Overlay content that appears on hover */
+  .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 81, 181, 0); /* Transparent initially */
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    z-index: 1;
+  }
+
+  /* Show overlay and apply zoom effect on hover */
+  .project-container:hover .hover-overlay {
+    background-color: rgba(63, 81, 181, 0.9); /* Indigo color with transparency */
+    opacity: 1;
+  }
+
+  .project-container:hover .project-image {
+    transform: scale(1.05);
+  }
+</style>
 
 
 </head>
@@ -118,27 +222,82 @@
 <body>
   <div class="navbar-fixed">
     <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="index.html" class="brand-logo"><img src="semtex logo2.png" width="200"></a>
-        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="index.html" class="indigo-text">Home</a></li>
-          <li class="dropdown">
-            <a href="services.html" class="indigo-text">Our Services</a>
-            <ul class="dropdown-menu">
-              <li><a href="web-dev.html" class="indigo-text">Web Development</a></li>
-              <li><a href="graphic-design.html" class="indigo-text">Graphic Design</a></li>
-              <li><a href="companyreg.html" class="indigo-text">Company Registration</a></li>
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="index.html" class="brand-logo"><img src="semtex logo2.png" width="200"></a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html" class="indigo-text">Home</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="indigo-text">Our Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="web-dev.html" class="indigo-text">Web Development</a></li>
+                        <li><a href="graphic-design.html" class="indigo-text">Graphic Design</a></li>
+                        <li><a href="companyreg.html" class="indigo-text">Company Registration</a></li>
+                    </ul>
+                </li>
+                <li><a href="background.html" class="indigo-text">Our Story</a></li>
+                <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
+                <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
+                <li><a href="faq.html" class="indigo-text">FAQs</a></li>
             </ul>
-          </li>
-          <li><a href="background.html" class="indigo-text">Our Story</a></li>
-          <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-          <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
-          <li><a href="faq.html" class="indigo-text">FAQs</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+            <div id="search-bar" class="hide">
+                <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
+                <ul id="search-results" class="search-results"></ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+  
+    <script>
+      // Toggle search bar visibility
+      document.querySelector('.search-trigger').addEventListener('click', function (event) {
+        event.preventDefault();
+        var searchBar = document.getElementById('search-bar');
+        searchBar.classList.toggle('hide');
+      });
+  
+      // Search function to filter results
+      function searchSite() {
+        let input = document.getElementById('search-input').value.toLowerCase();
+        let resultsList = document.getElementById('search-results');
+        resultsList.innerHTML = '';
+  
+        let pages = [
+          { title: 'Home', url: 'index.html' },
+          { title: 'Our Services', url: 'services.html' },
+          { title: 'Web Development', url: 'web-dev.html' },
+          { title: 'Graphic Design', url: 'graphic-design.html' },
+          { title: 'Company Registration', url: 'companyreg.html' },
+          { title: 'Our Story', url: 'background.html' },
+          { title: 'Prince Makhesha', url: 'background.html?#prince' },
+          { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
+          { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+          { title: 'Logo Design', url: 'graphic-design.html' },
+          { title: 'Flyer Design', url: 'graphic-design.html' },
+          { title: 'Poster Design', url: 'graphic-design.html' },
+          { title: 'Marketing Videos', url: 'graphic-design.html' },
+          { title: 'Business Cards', url: 'graphic-design.html' },
+          { title: 'Terms and Conditions', url: 'terms.html' },
+          { title: 'Ts&Cs', url: 'terms.html' },
+          { title: 'Banner Design', url: 'graphic-design.html' },
+          { title: 'Pamphlet Design', url: 'graphic-design.html' },
+          { title: 'Frequently Asked Questions', url: 'faq.html' },
+          { title: 'FAQs', url: 'faq.html' }
+        ];
+  
+        pages.forEach(page => {
+          if (page.title.toLowerCase().includes(input)) {
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.href = page.url;
+            a.textContent = page.title;
+            li.appendChild(a);
+            resultsList.appendChild(li);
+          }
+        });
+      }
+    </script>
 
   <!-- Mobile Navigation Menu -->
   <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
@@ -201,6 +360,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
+          <br id="professional_packages">
           <!-- <h1 class="header col s12 light">Professional</h1> -->
           <h1 class="header col s12 light center"> Professional Packages</h1>
           <!-- <h4>Non E-Commerce</h4> -->
@@ -265,7 +425,7 @@
                     pages website</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">language</i>.co.za
                     domain Reg</a></li>
-                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>3x email
+                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>2x email
                     accounts</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">access_time</i>10 months
                     hosting</a></li>
@@ -300,7 +460,7 @@
                     pages website</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">language</i>.co.za /
                     .com domain Reg</a></li>
-                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>5x email
+                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>3x email
                     accounts</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">access_time</i>10 months
                     hosting</a></li>
@@ -333,6 +493,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
+          <br id="e-commerce_packages">
           <!-- <h1 class="header col s12 light">E-Commerce</h1> -->
           <h1 class="header col s12 light"> E-Commerce Packages</h1>
           <!-- <h5 class="center">Let us transform your vision into a stunning website that not only looks great but also drives results. Whether you're just starting or looking to revamp your online presence, our website development packages have you covered. Contact us today to get started and take that crucial step towards online success.</h5> -->
@@ -406,7 +567,7 @@
                     pages website</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">language</i>.co.za
                     domain Reg</a></li>
-                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>4x email
+                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>3x email
                     accounts</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">access_time</i>12 months
                     hosting</a></li>
@@ -448,7 +609,7 @@
                       class="material-icons left">content_copy</i>Unlimited pages website</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">language</i>.co.za /
                     .com domain Reg</a></li>
-                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>6x email
+                <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>4x email
                     accounts</a></li>
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">access_time</i>12 months
                     hosting</a></li>
@@ -482,6 +643,80 @@
       </section>
     </div>
   </div>
+  <div class="row">
+    <div class="col s12 center">
+      <h4 class="indigo-text">Some of our work</h4>
+      <div class="row">
+  
+        <!-- Project Container 1 -->
+        <div class="col s12 m6 l4">
+          <a href="https://www.moataschool.co.za" target="_blank">
+            <div class="project-container">
+              <img src="websites/moataschool.png" alt="Moata School" class="project-image">
+              <div class="hover-overlay">
+                <!-- <span class="hover-title">Moata School</span> -->
+                <p>Education website with a focus on interactive learning and resources.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Project Container 2 -->
+        <div class="col s12 m6 l4">
+          <a href="https://www.localhalaalboard.org" target="_blank">
+            <div class="project-container">
+              <img src="websites/local halaal board.png" alt="Local Halaal Board" class="project-image">
+              <div class="hover-overlay">
+                <!-- <span class="hover-title">Local Halaal Board</span> -->
+                <p>Official website for the Local Halaal Board, focused on certification and resources.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Project Container 3 -->
+        <div class="col s12 m6 l4">
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank">
+            <div class="project-container">
+              <img src="websites/imaam masanga.png" alt="Imaam Masanga Book Restoration" class="project-image">
+              <div class="hover-overlay">
+                <!-- <span class="hover-title">Imaam Masanga</span> -->
+                <p>Website for a book restoration service, featuring portfolio and contact options.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Project Container 4 -->
+        <div class="col s12 m6 l4">
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank">
+            <div class="project-container">
+              <img src="websites/vhukhudo.png" alt="Vhukhudo Travel & Tourism" class="project-image">
+              <div class="hover-overlay">
+                <!-- <span class="hover-title">Vhukhudo Travel</span> -->
+                <p>Travel and tourism website with booking features and destination highlights.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Project Container 5 -->
+        <div class="col s12 m6 l4">
+          <a href="https://www.wtatrainingacademy.co.za" target="_blank">
+            <div class="project-container">
+              <img src="websites/wta.png" alt="WTA Training Academy" class="project-image">
+              <div class="hover-overlay">
+                <!-- <span class="hover-title">WTA Training Academy</span> -->
+                <p>Website for a training academy offering courses and certifications.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
 
   <footer class="page-footer #0d47a1 blue darken-4">
     <div class="center ">
