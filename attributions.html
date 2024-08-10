@@ -25,7 +25,7 @@
       padding: 10px;
       list-style: none;
       margin-top: 5px;
-      width: 250px;
+      width: 500px;
     }
     /* Reduce padding between dropdown items */
     .dropdown .dropdown-menu li {
@@ -73,6 +73,84 @@
       display: none;
     } */
   </style>
+
+<style>
+  /* Style for the search bar */
+  #search-bar {
+      background-color: #e3f2fd;
+      /* Light blue background */
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      /* Ensure it positions correctly */
+      top: 70px;
+      /* Increased from 60px to push it down */
+      left: 0;
+      /* Adjust based on your layout */
+      right: 0;
+      /* Adjust based on your layout */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+  }
+
+  /* Style for the search input */
+  #search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+  }
+
+  /* Style for the search results */
+  #search-results {
+      background-color: #ffffff;
+      /* White background for better readability */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      /* Position below the search input */
+      left: 0;
+      width: 100%;
+      /* Match the width of the search bar */
+      max-height: 300px;
+      /* Limit height for overflow */
+      overflow-y: auto;
+      /* Add scroll if too many results */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+  }
+
+  /* Style for each search result item */
+  #search-results li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+  }
+
+  #search-results li a {
+      color: #000;
+      /* Black text color */
+      text-decoration: none;
+      /* Remove underline */
+  }
+
+  #search-results li:hover {
+      background-color: #f0f0f0;
+      /* Highlight on hover */
+  }
+
+  html {
+      scroll-behavior: smooth;
+  }
+</style>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
   <script>
@@ -89,25 +167,93 @@
     <nav class="white" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="index.html" class="brand-logo"><img src="semtex logo2.png" width="200"></a>
-        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons indigo-text">menu</i></a>
+        <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="index.html" class="indigo-text">Home</a></li>
+          <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
           <li class="dropdown">
-            <a href="services.html" class="indigo-text">Our Services</a>
+            <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
             <ul class="dropdown-menu">
-              <li><a href="web-dev.html" class="indigo-text">Web Development</a></li>
-              <li><a href="graphic-design.html" class="indigo-text">Graphic Design</a></li>
-              <li><a href="companyreg.html" class="indigo-text">Company Registration</a></li>
+              <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                    class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                  <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                      class="material-icons left indigo-text">language</i></a>
+                  <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                      class="material-icons left indigo-text">shopping_cart</i></a>
+                  <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                      class="material-icons left indigo-text">email</i></a></span></li>
+              <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                  Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+              <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                  Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+              <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                    class="material-icons left indigo-text">arrow_forward</i></a></li>
             </ul>
           </li>
-          <li><a href="background.html" class="indigo-text">Our Story</a></li>
+          <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li>
           <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-          <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
-          <li><a href="faq.html" class="indigo-text">FAQs</a></li>
+          <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+          <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
         </ul>
+        <div id="search-bar" class="hide">
+          <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
+          <ul id="search-results" class="search-results"></ul>
       </div>
-    </nav>
   </div>
+</nav>
+</div>
+
+<script>
+// Toggle search bar visibility
+document.querySelector('.search-trigger').addEventListener('click', function (event) {
+  event.preventDefault();
+  var searchBar = document.getElementById('search-bar');
+  searchBar.classList.toggle('hide');
+});
+
+// Search function to filter results
+function searchSite() {
+  let input = document.getElementById('search-input').value.toLowerCase();
+  let resultsList = document.getElementById('search-results');
+  resultsList.innerHTML = '';
+
+  let pages = [
+      { title: 'Home', url: 'index.html' },
+      { title: 'Our Services', url: 'services.html' },
+      { title: 'Web Development', url: 'web-dev.html' },
+      { title: 'Graphic Design', url: 'graphic-design.html' },
+      { title: 'Company Registration', url: 'companyreg.html' },
+      { title: 'Our Story', url: 'background.html' },
+      { title: 'Prince Makhesha', url: 'background.html?#prince' },
+      { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
+      { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+      { title: 'Email hosting', url: 'emailhost.html' },
+      { title: 'Social media Marketing packages', url: 'socialmedia.html' },
+      { title: 'Logo Design', url: 'graphic-design.html' },
+      { title: 'Flyer Design', url: 'graphic-design.html' },
+      { title: 'Poster Design', url: 'graphic-design.html' },
+      { title: 'Marketing Videos', url: 'graphic-design.html' },
+      { title: 'Business Cards', url: 'graphic-design.html' },
+      { title: 'Terms and Conditions', url: 'terms.html' },
+      { title: 'Ts&Cs', url: 'terms.html' },
+      { title: 'Banner Design', url: 'graphic-design.html' },
+      { title: 'Pamphlet Design', url: 'graphic-design.html' },
+      { title: 'Frequently Asked Questions', url: 'faq.html' },
+      { title: 'FAQs', url: 'faq.html' }
+  ];
+
+  pages.forEach(page => {
+      if (page.title.toLowerCase().includes(input)) {
+          let li = document.createElement('li');
+          let a = document.createElement('a');
+          a.href = page.url;
+          a.textContent = page.title;
+          li.appendChild(a);
+          resultsList.appendChild(li);
+      }
+  });
+}
+</script>
 
   <!-- Mobile Navigation Menu -->
   <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">

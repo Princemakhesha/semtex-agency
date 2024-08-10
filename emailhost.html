@@ -5,7 +5,7 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | Semtex Agency</title>
+  <title>Email Hosting | Semtex Agency</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,33 +43,12 @@
       display: block;
     }
   </style>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
-  </script>
-  <script>
-    $(document).ready(function () {
-      $('.carousel').carousel();
-    });
-  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
       M.Sidenav.init(elems, {});
     });
   </script>
-  <style>
-    .faq-item {
-      margin-bottom: 10px;
-    }
-
-    .question {
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .answer {
-      display: none;
-    }
-  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
   <script>
@@ -95,10 +74,10 @@
 
     /* Style the form container */
     #contactModal {
-      /* padding: 20px;
-      border-radius: 10px; */
-
-
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -110,7 +89,7 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
-      border: 1px solid #3498db;
+      border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 16px;
       box-sizing: border-box;
@@ -191,6 +170,53 @@
     }
   </style>
 
+<style>
+  /* Base container for each project */
+  .project-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  /* Image container to ensure it covers the full area */
+  .project-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* Overlay content that appears on hover */
+  .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 81, 181, 0); /* Transparent initially */
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    z-index: 1;
+  }
+
+  /* Show overlay and apply zoom effect on hover */
+  .project-container:hover .hover-overlay {
+    background-color: rgba(63, 81, 181, 0.9); /* Indigo color with transparency */
+    opacity: 1;
+  }
+
+  .project-container:hover .project-image {
+    transform: scale(1.05);
+  }
+</style>
+
+
 </head>
 
 <body>
@@ -203,27 +229,27 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
                 <li class="dropdown">
-                  <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
-                  <ul class="dropdown-menu">
-                    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
-                          class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
-                        <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
-                            class="material-icons left indigo-text">language</i></a>
-                        <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
-                            class="material-icons left indigo-text">shopping_cart</i></a>
-                        <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
-                            class="material-icons left indigo-text">email</i></a></span></li>
-                    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
-                        Design<i class="material-icons left indigo-text">color_lens</i></a></li>
-                    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
-                        Registration <i class="material-icons left indigo-text">business_center</i></a></li>
-                    <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
-                          class="material-icons left indigo-text">arrow_forward</i></a></li>
-                  </ul>
-                </li>
+                    <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+                    <ul class="dropdown-menu">
+                      <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                            class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                          <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                              class="material-icons left indigo-text">language</i></a>
+                          <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                              class="material-icons left indigo-text">shopping_cart</i></a>
+                          <a href="emailhost.html" class=" btn-flat purple-text">Email Hosting<i
+                              class="material-icons left purple-text">email</i></a></span></li>
+                      <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                          Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+                      <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                          Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+                      <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                            class="material-icons left indigo-text">arrow_forward</i></a></li>
+                    </ul>
+                  </li>
                 <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li>
                 <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-                <li><a href="contact.html" class="purple-text"><strong>Contact Us</strong></a></li>
+                <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
                 <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
             </ul>
             <div id="search-bar" class="hide">
@@ -294,8 +320,8 @@
           class="material-icons left white-text">home</i></a></li>
     <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
           class="material-icons left white-text">store</i></a></li>
-    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i
-          class="material-icons left white-text">desktop_mac</i></a></li>
+    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat black-text">Website Dev<i
+          class="material-icons left black-text">desktop_mac</i></a></li>
     <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
           class="material-icons left white-text">color_lens</i></a></li>
     <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
@@ -303,8 +329,8 @@
 
     <li><a href="background.html" class="waves-effect waves-light btn-flat white-text">Our Story<i
           class="material-icons left white-text">local_florist</i></a></li>
-    <li><a href="contact.html" class="waves-effect waves-light btn-flat black-text">Contact Us<i
-          class="material-icons left black-text">headset_mic</i></a></li>
+    <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact Us<i
+          class="material-icons left white-text">headset_mic</i></a></li>
     <hr>
     <li><a href="faq.html" class="waves-effect waves-light btn-flat white-text">FAQs<i
           class="material-icons left white-text">question_answer</i></a></li>
@@ -315,7 +341,7 @@
     <li><a href="attributions.html" class="waves-effect waves-light btn-flat white-text">Attributions<i
           class="material-icons left white-text">favorite_border</i></a></li>
 
-    <br><br>
+          <br><br>
 
   </ul>
   <!-- Your existing navigation code here -->
@@ -342,272 +368,124 @@
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
         alt="WhatsApp Button" width="70"></a>
   </div>
+
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h1 class="header col s12 light">Contact Us</h1>
+          <br id="professional_packages">
+          <!-- <h1 class="header col s12 light">Professional</h1> -->
+          <h1 class="header col s12 light center">Email Hosting Packages</h1>
+          <!-- <h4>Non E-Commerce</h4> -->
+          <!-- <h5 class="center">Let us transform your vision into a stunning website that not only looks great but also drives results. Whether you're just starting or looking to revamp your online presence, our website development packages have you covered. Contact us today to get started and take that crucial step towards online success.</h5> -->
         </div>
       </div>
     </div>
 
-    <div class="parallax"><img src="businesswoman-networking-using-digital-devices.jpg"
+    <div class="parallax"><img src="email hosting header.jpg"
         alt="Unsplashed background img 2" width="30"></div>
 
   </div>
-  <!-- new section by chat -->
-
-  <br id="contact"><br>
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <!-- Contact Information -->
-        <div class="col s12 m8 l4">
-
-          <div class="row">
-            <div class="col s12 m20 l12">
-              <h3 class="center blue-text">Give us a shout!</h3>
-              <div class="icon-block">
-                <a href="tel:+27766108815">
-                  <h3 class="center indigo-text"><i class="material-icons">phone_iphone</i></h3>
-                  <h6 class="center"><a class="black-text" href="tel:+27766108815">076 610 8815</a></h6>
-                </a>
-                <a href="mailto:info@semtexagency.co.za">
-                  <h3 class="center indigo-text"><i class="material-icons">email</i></h3>
-                  <h6 class="center"><a class="black-text"
-                      href="mailto:info@semtexagency.co.za">info@semtexagency.co.za</a></h6>
-                </a>
-                <a>
-                  <h3 class="center indigo-text"><i class="material-icons">location_on</i></h3>
-                  <h6 class="center"><a class="black-text">We offer services nationwide</a></h6>
-                </a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col s12 m20 l6 right">
-          <div id="contactModal" class="">
-            <div class="modal-content">
-              <form method="post" action="your_script.php" id="contactModal">
-                <h3 class="left-align blue-text">Get in touch with us</h3>
-
-                <label for="name" class="black-text"></label>
-                <input type="text" name="name" id="name" placeholder="Name*" required>
-                <br>
-                <label for="email" class="black-text"></label>
-                <input type="email" name="email" id="email" placeholder="Email*" required>
-                <br>
-                <label for="subject" class="black-text"></label>
-                <input type="text" name="subject" id="subject" placeholder="Subject">
-                <br>
-                <label for="message" class="black-text"></label>
-                <textarea name="message" id="message" placeholder="Write Your Message Here*" required cols="30"
-                  rows="5"></textarea>
-                <br>
-                <button class="indigo" id="btn"><a class="white-text">Send</a></button>
-              </form>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- testing counter session -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-  <!-- Waypoints -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-  <!-- Counter Up -->
-  <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-
-  <style>
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-    }
-    .counter {
-      font-size: 2.5rem;
-      color: #2196F3;
-      text-align: center;
-    }
-  </style>
   <div class="container">
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="card center">
-          <div class="card-content">
-            <a class=""><img src="desktop icon.png" width="40"></a>
-            <span class="card-title">Websites Designed</span>
-            <h5 class="counter" data-count="10">0</h5>
+    <div class="section">
+      <h1 class="center indigo-text"></h1>
+      <!-- <hr> -->
+      <div class="row">
+        <div class="col s12 m12 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="emailhosting/starter package.png">
+              <!-- <span class="card-title center indigo-text">Basic Package</span> -->
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>1x email
+                        account</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">people_outline</i>Up to 10 Email Aliases</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">create</i>1X custom signature</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">headset_mic</i>12hr technical support</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">security</i>Email security</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">build</i>Email maintenance</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">attach_money</i>Pay once in a whole year</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">money_off</i>No monthly fees</a></li>
+                  </ul>
+            </div>
+            <div class="card-action center">
+              <a class="indigo-text"><strong>R999.99</strong></a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="emailhosting/standard pacakge.png">
+              <!-- <span class="card-title indigo-text">Standard Package</span> -->
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>3x email
+                        accounts</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">people_outline</i>Up to 25 Email Aliases</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">create</i>Unlimited signatures</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">headset_mic</i>24hr technical support</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">person</i>Designated personnel</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">perm_media</i>custom
+                        email banners</a></li>
+                        <!-- <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">whatshot</i>Newsletter broadcast</a></li> -->
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">security</i>Email security</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">build</i>Email maintenance</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">attach_money</i>Pay once in a whole year</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">money_off</i>No monthly fees</a></li>
+                  </ul>
+            </div>
+            <div class="card-action center">
+              <a class="indigo-text"><strong>R2 199.99</strong></a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="emailhosting/masters package.png">
+              <!-- <span class="card-title center indigo-text">Advanced Package</span> -->
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">email</i>3x email
+                        accounts</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">people_outline</i>Up to 40 Email Aliases</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">create</i>Unlimited signatures</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">headset_mic</i>24hr technical support</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">person</i>Designated personnel</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">perm_media</i>custom
+                        email banners</a></li>
+                        <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">sms</i>Inbox management</a></li>
+                        <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">whatshot</i>Newsletter broadcast</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">security</i>Email security</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">build</i>Email maintenance</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">attach_money</i>Pay once in a whole year</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">money_off</i>No monthly fees</a></li>
+                  </ul>
+            </div>
+            <div class="card-action center">
+              <a class="indigo-text"><strong>R3 999.99</strong></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col s12 m4">
-        <div class="card center">
-          <div class="card-content">
-            <a class=""><img src="logo icon.png" width="40"></a>
-            <span class="card-title">Graphics Designed</span>
-            <h5 class="counter" data-count="250">0</h5>
-          </div>
-        </div>
+      <div class="row">
       </div>
-      <div class="col s12 m4">
-        <div class="card center">
-          <div class="card-content">
-            <a class=""><img src="smiley face.png" width="40"></a>
-            <span class="card-title">Happy Clients</span>
-            <h5 class="counter" data-count="150">0</h5>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   </div>
 
-  <script>
-    $(document).ready(function(){
-      $('.counter').each(function () {
-        $(this).prop('Counter', 0).animate({
-          Counter: $(this).data('count')
-        }, {
-          duration: 2000,
-          easing: 'swing',
-          step: function (now) {
-            $(this).text(Math.ceil(now));
-          }
-        });
-      });
-    });
-  </script>
-  
-
-  <!-- testing ends here -->
-
-  <!-- //section by chat ends here -->
-
-
-
-  <!-- <section>
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <div>
-            <div class="row">
-              <div class="col s12 m12 l4">
-                <div class="icon-block">
-                  <a href="tel:+27766108815">
-                    <h2 class="center indigo-text"><i class="material-icons">phone_iphone</i></h2>
-                  </a>
-                  <h5 class="center"><a class="black-text" href="tel:+27766108815">076 610 8815</a></h5>
-                </div>
-              </div>
-
-              <div class="col s12 m12 l4">
-                <div class="icon-block">
-                  <a href="mailto:info@semtexagency.co.za">
-                    <h2 class="center indigo-text"><i class="material-icons">email</i></h2>
-                  </a>
-                  <h5 class="center"><a class="black-text"
-                      href="mailto:info@semtexagency.co.za">info@semtexagency.co.za</a></h5>
-                </div>
-              </div>
-              <div class="col s12 m12 l4">
-                <div class="icon-block">
-                  <a>
-                    <h2 class="center indigo-text"><i class="material-icons">location_on</i></h2>
-                  </a>
-                  <h5 class="center"><a class="black-text">We offer services countrywide</a></h5>
-                </div>
-              </div>
-
-              <div>
-
-
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <script>
-        function toggleAnswer(question) {
-          const answer = question.nextElementSibling;
-          answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-        }
-      </script>
-
-
-
+  </div>
+ 
     </div>
-  </section> -->
+  </div>
 
-  <section>
-
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      var btn = document.getElementById('btn');
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var subject = document.getElementById('subject').value;
-        var message = document.getElementById('message').value;
-
-        // Check if any required fields are empty
-        if (!name || !email || !message) {
-          alert("Please fill in all the required fields.");
-          return; // Prevent sending the email if fields are missing
-        }
-
-        var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
-
-        Email.send({
-          // SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
-          // To: 'messages.semtexagency@outlook.com',
-          // From: "semtexagency@gmail.com",
-          // Subject: "New Contact Form Enquiry",
-          SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
-          To: 'messages.semtexagency@outlook.com',
-          From: "messages.semtexagency@outlook.com",
-          Subject: "Urgent: A client is trying to get in touch - From Contact page",
-          Body: body
-        }).then(
-          function (message) {
-            alert("Thank you, we will be in touch shortly!");
-
-            // Clear form fields after successful submission
-            setTimeout(function () {
-              document.getElementById('name').value = '';
-              document.getElementById('email').value = '';
-              document.getElementById('subject').value = '';
-              document.getElementById('message').value = '';
-            }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
-          }
-        ).catch(
-          function (error) {
-            console.log("Email sending error:", error);
-          }
-        );
-      });
-    </script>
-
-    <!-- form ends here -->
-  </section>
+  </div>
+  
 
   <footer class="page-footer #64b5f6 blue lighten-2">
     <div class="container ">
@@ -652,7 +530,6 @@
           href="terms.html">Terms and Conditions.</a>
         <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
       </div>
-    </div>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

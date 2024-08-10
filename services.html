@@ -25,7 +25,7 @@
       padding: 10px;
       list-style: none;
       margin-top: 5px;
-      width: 250px;
+      width: 500px;
     }
 
     /* Reduce padding between dropdown items */
@@ -101,6 +101,15 @@
       scroll-behavior: smooth;
     }
   </style>
+    <style>
+      .brand-colour {
+        color: black;
+      }
+  
+      .brand-colour:hover {
+        color: #64b5f6;
+      }
+    </style>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
@@ -123,22 +132,33 @@
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="index.html" class="brand-logo"><img src="semtex logo2.png" width="200"></a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons indigo-text">menu</i></a>
             <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html" class="indigo-text">Home</a></li>
+                <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
                 <li class="dropdown">
-                    <a href="services.html" class="purple-text">Our Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="web-dev.html" class="indigo-text">Web Development</a></li>
-                        <li><a href="graphic-design.html" class="indigo-text">Graphic Design</a></li>
-                        <li><a href="companyreg.html" class="indigo-text">Company Registration</a></li>
-                    </ul>
+                  <a href="services.html" class="purple-text"><strong>Our Services</strong></a>
+                  <ul class="dropdown-menu">
+                    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                          class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                        <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                            class="material-icons left indigo-text">language</i></a>
+                        <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                            class="material-icons left indigo-text">shopping_cart</i></a>
+                        <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                            class="material-icons left indigo-text">email</i></a></span></li>
+                    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                        Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+                    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                        Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+                    <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                          class="material-icons left indigo-text">arrow_forward</i></a></li>
+                  </ul>
                 </li>
-                <li><a href="background.html" class="indigo-text">Our Story</a></li>
+                <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li>
                 <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-                <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
-                <li><a href="faq.html" class="indigo-text">FAQs</a></li>
+                <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+                <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
             </ul>
             <div id="search-bar" class="hide">
                 <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
@@ -172,6 +192,8 @@
           { title: 'Prince Makhesha', url: 'background.html?#prince' },
           { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
           { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+          { title: 'Email hosting', url: 'emailhost.html' },
+          { title: 'Social media Marketing packages', url: 'socialmedia.html' },
           { title: 'Logo Design', url: 'graphic-design.html' },
           { title: 'Flyer Design', url: 'graphic-design.html' },
           { title: 'Poster Design', url: 'graphic-design.html' },
@@ -270,74 +292,66 @@
 
   </div>
 
-  <div class="container">
-    <div class="section">
-      <h1 class="center indigo-text"></h1>
-      <!-- <hr> -->
+  <div class="section">
+    <div class="row">
+
       <div class="row">
-        <div class="col s12 m12 l4">
-            <a href="web-dev.html">
-              <div class="card">
-                <div class="card-image">
-                  <img src="web dev.png">
-                </div>
-                <div class="card-content">
-                  <span class="card-title center indigo-text">Website Development</span>
-                  <ul black-text>
-                    Elevate your online presence with our top-tier web development services. We specialize in crafting captivating websites and powerful web applications that not only meet your needs but exceed your expectations. Learn more about the packages we offer.
-                  </ul>
-                </div>
-                <div class="card-action center">
-                    <a href="web-dev.html" class="indigo-text">Learn more</a>
-                </div>
-              </div>
-            </a>
+        <!-- <h3 class="center"><a href="services.html" class="brand-colour">Our Services</a></h3> -->
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="web-dev.html?#professional_packages"><i
+                  class="material-icons brand-colour">language</i></a></h2>
+            <h5 class="center brand-colour"><a href="web-dev.html?#professional_packages" class="brand-colour">HTML &
+                CSS Web Develoment</a></h5>
+            <a class="center black-text">We build responsive and visually stunning websites that adapt seamlessly to any
+              device, from desktops to mobile phones.</a>
           </div>
-        <div class="col s12 m12 l4">
-            <a href="graphic-design.html">
-                <div class="card">
-                    <div class="card-image">
-                      <img src="graphic.png">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title center indigo-text">Graphic Design</span>
-                      <ul>
-                        Unlock the power of visual storytelling with our exceptional graphic design services. We are
-                          dedicated to bringing life into your ideas, concepts, and messages, transforming them into stunning
-                          visuals that captivate and leave a lasting impression.
-                      </ul>
-                    </div>
-                    <div class="card-action center">
-                        <a href="graphic-design.html" class="indigo-text">Learn more</a>
-                    </div>
-                  </div>
-            </a>
-          
         </div>
-        <div class="col s12 m12 l4">
-            <a href="companyreg.html">
-                <div class="card">
-                    <div class="card-image">
-                      <img src="company reg.jpg">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title center indigo-text">Company Registration</span>
-                      <ul>
-                        Embark on your entrepreneurial journey with confidence through our company registration services with
-                          the CIPC. Establishing your business is a critical step, and we're here to guide you through the
-                          process and ensuring an efficient registration.
-                      </ul>
-                    </div>
-                    <div class="card-action center">
-                        <a href="companyreg.html" class="indigo-text">Learn more</a>
-                    </div>
-                  </div>
-            </a>
-          
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="web-dev.html?#e-commerce_packages"><i
+                  class="material-icons brand-colour">shopping_cart</i></a></h2>
+            <h5 class="center"><a href="web-dev.html?#e-commerce_packages" class="brand-colour">E-Commerce Web
+                Development</a></h5>
+            <a class="center black-text">Partner with us to build a powerful e-commerce platform that showcases your
+              products and also drives sales and growth.</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="emailhost.html"><i class="material-icons brand-colour">email</i></a></h2>
+            <h5 class="center"><a href="emailhost.html" class="brand-colour">Email Hosting</a></h5>
+            <a class="center black-text">We create custom email addresses using your own domain to enhance your brand’s
+              professionalism and credibility..</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="graphic-design.html"><i class="material-icons brand-colour">color_lens</i></a>
+            </h2>
+            <h5 class="center"><a href="graphic-design.html" class="brand-colour">Graphic & Advertising Design</a></h5>
+            <a class="center black-text">We create cohesive and memorable brand identities, including logos, color
+              schemes, and typography, to establish a strong and recognizable presence in the market.</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="companyreg.html"><i class="material-icons brand-colour">work</i></a></h2>
+            <h5 class="center indigo-text"><a href="companyreg.html" class="brand-colour">Company Registrations</a></h5>
+            <a class="center black-text">Secure your desired business name with our assistance, ensuring it complies
+              with legal requirements and is unique to your industry.</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center indigo-text"><a href="socialmedia.html"><i class="material-icons brand-colour">thumb_up</i></a></h2>
+            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a></h5>
+            <a class="center black-text">We develop customized social media strategies aligned with your business goals,
+              focusing on platforms that best reach your target audience and drive results.</a>
+          </div>
         </div>
       </div>
-      </section>
-      <section>
     </div>
   </div>
   <div class="container">

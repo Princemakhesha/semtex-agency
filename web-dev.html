@@ -25,7 +25,7 @@
       padding: 10px;
       list-style: none;
       margin-top: 5px;
-      width: 250px;
+      width: 500px;
     }
 
     /* Reduce padding between dropdown items */
@@ -224,22 +224,33 @@
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="index.html" class="brand-logo"><img src="semtex logo2.png" width="200"></a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons indigo-text">menu</i></a>
             <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html" class="indigo-text">Home</a></li>
+                <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
                 <li class="dropdown">
-                    <a href="services.html" class="indigo-text">Our Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="web-dev.html" class="indigo-text">Web Development</a></li>
-                        <li><a href="graphic-design.html" class="indigo-text">Graphic Design</a></li>
-                        <li><a href="companyreg.html" class="indigo-text">Company Registration</a></li>
-                    </ul>
+                  <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+                  <ul class="dropdown-menu">
+                    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat purple-text"><i
+                          class="material-icons left purple-text">desktop_mac</i>Website Development</a><span>
+                        <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                            class="material-icons left indigo-text">language</i></a>
+                        <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                            class="material-icons left indigo-text">shopping_cart</i></a>
+                        <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                            class="material-icons left indigo-text">email</i></a></span></li>
+                    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                        Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+                    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                        Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+                    <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                          class="material-icons left indigo-text">arrow_forward</i></a></li>
+                  </ul>
                 </li>
-                <li><a href="background.html" class="indigo-text">Our Story</a></li>
+                <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li>
                 <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-                <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
-                <li><a href="faq.html" class="indigo-text">FAQs</a></li>
+                <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+                <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
             </ul>
             <div id="search-bar" class="hide">
                 <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
@@ -273,6 +284,8 @@
           { title: 'Prince Makhesha', url: 'background.html?#prince' },
           { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
           { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+          { title: 'Email hosting', url: 'emailhost.html' },
+          { title: 'Social media Marketing packages', url: 'socialmedia.html' },
           { title: 'Logo Design', url: 'graphic-design.html' },
           { title: 'Flyer Design', url: 'graphic-design.html' },
           { title: 'Poster Design', url: 'graphic-design.html' },
@@ -409,7 +422,7 @@
               </ul>
             </div>
             <div class="card-action center">
-              <a class="indigo-text">R1500.00</a>
+              <a class="indigo-text"><strong>R1 500.00</strong></a>
             </div>
           </div>
         </div>
@@ -444,7 +457,7 @@
               </ul>
             </div>
             <div class="card-action center">
-              <a class="indigo-text">R2500.00</a>
+              <a class="indigo-text"><strong>R2 500.00</strong></a>
             </div>
           </div>
         </div>
@@ -479,7 +492,7 @@
               </ul>
             </div>
             <div class="card-action center">
-              <a class="indigo-text">R4000.00</a>
+              <a class="indigo-text"><strong>R4 000.00</strong></a>
             </div>
           </div>
         </div>
@@ -517,7 +530,7 @@
               <!-- <span class="card-title center indigo-text">Silver Package</span> -->
             </div>
             <div class="card-content">
-              <h3 class="card-title indigo-text center">Silver Package</h3>
+              <h3 class="card-title indigo-text center"><strong>Silver Package</strong></h3>
               <ul>
                 <!-- <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">shopping_cart</i>online store enabled</a></li> -->
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">content_copy</i>5-10
@@ -547,7 +560,7 @@
               </ul>
             </div>
             <div class="card-action center">
-              <a class="indigo-text">R5000.00</a>
+              <a class="indigo-text"><strong>R5 000.00</strong></a>
             </div>
           </div>
         </div>
@@ -560,7 +573,7 @@
 
             <!-- <span class="card-title indigo-text right">Gold Package</span> -->
             <div class="card-content">
-              <h3 class="card-title indigo-text center">Gold Package</h3>
+              <h3 class="card-title indigo-text center"><strong>Gold Package</strong></h3>
               <ul>
                 <!-- <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">shopping_cart</i>online store enabled</a></li> -->
                 <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">content_copy</i>10-15
@@ -591,7 +604,7 @@
               </ul>
             </div>
             <div class="card-action center">
-              <a class="indigo-text">R8500.00</a>
+              <a class="indigo-text"><strong>R8 500.00</strong></a>
             </div>
           </div>
         </div>
@@ -602,7 +615,7 @@
               <!-- <span class="card-title center indigo-text">Platinum Package</span> -->
             </div>
             <div class="card-content">
-              <h3 class="card-title indigo-text center">Platinum Package</h3>
+              <h3 class="card-title indigo-text center"><strong>Platinum Package</strong></h3>
               <ul>
 
                 <li><a class="waves-effect waves-light btn-flat"><i
@@ -633,7 +646,7 @@
               </ul>
             </div>
             <div class="card-action center">
-              <a class="indigo-text">R10500.00</a>
+              <a class="indigo-text"><strong>R10 500.00</strong></a>
             </div>
           </div>
         </div>

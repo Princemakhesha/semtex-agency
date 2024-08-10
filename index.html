@@ -26,7 +26,8 @@
       padding: 10px;
       list-style: none;
       margin-top: 5px;
-      width: 250px;
+      width: 500px;
+      /* height: 540px; */
     }
 
     /* Reduce padding between dropdown items */
@@ -193,65 +194,81 @@
         transform: rotate(360deg);
       }
     }
-
   </style>
 
-<style>
-/* Style for the search bar */
-#search-bar {
-  background-color: #e3f2fd; /* Light blue background */
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  position: absolute; /* Ensure it positions correctly */
-  top: 70px; /* Increased from 60px to push it down */
-  left: 0; /* Adjust based on your layout */
-  right: 0; /* Adjust based on your layout */
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-  /* Style for the search input */
-  #search-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-  }
+  <style>
+    /* Style for the search bar */
+    #search-bar {
+      background-color: #e3f2fd;
+      /* Light blue background */
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      /* Ensure it positions correctly */
+      top: 70px;
+      /* Increased from 60px to push it down */
+      left: 0;
+      /* Adjust based on your layout */
+      right: 0;
+      /* Adjust based on your layout */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
 
-  /* Style for the search results */
-  #search-results {
-    background-color: #ffffff; /* White background for better readability */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: absolute;
-    top: 100%; /* Position below the search input */
-    left: 0;
-    width: 100%; /* Match the width of the search bar */
-    max-height: 300px; /* Limit height for overflow */
-    overflow-y: auto; /* Add scroll if too many results */
-    z-index: 1000; /* Ensure it appears above other elements */
-  }
+    /* Style for the search input */
+    #search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+    }
 
-  /* Style for each search result item */
-  #search-results li {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-  }
+    /* Style for the search results */
+    #search-results {
+      background-color: #ffffff;
+      /* White background for better readability */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      /* Position below the search input */
+      left: 0;
+      width: 100%;
+      /* Match the width of the search bar */
+      max-height: 300px;
+      /* Limit height for overflow */
+      overflow-y: auto;
+      /* Add scroll if too many results */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
 
-  #search-results li a {
-    color: #000; /* Black text color */
-    text-decoration: none; /* Remove underline */
-  }
+    /* Style for each search result item */
+    #search-results li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
 
-  #search-results li:hover {
-    background-color: #f0f0f0; /* Highlight on hover */
-  }
+    #search-results li a {
+      color: #000;
+      /* Black text color */
+      text-decoration: none;
+      /* Remove underline */
+    }
 
-  html {
+    #search-results li:hover {
+      background-color: #f0f0f0;
+      /* Highlight on hover */
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
@@ -364,7 +381,17 @@
       color: white;
       /* White text on hover */
     }
-</style>
+  </style>
+
+  <style>
+    .brand-colour {
+      color: black;
+    }
+
+    .brand-colour:hover {
+      color: #64b5f6;
+    }
+  </style>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -374,7 +401,7 @@
       }, 2000); // Adjust the timeout based on your content loading time
     });
   </script>
-  
+
 
 
 </head>
@@ -391,19 +418,30 @@
             class="material-icons left">menu</i></a>
         <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="index.html" class="purple-text">Home</a></li>
+          <li><a href="index.html" class="purple-text"><strong>Home</strong></a></li>
           <li class="dropdown">
-            <a href="services.html" class="indigo-text">Our Services</a>
+            <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
             <ul class="dropdown-menu">
-              <li><a href="web-dev.html" class="indigo-text">Web Development</a></li>
-              <li><a href="graphic-design.html" class="indigo-text">Graphic Design</a></li>
-              <li><a href="companyreg.html" class="indigo-text">Company Registration</a></li>
+              <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                    class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                  <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                      class="material-icons left indigo-text">language</i></a>
+                  <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                      class="material-icons left indigo-text">shopping_cart</i></a>
+                  <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                      class="material-icons left indigo-text">email</i></a></span></li>
+              <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                  Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+              <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                  Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+              <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                    class="material-icons left indigo-text">arrow_forward</i></a></li>
             </ul>
           </li>
-          <li><a href="background.html" class="indigo-text">Our Story</a></li>
+          <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li>
           <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-          <li><a href="contact.html" class="indigo-text">Contact Us</a></li>
-          <li><a href="faq.html" class="indigo-text">FAQs</a></li>
+          <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+          <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
         </ul>
 
         <div id="search-bar" class="hide">
@@ -438,6 +476,8 @@
         { title: 'Prince Makhesha', url: 'background.html?#prince' },
         { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
         { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+        { title: 'Email hosting', url: 'emailhost.html' },
+        { title: 'Social media Marketing packages', url: 'socialmedia.html' },
         { title: 'Logo Design', url: 'graphic-design.html' },
         { title: 'Flyer Design', url: 'graphic-design.html' },
         { title: 'Poster Design', url: 'graphic-design.html' },
@@ -521,84 +561,84 @@
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
         alt="WhatsApp Button" width="70"></a>
   </div>
-<!-- old parallax was here -->
+  <!-- old parallax was here -->
 
-<div id="index-banner" class="parallax-container">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <br><br>
-      <!-- <h2 class="header center white-text">Heavy Vehicle Training</h2> -->
-      <div class="row center">
-        <!-- <a href="services.html" id="download-button" class="btn-large waves-effect waves-light red">Learn More</a> -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <!-- <h2 class="header center white-text">Heavy Vehicle Training</h2> -->
+        <div class="row center">
+          <!-- <a href="services.html" id="download-button" class="btn-large waves-effect waves-light red">Learn More</a> -->
+        </div>
+        <br><br>
       </div>
-      <br><br>
     </div>
+    <div class="carousel carousel-slider">
+      <div class="carousel-item">
+        <img src="new background parallax.jpg" alt="">
+        <div class="carousel-caption">
+          <h3>Our clients are more</h3>
+          <h3>than just clients,</h3>
+          <h1>They're <strong>our Partners.</strong></h1>
+          <a href="contact.html?#contact" class="btn-large waves-effect waves-light carousel-buttons white-text">Get In
+            Touch</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="approvedbackground.webp" alt="">
+        <div class="carousel-caption">
+          <h3>Working to empower</h3>
+          <h1>
+            <strng>Your <strong>Digital Presence.</strong></strng>
+          </h1>
+          <a href="web-dev.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn More</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="modern-office-building-facade copy.jpg">
+        <div class="carousel-caption">
+          <h3>We embarked on a mission</h3>
+          <h1>To breathe life into ideas.</h1>
+          <a href="background.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn
+            More</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-nav left" id="carousel-prev"><i class="material-icons">chevron_left</i></a>
+    <a class="carousel-nav right" id="carousel-next"><i class="material-icons">chevron_right</i></a>
   </div>
-  <div class="carousel carousel-slider">
-    <div class="carousel-item">
-      <img src="new background parallax.jpg" alt="">
-      <div class="carousel-caption">
-        <h3>Our clients are more</h3>
-        <h3>than just clients,</h3>
-        <h1>They're <strong>our Partners.</strong></h1>
-        <a href="contact.html?#contact" class="btn-large waves-effect waves-light carousel-buttons white-text">Get In Touch</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="approvedbackground.webp" alt="">
-      <div class="carousel-caption">
-        <h3>Working to empower</h3>
-        <h1>
-          <strng>Your <strong>Digital Presence.</strong></strng>
-        </h1>
-        <a href="web-dev.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn More</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="modern-office-building-facade copy.jpg">
-      <div class="carousel-caption">
-        <h3>We embarked on a mission</h3>
-        <h1>To breathe life into ideas.</h1>
-        <a href="background.html"
-          class="btn-large waves-effect waves-light carousel-buttons white-text">Learn
-          More</a>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-nav left" id="carousel-prev"><i class="material-icons">chevron_left</i></a>
-  <a class="carousel-nav right" id="carousel-next"><i class="material-icons">chevron_right</i></a>
-</div>
 
 
-<!-- Import Materialize JavaScript and Initialize Components -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var elemsParallax = document.querySelectorAll('.parallax');
-    M.Parallax.init(elemsParallax);
+  <!-- Import Materialize JavaScript and Initialize Components -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elemsParallax = document.querySelectorAll('.parallax');
+      M.Parallax.init(elemsParallax);
 
-    var elemsCarousel = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elemsCarousel, {
-      fullWidth: true,
-      indicators: true,
-      duration: 200
+      var elemsCarousel = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elemsCarousel, {
+        fullWidth: true,
+        indicators: true,
+        duration: 200
+      });
+
+      // Autoplay functionality
+      setInterval(function () {
+        instances[0].next();
+      }, 5000); // Change slide every 3 seconds
+
+      // Navigation buttons
+      document.getElementById('carousel-prev').addEventListener('click', function () {
+        instances[0].prev();
+      });
+
+      document.getElementById('carousel-next').addEventListener('click', function () {
+        instances[0].next();
+      });
     });
-
-    // Autoplay functionality
-    setInterval(function () {
-      instances[0].next();
-    }, 5000); // Change slide every 3 seconds
-
-    // Navigation buttons
-    document.getElementById('carousel-prev').addEventListener('click', function () {
-      instances[0].prev();
-    });
-
-    document.getElementById('carousel-next').addEventListener('click', function () {
-      instances[0].next();
-    });
-  });
-</script>
+  </script>
 
   <div class="section">
     <div class="row">
@@ -643,64 +683,73 @@
     </div>
     <div class="parallax"><img src="back1.png" alt="Unsplashed background img 2" width="30"></div>
   </div>
-  <div class="container">
-    <div class="card ">
+
+  <div class="section">
+    <div class="row">
+
       <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h3 class="indigo-text">Our Services</h3>
-          <div class="col s12 m12 l4">
-            <div class="card service-card">
-              <div class="card-image">
-                <img src="web dev.png">
-              </div>
-              <div class="card-content">
-                <span class="card-title indigo-text">Website Development</span>
-                <p>Elevate your online presence with our top-tier web development services. We specialize in crafting
-                  captivating websites and powerful web applications that not only meet your needs but exceed your
-                  expectations.Learn more about the packages we offer.</p>
-              </div>
-              <div class="card-action">
-                <a href="web-dev.html" class="indigo-text">Learn more</a>
-              </div>
-            </div>
+        <h3 class="center"><a href="services.html" class="brand-colour">Our Services</a></h3>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="web-dev.html?#professional_packages"><i
+                  class="material-icons brand-colour">language</i></a></h2>
+            <h5 class="center brand-colour"><a href="web-dev.html?#professional_packages" class="brand-colour">HTML &
+                CSS Web Develoment</a></h5>
+            <a class="center black-text">We build responsive and visually stunning websites that adapt seamlessly to any
+              device, from desktops to mobile phones.</a>
           </div>
-          <div class="col s12 m12 l4">
-            <div class="card service-card">
-              <div class="card-image">
-                <img src="graphic.png">
-              </div>
-              <div class="card-content">
-                <span class="card-title indigo-text">Graphic Design</span>
-                <p>Unlock the power of visual storytelling with our exceptional graphic design services. We are
-                  dedicated to bringing life into your ideas, concepts, and messages, transforming them into stunning
-                  visuals that captivate and leave a lasting impression.</p>
-              </div>
-              <div class="card-action">
-                <a href="graphic-design.html" class="indigo-text">Learn more</a>
-              </div>
-            </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="web-dev.html?#e-commerce_packages"><i
+                  class="material-icons brand-colour">shopping_cart</i></a></h2>
+            <h5 class="center"><a href="web-dev.html?#e-commerce_packages" class="brand-colour">E-Commerce Web
+                Development</a></h5>
+            <a class="center black-text">Partner with us to build a powerful e-commerce platform that showcases your
+              products and also drives sales and growth.</a>
           </div>
-          <div class="col s12 m12 l4">
-            <div class="card service-card">
-              <div class="card-image">
-                <img src="company reg.jpg">
-              </div>
-              <div class="card-content">
-                <span class="card-title indigo-text">Company Registration</span>
-                <p>Embark on your entrepreneurial journey with confidence through our company registration services with
-                  the CIPC. Establishing your business is a critical step, and we're here to guide you through the
-                  process and ensuring an efficient registration.</p>
-              </div>
-              <div class="card-action">
-                <a href="companyreg.html" class="indigo-text">Learn more</a>
-              </div>
-            </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="emailhost.html"><i class="material-icons brand-colour">email</i></a></h2>
+            <h5 class="center"><a href="emailhost.html" class="brand-colour">Email Hosting</a></h5>
+            <a class="center black-text">We create custom email addresses using your own domain to enhance your brand’s
+              professionalism and credibility..</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="graphic-design.html"><i class="material-icons brand-colour">color_lens</i></a>
+            </h2>
+            <h5 class="center"><a href="graphic-design.html" class="brand-colour">Graphic & Advertising Design</a></h5>
+            <a class="center black-text">We create cohesive and memorable brand identities, including logos, color
+              schemes, and typography, to establish a strong and recognizable presence in the market.</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><a href="companyreg.html"><i class="material-icons brand-colour">work</i></a></h2>
+            <h5 class="center indigo-text"><a href="companyreg.html" class="brand-colour">Company Registrations</a></h5>
+            <a class="center black-text">Secure your desired business name with our assistance, ensuring it complies
+              with legal requirements and is unique to your industry.</a>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center indigo-text"><a href="socialmedia.html"><i class="material-icons brand-colour">thumb_up</i></a></h2>
+            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a></h5>
+            <a class="center black-text">We develop customized social media strategies aligned with your business goals,
+              focusing on platforms that best reach your target audience and drive results.</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
   </div>
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
@@ -810,19 +859,91 @@
 
 
   </footer>
-  <div class="client-carousel-wrapper">
+  <div class="client-carousel-wrapper col l5 m12 s2">
     <h4 class="indigo-text center">Some of our clients</h4>
     <div class="client-carousel">
       <div class="client-carousel-inner">
         <!-- Carousel Items -->
         <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250" alt="Imaam Masanga"></a>
+          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="230"
+              alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="160" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="230" alt="Vhukhudo Travel"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/rich skills cleaning.png" width="230" alt="Rich Skills Cleaning"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/beapearl logo black.png" width="230" alt="Beapearl"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/color logo.png" width="230" alt="Color Logo"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/fluvial.png" width="230" alt="Fluvial"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
+              width="230" alt="Ndaa Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="180"
+              alt="Mitana Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="170"
+              alt="Moata School"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="230"
+              alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="160" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png"
+              width="230" alt="Vhukhudo Travel"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/rich skills cleaning.png" width="230" alt="Rich Skills Cleaning"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/beapearl logo black.png" width="253" alt="Beapearl"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/color logo.png" width="250" alt="Color Logo"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
+              width="250" alt="Ndaa Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200"
+              alt="Mitana Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190"
+              alt="Moata School"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250"
+              alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
           <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="180" alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
+          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png"
+              width="250" alt="Vhukhudo Travel"></a>
         </div>
         <div class="client-carousel-item">
           <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
@@ -837,22 +958,27 @@
           <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
+          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
+              width="250" alt="Ndaa Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200" alt="Mitana Training"></a>
+          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200"
+              alt="Mitana Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190" alt="Moata School"></a>
+          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190"
+              alt="Moata School"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250" alt="Imaam Masanga"></a>
+          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250"
+              alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
           <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="180" alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
+          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png"
+              width="250" alt="Vhukhudo Travel"></a>
         </div>
         <div class="client-carousel-item">
           <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
@@ -867,198 +993,274 @@
           <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
+          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
+              width="250" alt="Ndaa Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200" alt="Mitana Training"></a>
+          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200"
+              alt="Mitana Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190" alt="Moata School"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="180" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/beapearl logo black.png" width="250" alt="Beapearl"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/color logo.png" width="250" alt="Color Logo"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200" alt="Mitana Training"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190" alt="Moata School"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="180" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/beapearl logo black.png" width="250" alt="Beapearl"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/color logo.png" width="250" alt="Color Logo"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200" alt="Mitana Training"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190" alt="Moata School"></a>
+          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190"
+              alt="Moata School"></a>
         </div>
       </div>
-      
+
       <!-- Navigation Arrows -->
       <a class="client-carousel-prev" href="#"><i class="material-icons">chevron_left</i></a>
       <a class="client-carousel-next" href="#"><i class="material-icons">chevron_right</i></a>
     </div>
   </div>
-  
-  
+
+
 
   <style>
- .client-carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
+    .client-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
 
-.client-carousel {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
+    .client-carousel {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
 
-.client-carousel-inner {
-  display: flex;
-  width: 100%;
-  transition: transform 0.5s ease-in-out;
-}
+    .client-carousel-inner {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
 
-.client-carousel-item {
-  flex: 0 0 auto;
-  margin: 0 10px; /* Adjust margin as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .client-carousel-item {
+      flex: 0 0 auto;
+      margin: 0 10px;
+      /* Adjust margin as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.client-carousel img {
-  max-width: 100%;
-  height: auto;
-}
+    .client-carousel img {
+      max-width: 100%;
+      height: auto;
+    }
 
-.client-carousel-prev, .client-carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 24px;
-}
+    .client-carousel-prev,
+    .client-carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 24px;
+    }
 
-.client-carousel-prev {
-  left: 10px;
-}
+    .client-carousel-prev {
+      left: 10px;
+    }
 
-.client-carousel-next {
-  right: 10px;
-}
-
+    .client-carousel-next {
+      right: 10px;
+    }
   </style>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const carouselInner = document.querySelector('.client-carousel-inner');
-    const prevBtn = document.querySelector('.client-carousel-prev');
-    const nextBtn = document.querySelector('.client-carousel-next');
-    const items = document.querySelectorAll('.client-carousel-item');
-    let index = 1; // Start from the first original item
-    const itemWidth = items[0].offsetWidth + 20; // Account for margin
-    const itemCount = items.length;
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carouselInner = document.querySelector('.client-carousel-inner');
+      const prevBtn = document.querySelector('.client-carousel-prev');
+      const nextBtn = document.querySelector('.client-carousel-next');
+      const items = document.querySelectorAll('.client-carousel-item');
+      let index = 1; // Start from the first original item
+      const itemWidth = items[0].offsetWidth + 20; // Account for margin
+      const itemCount = items.length;
 
-    function showSlide(n) {
-      if (n >= itemCount) {
-        index = 1; // Jump to the first original item
-        carouselInner.style.transition = 'none'; // Disable transition for instant jump
-        carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
-        setTimeout(() => {
-          carouselInner.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
-          showSlide(index + 1);
-        }, 50);
-      } else if (n < 0) {
-        index = itemCount - 2; // Jump to the last original item
-        carouselInner.style.transition = 'none'; // Disable transition for instant jump
-        carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
-        setTimeout(() => {
-          carouselInner.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
-          showSlide(index - 1);
-        }, 50);
-      } else {
-        index = n;
-        carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+      function showSlide(n) {
+        if (n >= itemCount) {
+          index = 1; // Jump to the first original item
+          carouselInner.style.transition = 'none'; // Disable transition for instant jump
+          carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+          setTimeout(() => {
+            carouselInner.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            showSlide(index + 1);
+          }, 50);
+        } else if (n < 0) {
+          index = itemCount - 2; // Jump to the last original item
+          carouselInner.style.transition = 'none'; // Disable transition for instant jump
+          carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+          setTimeout(() => {
+            carouselInner.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            showSlide(index - 1);
+          }, 50);
+        } else {
+          index = n;
+          carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+        }
       }
-    }
 
-    function nextSlide() {
-      showSlide(index + 1);
-    }
+      function nextSlide() {
+        showSlide(index + 1);
+      }
 
-    function prevSlide() {
-      showSlide(index - 1);
-    }
+      function prevSlide() {
+        showSlide(index - 1);
+      }
 
-    prevBtn.addEventListener('click', function(event) {
-      event.preventDefault();
-      prevSlide();
+      prevBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        prevSlide();
+      });
+
+      nextBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        nextSlide();
+      });
+
+      // Automatic scroll every 3 seconds
+      setInterval(nextSlide, 4000);
     });
+  </script>
 
-    nextBtn.addEventListener('click', function(event) {
-      event.preventDefault();
-      nextSlide();
+  <div class="background-section">
+    <div class="container">
+      <div class="row">
+        <!-- Left Side: Text -->
+        <div class="col l4 s12">
+          <div class="left-align">
+            <h5 class="white-text">Keep up with Semtex Agency</h5>
+            <p class="white-text">Sign up for our Newsletter:</p>
+          </div>
+        </div>
+        <!-- Right Side: Form -->
+        <div class="col l6 s12">
+          <form id="newsletterForm" method="post" class="row">
+            <div class="input-field col s12 m5">
+              <input id="name" type="text" name="name" class="validate custom-input" placeholder="Your Name*" required>
+              <label for="name" class="white-text"></label>
+            </div>
+            <div class="input-field col s12 m5">
+              <input id="email" type="email" name="email" class="validate custom-input" placeholder="Your Email*"
+                required>
+              <label for="email" class="white-text"></label>
+            </div>
+            <div class="input-field col s12 m2">
+              <button id="btn" class="btn-large blue lighten-2 form-button"><strong>Submit</strong></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Existing Script for SMTP -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+
+      // Check if any required fields are empty
+      if (!name || !email) {
+        alert("Please fill in all the required fields.");
+        return; // Prevent sending the email if fields are missing
+      }
+
+      var body = 'name: ' + name + '<br/> email: ' + email;
+
+      Email.send({
+        SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175",
+        To: 'messages.semtexagency@outlook.com',
+        From: "messages.semtexagency@outlook.com",
+        Subject: "Newsletter Signup - From Semtex Agency",
+        Body: body
+      }).then(
+        function (message) {
+          alert("Thank you for signing up!");
+
+          // Clear form fields after successful submission
+          setTimeout(function () {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+          }, 2000);
+        }
+      ).catch(
+        function (error) {
+          console.log("Email sending error:", error);
+        }
+      );
     });
+  </script>
 
-    // Automatic scroll every 3 seconds
-    setInterval(nextSlide, 4000);
-  });
-</script>
+  <style>
+    .background-section {
+      background-color: #0d47a1;
+      /* Dark blue background */
+      padding: 20px 0;
+      /* Adjust padding as needed */
+    }
 
-  
-  
-  
+    .input-field {
+      display: flex;
+      align-items: center;
+    }
+
+    .input-field input.custom-input {
+      color: #000;
+      /* Black text color */
+      background-color: #fff;
+      /* White background */
+      border: 2px solid #ddd;
+      /* Light gray border */
+      border-radius: 4px;
+      /* Rounded corners */
+      padding: 10px;
+      /* Padding inside input */
+      box-sizing: border-box;
+      /* Include padding and border in element's total width and height */
+      height: 56px;
+    }
+
+    .input-field input.custom-input:focus {
+      border-color: #64b5f6;
+      /* Change border color on focus */
+      box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.3);
+      /* Add shadow on focus */
+    }
+
+    .form-button {
+      /* height: 50px; */
+      width: 500px;
+      /* padding: 10px; Match height with input fields */
+      font-size: 1rem;
+      /* Larger font size */
+      display: flex;
+      /* Flexbox to center text */
+      justify-content: center;
+      /* Center text horizontally */
+      align-items: center;
+      /* Center text vertically */
+      border: 2px solid #ddd;
+      /* Light gray border */
+      border-radius: 4px;
+      /* Rounded corners */
+      padding: 10px;
+      /* Padding inside input */
+      /* box-sizing: border-box; Include padding and border in element's total width and height */
+    }
+
+    .form-button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+
 
 
   <footer class="page-footer #64b5f6 blue lighten-2">

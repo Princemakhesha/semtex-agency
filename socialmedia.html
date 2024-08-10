@@ -5,7 +5,7 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Company Registration | Semtex Agency</title>
+  <title>Social Media Marketing | Semtex Agency</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,6 +41,74 @@
 
     .dropdown:hover .dropdown-menu {
       display: block;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {});
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HHYH36RY42');
+  </script>
+  <style>
+    #contactModal textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+      height: auto;
+      /* Allow the height to adjust automatically based on content */
+    }
+
+    /* Style the form container */
+    #contactModal {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Style input fields */
+    #contactModal input[type="text"],
+    #contactModal input[type="email"],
+    #contactModal textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Style the "Send" button */
+    #contactModal button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Add some hover effect to the button */
+    #contactModal button:hover {
+      background-color: #2980b9;
     }
 
     /* Style for the search bar */
@@ -101,21 +169,54 @@
       scroll-behavior: smooth;
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(elems, {});
-    });
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-HHYH36RY42');
-  </script>
+<style>
+  /* Base container for each project */
+  .project-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  /* Image container to ensure it covers the full area */
+  .project-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* Overlay content that appears on hover */
+  .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 81, 181, 0); /* Transparent initially */
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    z-index: 1;
+  }
+
+  /* Show overlay and apply zoom effect on hover */
+  .project-container:hover .hover-overlay {
+    background-color: rgba(63, 81, 181, 0.9); /* Indigo color with transparency */
+    opacity: 1;
+  }
+
+  .project-container:hover .project-image {
+    transform: scale(1.05);
+  }
+</style>
+
+
 </head>
 
 <body>
@@ -128,24 +229,24 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
                 <li class="dropdown">
-                  <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
-                  <ul class="dropdown-menu">
-                    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
-                          class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
-                        <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
-                            class="material-icons left indigo-text">language</i></a>
-                        <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
-                            class="material-icons left indigo-text">shopping_cart</i></a>
-                        <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
-                            class="material-icons left indigo-text">email</i></a></span></li>
-                    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
-                        Design<i class="material-icons left indigo-text">color_lens</i></a></li>
-                    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat purple-text">Company
-                        Registration <i class="material-icons left purple-text">business_center</i></a></li>
-                    <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
-                          class="material-icons left indigo-text">arrow_forward</i></a></li>
-                  </ul>
-                </li>
+                    <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+                    <ul class="dropdown-menu">
+                      <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                            class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                          <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                              class="material-icons left indigo-text">language</i></a>
+                          <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                              class="material-icons left indigo-text">shopping_cart</i></a>
+                          <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                              class="material-icons left indigo-text">email</i></a></span></li>
+                      <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                          Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+                      <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                          Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+                      <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                            class="material-icons left indigo-text">arrow_forward</i></a></li>
+                    </ul>
+                  </li>
                 <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li>
                 <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
                 <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
@@ -219,12 +320,12 @@
           class="material-icons left white-text">home</i></a></li>
     <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
           class="material-icons left white-text">store</i></a></li>
-    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i
-          class="material-icons left white-text">desktop_mac</i></a></li>
+    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat black-text">Website Dev<i
+          class="material-icons left black-text">desktop_mac</i></a></li>
     <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
           class="material-icons left white-text">color_lens</i></a></li>
-    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat black-text">Company Reg<i
-          class="material-icons left black-text">business_center</i></a></li>
+    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
+          class="material-icons left white-text">business_center</i></a></li>
 
     <li><a href="background.html" class="waves-effect waves-light btn-flat white-text">Our Story<i
           class="material-icons left white-text">local_florist</i></a></li>
@@ -272,74 +373,111 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h1 class="header col s12 light">Company Registration</h1>
-          <!-- <h5 class="center">Navigating the complexities of company registration can be a daunting task. Our
-            company registration service offers you a streamlined and hassle-free journey to establishing
-            your business entity with the Companies and Intellectual Property Commission (CIPC). We handle
-            the intricate details, paperwork, and legal requirements, allowing you to focus on your core
-            business activities.</h5> -->
+          <br id="professional_packages">
+          <!-- <h1 class="header col s12 light">Professional</h1> -->
+          <h1 class="header col s12 light center">Soci Media Marketing Packages</h1>
+          <!-- <h4>Non E-Commerce</h4> -->
+          <!-- <h5 class="center">Let us transform your vision into a stunning website that not only looks great but also drives results. Whether you're just starting or looking to revamp your online presence, our website development packages have you covered. Contact us today to get started and take that crucial step towards online success.</h5> -->
         </div>
       </div>
     </div>
 
-    <div class="parallax"><img src="businessman-analysis-working-discussing-charts-graphs-showing-results.jpg"
+    <div class="parallax"><img src="hands-holding-smartphone-social-media-concept COPY.jpg"
         alt="Unsplashed background img 2" width="30"></div>
 
   </div>
-
-  
   <div class="container">
     <div class="section">
       <h1 class="center indigo-text"></h1>
       <!-- <hr> -->
       <div class="row">
-        <div>
-          
-          <div class="row">
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="center indigo-text"><i class="material-icons">business</i></h2>
-                <h5 class="center">Unlock Official Recognition</h5>
-                <ul>
-                  <a class="center">Embark on your business journey with confidence. Our company
-                    registration service ensures that your business gains the official recognition
-                    it deserves. We guide you through the process, helping you navigate the legal
-                    landscape and ensuring your business is compliant from day one.</a>
-                </ul>
-                <h5 class="center"></h5>
-              </div>
+        <div class="col s12 m12 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="socialmedia/silver.png">
+              <!-- <span class="card-title center indigo-text">Basic Package</span> -->
             </div>
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="center indigo-text"><i class="material-icons">book</i></h2>
-                <h5 class="center">Seamless Paperwork Process</h5>
+            <div class="card-content">
+                <h3 class="card-title indigo-text center"><strong>Silver Package</strong></h3>
                 <ul>
-                  <a class="center">Paperwork can be overwhelming, but not with us by your side. We
-                    take care of all the necessary documentation, including completing and
-                    submitting the required forms to CIPC. Our efficient process eliminates the
-                    stress and confusion often associated with registration, making your journey
-                    swift and straightforward.</a>
-                </ul>
-              </div>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">content_copy</i>3X posts per week</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">color_lens</i>graphic designs</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">thumb_up</i>1X paid campaign</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">today</i>Pay once a month</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">money_off</i>ad budget included</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">touch_app</i>ad management</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">event_note</i>insights report</a></li>
+                  </ul>
             </div>
-            <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="center indigo-text"><i class="material-icons">search</i></h2>
-                <h5 class="center">Thorough Legal Compliance</h5>
+            <div class="card-action center">
+              <a class="indigo-text"><strong>R1 299.99</strong></a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="socialmedia/gold.png">
+              <!-- <span class="card-title indigo-text">Standard Package</span> -->
+            </div>
+            <div class="card-content">
+                <h3 class="card-title indigo-text center"><strong>Gold Package</strong></h3>
                 <ul>
-                  <a class="center">Navigating legal intricacies is our expertise. We ensure that your
-                    company registration adheres to all relevant laws, regulations, and procedures.
-                    Our meticulous approach guarantees that your business is registered correctly
-                    and in full compliance with CIPC standards.</a>
-                </ul>
-              </div>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">content_copy</i>5X posts per week</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">color_lens</i>graphic designs</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">image</i>Stock images</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">thumb_up</i>3X paid campaign</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">today</i>Pay once a month</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">money_off</i>ad budget included</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">touch_app</i>ad management</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">event_note</i>insights report</a></li>
+                  </ul>
+            </div>
+            <div class="card-action center">
+              <a class="indigo-text"><strong>R2 999.99</strong></a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="socialmedia/platinum.png">
+              <!-- <span class="card-title center indigo-text">Advanced Package</span> -->
+            </div>
+            <div class="card-content">
+                <h3 class="card-title indigo-text center"><strong>Premium Package</strong></h3>
+                <ul>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">content_copy</i>7X posts per week</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">color_lens</i>graphic designs</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">image</i>Stock images</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">thumb_up</i>5X paid campaign</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">record_voice_over</i>Weekly Consulting</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">today</i>Pay once a month</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">money_off</i>ad budget included</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">touch_app</i>ad management</a></li>
+                    <li><a class="waves-effect waves-light btn-flat"><i class="material-icons left">event_note</i>insights report</a></li>
+                  </ul>
+            </div>
+            <div class="card-action center">
+              <a class="indigo-text"><strong>R5 999.99</strong></a>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+      </div>
       </section>
     </div>
   </div>
+
+  </div>
+ 
+    </div>
+  </div>
+
+  </div>
+  
+
   <footer class="page-footer #64b5f6 blue lighten-2">
     <div class="container ">
       <div class="row">
@@ -367,13 +505,11 @@
           <h5 class="white-text">Connect with us</h5>
           <ul>
             <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png" width="37"></a>
-            <a class="white-text" href="https://twitter.com/agencysemtex"><img
-                src="twitter_x.png" width="40"></a>
-            <a class="white-text" href="https://www.instagram.com/semtexagency"><img
-                src="insta.png"width="40"></a>
-            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img
-                src="youtube_black.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png"
+                width="37"></a>
+            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="twitter_x.png" width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/semtexagency"><img src="insta.png" width="40"></a>
+            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img src="youtube_black.png"
                 width="40"></a>
           </ul>
         </div>
@@ -381,7 +517,8 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        Copyright © 2023-2024 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4" href="terms.html">Terms and Conditions.</a>
+        Copyright © 2023-2024 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4"
+          href="terms.html">Terms and Conditions.</a>
         <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
       </div>
     </div>
@@ -389,6 +526,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
 </body>
 
 </html>
