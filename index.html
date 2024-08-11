@@ -277,6 +277,7 @@
     .parallax-container {
       position: relative;
       height: 500px;
+      margin-bottom: -90px;
       /* Adjust the height as needed */
     }
 
@@ -296,6 +297,7 @@
     }
 
     .carousel-nav {
+      /*mostly for the left and right buttons*/
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -393,12 +395,108 @@
     }
   </style>
 
+  <style>
+    .fly-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fly-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <style>
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .counter {
+      font-size: 2.5rem;
+      color: #2196F3;
+      text-align: center;
+    }
+
+    .card1 {
+      background-color: transparent;
+      border: none;
+      /* Optional: Remove border if needed */
+      box-shadow: none;
+      /* Optional: Remove box-shadow if needed */
+    }
+
+    .card-content {
+      padding: 24px;
+      /* Optional: Adjust padding as needed */
+    }
+  </style>
+
+
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Simulate content loading (replace this with your actual loading logic)
       setTimeout(function () {
         document.getElementById("loading-container").style.display = "none";
       }, 2000); // Adjust the timeout based on your content loading time
+    });
+  </script>
+
+  <!-- Custom JavaScript for Fly-In Effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const flyInElements = document.querySelectorAll('.fly-in');
+
+      function checkPosition() {
+        flyInElements.forEach(function (element) {
+          const positionFromTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          // Check if the element is within the viewport
+          if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+            element.classList.add('show');
+          } else {
+            element.classList.remove('show'); // Remove the show class when the element is out of view
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkPosition);
+      window.addEventListener('resize', checkPosition);
+      checkPosition(); // Initial check on page load
+    });
+  </script>
+
+  <!-- Import Materialize JavaScript and Initialize Components -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elemsParallax = document.querySelectorAll('.parallax');
+      M.Parallax.init(elemsParallax);
+
+      var elemsCarousel = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elemsCarousel, {
+        fullWidth: true,
+        indicators: true,
+        duration: 200
+      });
+
+      // Autoplay functionality
+      setInterval(function () {
+        instances[0].next();
+      }, 5000); // Change slide every 3 seconds
+
+      // Navigation buttons
+      document.getElementById('carousel-prev').addEventListener('click', function () {
+        instances[0].prev();
+      });
+
+      document.getElementById('carousel-next').addEventListener('click', function () {
+        instances[0].next();
+      });
     });
   </script>
 
@@ -517,6 +615,10 @@
           class="material-icons left white-text">desktop_mac</i></a></li>
     <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
           class="material-icons left white-text">color_lens</i></a></li>
+    <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i
+          class="material-icons left white-text">email</i></a></li>
+    <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i
+          class="material-icons left white-text">thumb_up</i></a></li>
     <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
           class="material-icons left white-text">business_center</i></a></li>
 
@@ -564,19 +666,9 @@
   <!-- old parallax was here -->
 
   <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <!-- <h2 class="header center white-text">Heavy Vehicle Training</h2> -->
-        <div class="row center">
-          <!-- <a href="services.html" id="download-button" class="btn-large waves-effect waves-light red">Learn More</a> -->
-        </div>
-        <br><br>
-      </div>
-    </div>
     <div class="carousel carousel-slider">
       <div class="carousel-item">
-        <img src="new background parallax.jpg" alt="">
+        <img src="new background parallax.jpg" alt="1st background">
         <div class="carousel-caption">
           <h3>Our clients are more</h3>
           <h3>than just clients,</h3>
@@ -586,17 +678,17 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="approvedbackground.webp" alt="">
+        <img src="approvedbackground.webp" alt="2nd background">
         <div class="carousel-caption">
           <h3>Working to empower</h3>
           <h1>
-            <strng>Your <strong>Digital Presence.</strong></strng>
+            Your <strong>Digital Presence.</strong>
           </h1>
           <a href="web-dev.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn More</a>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="modern-office-building-facade copy.jpg">
+        <img src="modern-office-building-facade copy.jpg" alt="3rd background">
         <div class="carousel-caption">
           <h3>We embarked on a mission</h3>
           <h1>To breathe life into ideas.</h1>
@@ -610,41 +702,12 @@
   </div>
 
 
-  <!-- Import Materialize JavaScript and Initialize Components -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var elemsParallax = document.querySelectorAll('.parallax');
-      M.Parallax.init(elemsParallax);
-
-      var elemsCarousel = document.querySelectorAll('.carousel');
-      var instances = M.Carousel.init(elemsCarousel, {
-        fullWidth: true,
-        indicators: true,
-        duration: 200
-      });
-
-      // Autoplay functionality
-      setInterval(function () {
-        instances[0].next();
-      }, 5000); // Change slide every 3 seconds
-
-      // Navigation buttons
-      document.getElementById('carousel-prev').addEventListener('click', function () {
-        instances[0].prev();
-      });
-
-      document.getElementById('carousel-next').addEventListener('click', function () {
-        instances[0].next();
-      });
-    });
-  </script>
-
-  <div class="section">
-    <div class="row">
-
+  <!-- <h3 class="center indigo-text">Why Choose Us</h3> -->
+  <div class="container col s12 m4 l4">
+    <div class="">
+      <h3 class="center indigo-text">Why Choose Us</h3>
       <div class="row">
-        <h3 class="center indigo-text">Why Choose Us</h3>
+        <!-- <h3 class="center indigo-text">Why Choose Us</h3> -->
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center indigo-text"><i class="material-icons">color_lens</i></h2>
@@ -684,23 +747,24 @@
     <div class="parallax"><img src="back1.png" alt="Unsplashed background img 2" width="30"></div>
   </div>
 
+  <br><br>
+
+  <!-- Section with Fly-In Effect -->
   <div class="section">
     <div class="row">
-
       <div class="row">
-        <h3 class="center"><a href="services.html" class="brand-colour">Our Services</a></h3>
-        <div class="col s12 m4">
+        <h3 class="center fly-in white"><a href="services.html" class="brand-colour">Our Services</a></h3>
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#professional_packages"><i
                   class="material-icons brand-colour">language</i></a></h2>
             <h5 class="center brand-colour"><a href="web-dev.html?#professional_packages" class="brand-colour">HTML &
-                CSS Web Develoment</a></h5>
+                CSS Web Development</a></h5>
             <a class="center black-text">We build responsive and visually stunning websites that adapt seamlessly to any
               device, from desktops to mobile phones.</a>
           </div>
         </div>
-
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#e-commerce_packages"><i
                   class="material-icons brand-colour">shopping_cart</i></a></h2>
@@ -710,15 +774,15 @@
               products and also drives sales and growth.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="emailhost.html"><i class="material-icons brand-colour">email</i></a></h2>
             <h5 class="center"><a href="emailhost.html" class="brand-colour">Email Hosting</a></h5>
             <a class="center black-text">We create custom email addresses using your own domain to enhance your brand’s
-              professionalism and credibility..</a>
+              professionalism and credibility.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="graphic-design.html"><i class="material-icons brand-colour">color_lens</i></a>
             </h2>
@@ -727,7 +791,7 @@
               schemes, and typography, to establish a strong and recognizable presence in the market.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="companyreg.html"><i class="material-icons brand-colour">work</i></a></h2>
             <h5 class="center indigo-text"><a href="companyreg.html" class="brand-colour">Company Registrations</a></h5>
@@ -735,10 +799,12 @@
               with legal requirements and is unique to your industry.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
-            <h2 class="center indigo-text"><a href="socialmedia.html"><i class="material-icons brand-colour">thumb_up</i></a></h2>
-            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a></h5>
+            <h2 class="center indigo-text"><a href="socialmedia.html"><i
+                  class="material-icons brand-colour">thumb_up</i></a></h2>
+            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a>
+            </h5>
             <a class="center black-text">We develop customized social media strategies aligned with your business goals,
               focusing on platforms that best reach your target audience and drive results.</a>
           </div>
@@ -747,7 +813,8 @@
     </div>
   </div>
 
-
+  <!-- Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
   </div>
@@ -767,7 +834,8 @@
     </div>
   </div>
 
-  <footer class="page-footer #e3f2fd blue lighten-5">
+  <!-- Counter Section -->
+  <footer class="page-footer #e3f2fd blue lighten-5" id="counter-section">
     <!-- testing counter session -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -780,40 +848,14 @@
     <!-- Counter Up -->
     <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 
-    <style>
-      .card-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-align: center;
-      }
-
-      .counter {
-        font-size: 2.5rem;
-        color: #2196F3;
-        text-align: center;
-      }
-
-      .card1 {
-        background-color: transparent;
-        border: none;
-        /* Optional: Remove border if needed */
-        box-shadow: none;
-        /* Optional: Remove box-shadow if needed */
-      }
-
-      .card-content {
-        padding: 24px;
-        /* Optional: Adjust padding as needed */
-      }
-    </style>
-    <div class="container">
+    <div class="container fly-in">
       <div class="row">
         <div class="col s12 m12 l4">
           <div class="card1 center">
             <div class="card-content">
               <a class=""><img src="desktop icon.png" width="40"></a>
               <span class="card-title black-text">Websites Designed</span>
-              <h5 class="counter" data-count="10">0</h5>
+              <h5 class="counter" data-count="10">0+</h5>
             </div>
           </div>
         </div>
@@ -822,7 +864,7 @@
             <div class="card-content">
               <a class=""><img src="logo icon.png" width="40"></a>
               <span class="card-title black-text">Graphics Designed</span>
-              <h5 class="counter" data-count="250">0</h5>
+              <h5 class="counter" data-count="500">0+</h5>
             </div>
           </div>
         </div>
@@ -831,7 +873,7 @@
             <div class="card-content">
               <a class=""><img src="smiley face.png" width="40"></a>
               <span class="card-title black-text">Happy Clients</span>
-              <h5 class="counter" data-count="150">0</h5>
+              <h5 class="counter" data-count="150">0+</h5>
             </div>
           </div>
         </div>
@@ -840,26 +882,37 @@
 
     <script>
       $(document).ready(function () {
-        $('.counter').each(function () {
-          $(this).prop('Counter', 0).animate({
-            Counter: $(this).data('count')
-          }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-              $(this).text(Math.ceil(now));
+        // Initialize Waypoints
+        var counterSection = new Waypoint({
+          element: document.getElementById('counter-section'),
+          handler: function (direction) {
+            if (direction === 'down') {
+              // Reset counter values
+              $('.counter').each(function () {
+                var $this = $(this);
+                var countTo = $this.data('count');
+                $this.text('0+'); // Reset the counter text
+
+                $this.prop('Counter', 0).animate({
+                  Counter: countTo
+                }, {
+                  duration: 2000,
+                  easing: 'swing',
+                  step: function (now) {
+                    $this.text(Math.ceil(now) + '+');
+                  }
+                });
+              });
             }
-          });
+          },
+          offset: '75%' // Adjust this value to trigger the counter earlier or later
         });
       });
     </script>
-
-
-    <!-- testing ends here -->
-
-
   </footer>
-  <div class="client-carousel-wrapper col l5 m12 s2">
+
+
+  <div class="client-carousel-wrapper col l5 m12 s4 fly-in">
     <h4 class="indigo-text center">Some of our clients</h4>
     <div class="client-carousel">
       <div class="client-carousel-inner">
@@ -1126,11 +1179,11 @@
     });
   </script>
 
-  <div class="background-section">
+  <div class="background-section fly-in">
     <div class="container">
       <div class="row">
         <!-- Left Side: Text -->
-        <div class="col l4 s12">
+        <div class="col l4 s12 l3">
           <div class="left-align">
             <h5 class="white-text">Keep up with Semtex Agency</h5>
             <p class="white-text">Sign up for our Newsletter:</p>
@@ -1263,7 +1316,7 @@
 
 
 
-  <footer class="page-footer #64b5f6 blue lighten-2">
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in">
     <div class="container ">
       <div class="row">
         <div class="col l6 s12">

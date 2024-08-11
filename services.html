@@ -110,6 +110,46 @@
         color: #64b5f6;
       }
     </style>
+    <style>
+      .fly-in {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+    
+      .fly-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+     <!-- Custom JavaScript for Fly-In Effect -->
+     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const flyInElements = document.querySelectorAll('.fly-in');
+    
+        function checkPosition() {
+          flyInElements.forEach(function(element) {
+            const positionFromTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+    
+            // Check if the element is within the viewport
+            if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+              element.classList.add('show');
+            } else {
+              element.classList.remove('show'); // Remove the show class when the element is out of view
+            }
+          });
+        }
+    
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', checkPosition);
+        checkPosition(); // Initial check on page load
+      });
+    </script>
+
+
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
@@ -232,6 +272,10 @@
           class="material-icons left white-text">desktop_mac</i></a></li>
     <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
           class="material-icons left white-text">color_lens</i></a></li>
+          <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i
+            class="material-icons left white-text">email</i></a></li>
+      <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i
+            class="material-icons left white-text">thumb_up</i></a></li>
     <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
           class="material-icons left white-text">business_center</i></a></li>
 
@@ -292,12 +336,12 @@
 
   </div>
 
-  <div class="section">
+  <div class="section  center">
     <div class="row">
 
       <div class="row">
         <!-- <h3 class="center"><a href="services.html" class="brand-colour">Our Services</a></h3> -->
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#professional_packages"><i
                   class="material-icons brand-colour">language</i></a></h2>
@@ -308,7 +352,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#e-commerce_packages"><i
                   class="material-icons brand-colour">shopping_cart</i></a></h2>
@@ -318,7 +362,8 @@
               products and also drives sales and growth.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="emailhost.html"><i class="material-icons brand-colour">email</i></a></h2>
             <h5 class="center"><a href="emailhost.html" class="brand-colour">Email Hosting</a></h5>
@@ -326,7 +371,8 @@
               professionalism and credibility..</a>
           </div>
         </div>
-        <div class="col s12 m4">
+
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="graphic-design.html"><i class="material-icons brand-colour">color_lens</i></a>
             </h2>
@@ -335,7 +381,8 @@
               schemes, and typography, to establish a strong and recognizable presence in the market.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="companyreg.html"><i class="material-icons brand-colour">work</i></a></h2>
             <h5 class="center indigo-text"><a href="companyreg.html" class="brand-colour">Company Registrations</a></h5>
@@ -343,7 +390,8 @@
               with legal requirements and is unique to your industry.</a>
           </div>
         </div>
-        <div class="col s12 m4">
+
+        <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center indigo-text"><a href="socialmedia.html"><i class="material-icons brand-colour">thumb_up</i></a></h2>
             <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a></h5>
@@ -351,6 +399,7 @@
               focusing on platforms that best reach your target audience and drive results.</a>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -363,7 +412,7 @@
       <section>
     </div>
   </div>
-  <footer class="page-footer #64b5f6 blue lighten-2">
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in">
     <div class="container ">
 
       <div class="row">
