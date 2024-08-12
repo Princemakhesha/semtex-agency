@@ -21,11 +21,13 @@
       display: none;
       position: absolute;
       background-color: white;
-      border: 1px solid #ddd;
+      border: 2px solid #64b5f6;
       padding: 10px;
       list-style: none;
       margin-top: 5px;
       width: 500px;
+      margin-top: -1px;
+      /* height: 540px; */
     }
 
     /* Reduce padding between dropdown items */
@@ -116,6 +118,44 @@
 
     gtag('config', 'G-HHYH36RY42');
   </script>
+
+<style>
+  .fly-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fly-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+  <!-- Custom JavaScript for Fly-In Effect -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const flyInElements = document.querySelectorAll('.fly-in');
+
+  function checkPosition() {
+    flyInElements.forEach(function (element) {
+      const positionFromTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // Check if the element is within the viewport
+      if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+        element.classList.add('show');
+      } else {
+        element.classList.remove('show'); // Remove the show class when the element is out of view
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', checkPosition);
+  checkPosition(); // Initial check on page load
+});
+</script>
+
 </head>
 
 <body>
@@ -291,7 +331,7 @@
       <h1 class="center indigo-text"></h1>
       <!-- <hr> -->
       <div class="row">
-        <div class="col s12 m12 l4">
+        <div class="col s12 m12 l4 fly-in">
           <div class="card">
             <div class="card-image">
               <img src="logos.png">
@@ -311,7 +351,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m12 l4">
+        <div class="col s12 m12 l4 fly-in">
           <div class="card">
             <div class="card-image">
               <img src="graphic1.png">
@@ -331,7 +371,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m12 l4">
+        <div class="col s12 m12 l4 fly-in">
           <div class="card">
             <div class="card-image">
               <img src="pamphlet.png">
@@ -360,7 +400,7 @@
   <div class="container">
     <div class="section">
       <div class="row">
-        <div class="col s12 m12 l4">
+        <div class="col s12 m12 l4 fly-in">
           <div class="card">
             <div class="card-image">
               <img src="banner.png">
@@ -378,7 +418,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m12 l4">
+        <div class="col s12 m12 l4 fly-in">
           <div class="card">
             <div class="card-image">
               <img src="cards.jpg">
@@ -396,7 +436,7 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m12 l4">
+        <div class="col s12 m12 l4 fly-in">
           <div class="card">
             <div class="card-image">
               <img src="videos.png">
@@ -419,7 +459,7 @@
       <section>
     </div>
   </div>
-  <footer class="page-footer #64b5f6 blue lighten-2">
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in">
     <div class="container ">
 
       <div class="row">

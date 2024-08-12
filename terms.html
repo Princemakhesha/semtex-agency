@@ -21,13 +21,14 @@
       display: none;
       position: absolute;
       background-color: white;
-      border: 1px solid #ddd;
+      border: 2px solid #64b5f6;
       padding: 10px;
       list-style: none;
       margin-top: 5px;
       width: 500px;
+      margin-top: -1px;
+      /* height: 540px; */
     }
-
     /* Reduce padding between dropdown items */
     .dropdown .dropdown-menu li {
       padding: 3px 0;
@@ -141,6 +142,44 @@
 
     gtag('config', 'G-HHYH36RY42');
   </script>
+
+<style>
+  .fly-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fly-in.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+  <!-- Custom JavaScript for Fly-In Effect -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const flyInElements = document.querySelectorAll('.fly-in');
+
+  function checkPosition() {
+    flyInElements.forEach(function (element) {
+      const positionFromTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // Check if the element is within the viewport
+      if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+        element.classList.add('show');
+      } else {
+        element.classList.remove('show'); // Remove the show class when the element is out of view
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', checkPosition);
+  checkPosition(); // Initial check on page load
+});
+</script>
+
 </head>
 
 <body>
@@ -332,7 +371,7 @@
 
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
             <h5>
               <div class="question left-align" onclick="toggleAnswer(this)">2. Design Specifications</div>
               <p>
@@ -344,7 +383,7 @@
   
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
             <h5>
               <div class="question left-align" onclick="toggleAnswer(this)">3. Hosting and Renewals</div>
               <p>
@@ -359,7 +398,7 @@
   
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
             <h5>
               <div class="question left-align" onclick="toggleAnswer(this)">4. Website Packages</div>
               <p>
@@ -376,7 +415,7 @@
             </h5>
   
         </div>
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h5>
             <div class="question left-align" onclick="toggleAnswer(this)">5. Ownership and Intellectual Property</div>
             <p>
@@ -388,7 +427,7 @@
           </h5>
       </div>
 
-      <div class="faq-item">
+      <div class="faq-item fly-in">
         <h5>
           <div class="question left-align" onclick="toggleAnswer(this)">6. Confidentiality</div>
           <p>
@@ -401,7 +440,7 @@
         </h5>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item fly-in">
       <h5>
         <div class="question left-align" onclick="toggleAnswer(this)">7. Warranty and Support</div>
         <p>
@@ -415,7 +454,7 @@
       </h5>
   </div>
         
-  <div class="faq-item">
+  <div class="faq-item fly-in">
     <h5>
       <div class="question left-align" onclick="toggleAnswer(this)">8. Termination</div>
       <p>
@@ -425,7 +464,7 @@
           </p>
     </h5>
 </div>
-<div class="faq-item">
+<div class="faq-item fly-in">
   <h5>
     <div class="question left-align" onclick="toggleAnswer(this)">9. Indemnification</div>
     <p>
@@ -436,7 +475,7 @@
   </h5>
 </div>
 
-<div class="faq-item">
+<div class="faq-item fly-in">
   <h5>
     <div class="question left-align" onclick="toggleAnswer(this)">SPECIAL NOTE</div>
     <p>
@@ -467,7 +506,7 @@
       
   </section>
 
-  <footer class="page-footer #64b5f6 blue lighten-2">
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in">
     <div class="container ">
       <div class="row">
         <div class="col l6 s12">

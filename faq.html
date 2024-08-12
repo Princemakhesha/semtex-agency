@@ -21,11 +21,13 @@
       display: none;
       position: absolute;
       background-color: white;
-      border: 1px solid #ddd;
+      border: 2px solid #64b5f6;
       padding: 10px;
       list-style: none;
       margin-top: 5px;
       width: 500px;
+      margin-top: -1px;
+      /* height: 540px; */
     }
 
     /* Reduce padding between dropdown items */
@@ -74,6 +76,43 @@
       display: none;
     } */
   </style>
+    <style>
+      .fly-in {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+  
+      .fly-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+      <!-- Custom JavaScript for Fly-In Effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const flyInElements = document.querySelectorAll('.fly-in');
+
+      function checkPosition() {
+        flyInElements.forEach(function (element) {
+          const positionFromTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          // Check if the element is within the viewport
+          if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+            element.classList.add('show');
+          } else {
+            element.classList.remove('show'); // Remove the show class when the element is out of view
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkPosition);
+      window.addEventListener('resize', checkPosition);
+      checkPosition(); // Initial check on page load
+    });
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
   <script>
@@ -370,7 +409,7 @@
 
       </div>
       <div class="section">
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">How can I get started with your services?</div>
             <div class="answer center black-text">Getting started is easy. Simply reach out to us through our contact
@@ -379,7 +418,7 @@
           </h4>
 
         </div>
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">What sets your agency apart from others?</div>
             <div class="answer center black-text">Our agency stands out through our commitment to personalized service,
@@ -388,7 +427,7 @@
           </h4>
 
         </div>
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">Do you offer ongoing support after the project is
               completed?</div>
@@ -397,9 +436,9 @@
           </h4>
 
         </div>
-        <h4 class="center indigo-text">Website Develpoment:</h4>
+        <h4 class="center indigo-text  fly-in">Website Develpoment:</h4>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">What services do you offer for website
               development?</div>
@@ -409,7 +448,7 @@
           </h4>
 
         </div>
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">How long does it take to develop a website?</div>
             <div class="answer center black-text">The time required to develop a website varies based on its complexity
@@ -419,7 +458,7 @@
 
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">Do you offer mobile-responsive design?</div>
             <div class="answer center black-text">Yes, we prioritize mobile-responsive design to ensure your website
@@ -428,7 +467,7 @@
 
         </div>
 
-        <h4 class="center indigo-text">Graphic Design:</h4>
+        <h4 class="center indigo-text fly-in">Graphic Design:</h4>
 
         <div class="faq-item">
           <h4>
@@ -440,7 +479,7 @@
           </h4>
 
         </div>
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">Can you incorporate our existing branding into new
               designs?</div>
@@ -450,7 +489,7 @@
 
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">What is the typical design process?</div>
             <div class="answer center black-text">Our design process involves initial consultations, concept
@@ -460,7 +499,7 @@
 
         </div>
 
-        <h4 class="center indigo-text">Company Registrations:</h4>
+        <h4 class="center indigo-text fly-in">Company Registrations:</h4>
 
         <div class="faq-item">
           <h4>
@@ -472,7 +511,7 @@
           </h4>
 
         </div>
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">What are the benefits of formal company
               registration?</div>
@@ -483,7 +522,7 @@
 
         </div>
 
-        <div class="faq-item">
+        <div class="faq-item fly-in">
           <h4>
             <div class="question center" onclick="toggleAnswer(this)">How long does the company registration process
               take?</div>
@@ -512,7 +551,7 @@
 
   </section>
 
-  <footer class="page-footer #0d47a1 blue darken-4">
+  <footer class="page-footer #0d47a1 blue darken-4 fly-in">
     <div class="center ">
       <div class="">
         <div class="col l6 s12">
@@ -654,7 +693,7 @@
             </div>
   </footer>
 
-  <footer class="page-footer #64b5f6 blue lighten-2">
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in">
     <div class="container ">
       <div class="row">
         <div class="col l6 s12">
