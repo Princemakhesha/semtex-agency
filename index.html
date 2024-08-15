@@ -5,7 +5,7 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Semtex Agency | Ignite Your Brand</title>
+  <title>Website Develpment, Graphic Design & Social Media Marketing | Semtex Agency</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -501,11 +501,284 @@
     });
   </script>
 
+  <style>
+    .card-hover {
+      transition: background-color 0.3s ease-in-out;
+      box-sizing: border-box;
+      overflow: hidden;
+      height: 300px;
+      /* Fixed height for the card */
+      width: 100%;
+      /* Maintain card width */
+      position: relative;
+      border-radius: 10px;
+      /* Rounded corners for the card */
+    }
+
+    .card-hover:hover {
+      background-color: #3f51b5;
+      /* Indigo background color */
+    }
+
+    .card-hover .card-content {
+      position: absolute;
+      top: -10px;
+      /* Move content up to improve display before hover */
+      transition: top 0.3s ease-in-out;
+      height: 100%;
+      /* Ensure content height is within the card */
+    }
+
+    .card-hover:hover .card-content {
+      top: -120px;
+      /* Adjust to control how much the content moves up */
+    }
+
+    .card-hover:hover .card-title,
+    .card-hover:hover .card-description,
+    .card-hover:hover .learn-more-btn {
+      display: block;
+      color: white;
+    }
+
+    .learn-more-btn {
+      display: none;
+      margin-top: 15px;
+      border-radius: 10px;
+      /* Rounded corners for the button */
+    }
+
+    .icon-block h2 {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .card-hover:hover .icon-block h2 {
+      opacity: 0;
+    }
+  </style>
+
+  <style>
+@keyframes flyIn {
+  from {
+    transform: translateY(100%); /* Start from below the screen */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.contact-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  background-color: #3f51b5;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+  transform: translateY(100%); /* Start below the screen */
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.contact-form.show {
+  display: block;
+  animation: flyIn 0.5s ease-out forwards;
+}
+
+
+    .contact-form .form-header {
+      text-align: right;
+    }
+
+    .contact-form .close-btn {
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+    }
+
+    .contact-form .form-content h6 {
+      color: white;
+      margin-top: -35px;
+    }
+
+    .contact-form .input-field label {
+      color: white;
+    }
+
+    .contact-form .input-field input,
+    .contact-form .input-field select {
+      color: black;
+      background-color: white;
+      /* Fill text boxes with white */
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .contact-form .input-field select {
+      display: block;
+    }
+
+    .contact-form p {
+      color: white;
+      font-size: 5px;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      background-color: white;
+      color: #3f51b5;
+      border-radius: 5px;
+      padding: -10px;
+      cursor: pointer;
+      /* text-align: center; */
+      display: flex;
+      /* Flexbox to center text */
+      justify-content: center;
+      /* Center text horizontally */
+    }
+    .contact-form .btn :hover {
+      color: white;
+    }
+    
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var popupForm = document.getElementById("popupForm");
+      var closeForm = document.getElementById("closeForm");
+
+      // Show the form when the page loads
+      popupForm.style.display = "block";
+
+      // Close the form when the close button is clicked
+      closeForm.onclick = function () {
+        popupForm.style.display = "none";
+      };
+    });
+
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      const form = document.getElementById('popupForm');
+      form.style.display = 'block'; // Ensure the form is displayed
+      form.classList.add('show'); // Add the class to trigger animation
+    }, 5000); // 5000 milliseconds = 5 seconds
+  });
+</script>
+
+
+
 
 
 </head>
 
 <body>
+
+  <div id="popupForm" class="contact-form">
+    <div class="form-header">
+      <span id="closeForm" class="close-btn">&times;</span>
+    </div>
+    <div class="form-content">
+      <h6 class="white-text">Let's Talk About Improving Your <strong>Brand!</strong></h6>
+      <h9 class="white-text">Fill in your details and we'll contact you shortly</h9>
+      <form id="contactForm">
+        <div class="input-field">
+          <input id="name" type="text" class="validate" required>
+          <label for="name">Your Name</label>
+        </div>
+        <div class="input-field">
+          <input id="email" type="email" class="validate" required>
+          <label for="email">Your Email</label>
+        </div>
+        <div class="input-field">
+          <select id="services" required>
+            <option value="" disabled selected>Choose your service</option>
+            <option value="web-development">Web Development</option>
+            <option value="email-hosting">Email Hosting</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="company-registration">Company Registration</option>
+            <option value="social-media-marketing">Social Media Marketing</option>
+          </select>
+          <label for="services">Services</label>
+        </div>
+        <p class="white-text">
+          <label>
+            <input type="checkbox" class="" id="consent" required />
+            <span>I consent to receive emails about Semtex Agency's products and promotions</span>
+          </label>
+        </p>
+        <button id="btn" type="submit" class="btn"><strong>Submit</strong></button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const form = document.getElementById('popupForm');
+        form.style.display = 'block'; // Ensure the form is displayed
+        form.classList.add('show'); // Add the class to trigger animation
+      }, 5000); // 5000 milliseconds = 5 seconds
+    });
+  
+    document.getElementById('btn').addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const services = document.getElementById('services').value;
+      const consent = document.getElementById('consent').checked;
+  
+      // Check if any required fields are empty or if the checkbox is not ticked
+      if (!name || !email || !services || !consent) {
+        alert("Please fill in all the required fields and consent to receive emails.");
+        return; // Prevent sending the email if fields are missing or consent is not given
+      }
+  
+      const body = `Name: ${name}<br>Email: ${email}<br>Service: ${services}`;
+  
+      Email.send({
+        SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", // for messages.semtexagency@outlook.com
+        To: 'messages.semtexagency@outlook.com',
+        From: "messages.semtexagency@outlook.com",
+        Subject: "Urgent: A client is trying to get in touch - From Home page",
+        Body: body
+      }).then(
+        function (message) {
+          alert("Thank you, we will be in touch shortly!");
+  
+          // Clear form fields after successful submission
+          setTimeout(function () {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('services').value = '';
+            document.getElementById('consent').checked = false;
+          }, 2000); // Delay clearing fields by 2000 milliseconds (2 seconds)
+        }
+      ).catch(
+        function (error) {
+          console.log("Email sending error:", error);
+        }
+      );
+    });
+  </script>
+  
+  
+
+
+
   <div id="loading-container">
     <div class="loader"></div>
   </div>
@@ -749,13 +1022,116 @@
   </div>
 
   <br><br>
+  <br>
 
   <!-- Section with Fly-In Effect -->
-  <div class="section">
+  <div class="section container">
     <div class="row">
       <div class="row">
-        <h3 class="center fly-in white"><a href="services.html" class="brand-colour">Our Services</a></h3>
-        <div class="col s12 m6 l4 fly-in">
+        <h3 class="center fly-in white"><a href="services.html" class="indigo-text">Our Services</a></h3>
+
+        <div class="">
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">language</i></h2>
+                <h5 class="center card-title"><strong>HTML & CSS Web Development</strong></h5>
+                <p class="center card-description">We build responsive and visually stunning websites that adapt
+                  seamlessly to any device, from desktops to mobile phones.</p>
+                <div class="center learn-more-btn">
+                  <a href="web-dev.html?#professional_packages"
+                    class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">shopping_cart</i></h2>
+                <h5 class="center card-title"><strong>E-Commerce Web Development</strong></h5>
+                <p class="center card-description">Partner with us to build a powerful e-commerce platform that
+                  showcases your
+                  products and also drives sales and growth.</p>
+                <div class="center learn-more-btn">
+                  <a href="web-dev.html?#e-commerce_packages"
+                    class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">email</i></h2>
+                <h5 class="center card-title"><strong>Email Hosting</strong></h5>
+                <p class="center card-description">We create custom email addresses using your own domain to enhance
+                  your brand’s
+                  professionalism and credibility.</p>
+                <div class="center learn-more-btn">
+                  <a href="emailhost.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">color_lens</i></h2>
+                <h5 class="center card-title"><strong>Graphic & Advertising Design</strong></h5>
+                <p class="center card-description">We create cohesive and memorable brand identities, including logos,
+                  color
+                  schemes, and typography, to establish a recognizable presence in the market.</p>
+                <div class="center learn-more-btn">
+                  <a href="graphic-design.html"
+                    class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">work</i></h2>
+                <h5 class="center card-title"><strong>Company Registrations</strong></h5>
+                <p class="center card-description">Secure your desired business name with our assistance, ensuring it
+                  complies
+                  with legal requirements and is unique to your industry.</p>
+                <div class="center learn-more-btn">
+                  <a href="companyreg.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">thumb_up</i></h2>
+                <h5 class="center card-title"><strong>Social Media Marketing</strong></h5>
+                <p class="center card-description">We develop customized social media strategies aligned with your
+                  business goals,
+                  focusing on platforms that best reach your target audience and drive results.</p>
+                <div class="center learn-more-btn">
+                  <a href="socialmedia.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+        <!-- <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#professional_packages"><i
                   class="material-icons brand-colour">language</i></a></h2>
@@ -810,12 +1186,12 @@
               focusing on platforms that best reach your target audience and drive results.</a>
           </div>
         </div>
+      </div> -->
       </div>
     </div>
-  </div>
 
-  <!-- Materialize JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
   </div>
@@ -919,11 +1295,12 @@
       <div class="client-carousel-inner">
         <!-- Carousel Items -->
         <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="230"
-              alt="Imaam Masanga"></a>
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="230" alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="160" alt="Imaam Masanga"></a>
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="160"
+              alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
           <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
@@ -942,27 +1319,28 @@
           <a><img src="clientlogos/fluvial.png" width="230" alt="Fluvial"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
-              width="230" alt="Ndaa Training"></a>
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="230" alt="Ndaa Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="180"
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="180"
               alt="Mitana Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="170"
-              alt="Moata School"></a>
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="170" alt="Moata School"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="230"
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="230" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="160"
               alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="160" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png"
-              width="230" alt="Vhukhudo Travel"></a>
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="230" alt="Vhukhudo Travel"></a>
         </div>
         <div class="client-carousel-item">
           <a><img src="clientlogos/rich skills cleaning.png" width="230" alt="Rich Skills Cleaning"></a>
@@ -977,27 +1355,28 @@
           <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
-              width="250" alt="Ndaa Training"></a>
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200"
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="200"
               alt="Mitana Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190"
-              alt="Moata School"></a>
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="190" alt="Moata School"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250"
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="250" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="180"
               alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="180" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png"
-              width="250" alt="Vhukhudo Travel"></a>
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
         </div>
         <div class="client-carousel-item">
           <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
@@ -1012,27 +1391,28 @@
           <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
-              width="250" alt="Ndaa Training"></a>
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200"
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="200"
               alt="Mitana Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190"
-              alt="Moata School"></a>
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="190" alt="Moata School"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.imaammasangabookrestoration.co.za"><img src="clientlogos/masanga.png" width="250"
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="250" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="180"
               alt="Imaam Masanga"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.localhalaalboard.og"><img src="clientlogos/LHB.png" width="180" alt="Imaam Masanga"></a>
-        </div>
-        <div class="client-carousel-item">
-          <a href="https://www.vhukhudotravelandtourism.co.za"><img src="clientlogos/vhukhudotravel_logo.png"
-              width="250" alt="Vhukhudo Travel"></a>
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
         </div>
         <div class="client-carousel-item">
           <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
@@ -1047,16 +1427,16 @@
           <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://ndaatrainingconsultants.co.za/"><img src="clientlogos/Ndaa training logo_semtex2020.png.png"
-              width="250" alt="Ndaa Training"></a>
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.mitanatraining.co.za"><img src="clientlogos/mitana.png" width="200"
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="200"
               alt="Mitana Training"></a>
         </div>
         <div class="client-carousel-item">
-          <a href="https://www.moataschool.co.za"><img src="clientlogos/Moata School Logo.png" width="190"
-              alt="Moata School"></a>
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="190" alt="Moata School"></a>
         </div>
       </div>
 

@@ -125,6 +125,56 @@
       }
     </style>
 
+<style>
+  .card-hover {
+   transition: background-color 0.3s ease-in-out;
+   box-sizing: border-box;
+   overflow: hidden;
+   height: 300px; /* Fixed height for the card */
+   width: 100%; /* Maintain card width */
+   position: relative;
+   border-radius: 10px; /* Rounded corners for the card */
+ }
+ 
+ .card-hover:hover {
+   background-color: #3f51b5; /* Indigo background color */
+ }
+ 
+ .card-hover .card-content {
+   position: absolute;
+   top: -10px; /* Move content up to improve display before hover */
+   transition: top 0.3s ease-in-out;
+   height: 100%; /* Ensure content height is within the card */
+ }
+ 
+ .card-hover:hover .card-content {
+   top: -50px; /* Adjust to control how much the content moves up */
+ }
+ 
+ .card-hover:hover .card-title,
+ .card-hover:hover .card-description,
+ .card-hover:hover .learn-more-btn {
+   display: block;
+   color: white;
+ }
+ 
+ .learn-more-btn {
+   display: none;
+   margin-top: 15px;
+   border-radius: 10px; /* Rounded corners for the button */
+ }
+ 
+ .icon-block h2 {
+   opacity: 1;
+   transition: opacity 0.3s ease-in-out;
+ }
+ 
+ .card-hover:hover .icon-block h2 {
+   opacity: 0;
+ }
+ 
+  </style>
+
      <!-- Custom JavaScript for Fly-In Effect -->
      <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -338,22 +388,110 @@
 
   </div>
 
-  <div class="section  center">
+  <div class="section">
     <div class="row">
-
       <div class="row">
-        <!-- <h3 class="center"><a href="services.html" class="brand-colour">Our Services</a></h3> -->
-        <div class="col s12 m6 l4 fly-in">
+        <h3 class="center fly-in white"><a href="services.html" class="indigo-text">Our Services</a></h3>
+
+        <div class="">
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">language</i></h2>
+                <h5 class="center card-title"><strong>HTML & CSS Web Development</strong></h5>
+                <p class="center card-description">We build responsive and visually stunning websites that adapt seamlessly to any device, from desktops to mobile phones.</p>
+                <div class="center learn-more-btn">
+                  <a href="web-dev.html?#professional_packages" class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">shopping_cart</i></h2>
+                <h5 class="center card-title"><strong>E-Commerce Web Development</strong></h5>
+                <p class="center card-description">Partner with us to build a powerful e-commerce platform that showcases your
+                  products and also drives sales and growth.</p>
+                <div class="center learn-more-btn">
+                  <a href="web-dev.html?#e-commerce_packages" class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">email</i></h2>
+                <h5 class="center card-title"><strong>Email Hosting</strong></h5>
+                <p class="center card-description">We create custom email addresses using your own domain to enhance your brand’s
+                  professionalism and credibility.</p>
+                <div class="center learn-more-btn">
+                  <a href="emailhost.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">color_lens</i></h2>
+                <h5 class="center card-title"><strong>Graphic & Advertising Design</strong></h5>
+                <p class="center card-description">We create cohesive and memorable brand identities, including logos, color
+                  schemes, and typography, to establish a recognizable presence in the market.</p>
+                <div class="center learn-more-btn">
+                  <a href="graphic-design.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">work</i></h2>
+                <h5 class="center card-title"><strong>Company Registrations</strong></h5>
+                <p class="center card-description">Secure your desired business name with our assistance, ensuring it complies
+                  with legal requirements and is unique to your industry.</p>
+                <div class="center learn-more-btn">
+                  <a href="companyreg.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">thumb_up</i></h2>
+                <h5 class="center card-title"><strong>Social Media Marketing</strong></h5>
+                <p class="center card-description">We develop customized social media strategies aligned with your business goals,
+                  focusing on platforms that best reach your target audience and drive results.</p>
+                <div class="center learn-more-btn">
+                  <a href="socialmedia.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        
+
+
+        <!-- <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#professional_packages"><i
                   class="material-icons brand-colour">language</i></a></h2>
             <h5 class="center brand-colour"><a href="web-dev.html?#professional_packages" class="brand-colour">HTML &
-                CSS Web Develoment</a></h5>
+                CSS Web Development</a></h5>
             <a class="center black-text">We build responsive and visually stunning websites that adapt seamlessly to any
               device, from desktops to mobile phones.</a>
           </div>
         </div>
-
         <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="web-dev.html?#e-commerce_packages"><i
@@ -364,16 +502,14 @@
               products and also drives sales and growth.</a>
           </div>
         </div>
-
         <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="emailhost.html"><i class="material-icons brand-colour">email</i></a></h2>
             <h5 class="center"><a href="emailhost.html" class="brand-colour">Email Hosting</a></h5>
             <a class="center black-text">We create custom email addresses using your own domain to enhance your brand’s
-              professionalism and credibility..</a>
+              professionalism and credibility.</a>
           </div>
         </div>
-
         <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="graphic-design.html"><i class="material-icons brand-colour">color_lens</i></a>
@@ -383,7 +519,6 @@
               schemes, and typography, to establish a strong and recognizable presence in the market.</a>
           </div>
         </div>
-
         <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
             <h2 class="center"><a href="companyreg.html"><i class="material-icons brand-colour">work</i></a></h2>
@@ -392,18 +527,20 @@
               with legal requirements and is unique to your industry.</a>
           </div>
         </div>
-
         <div class="col s12 m6 l4 fly-in">
           <div class="icon-block">
-            <h2 class="center indigo-text"><a href="socialmedia.html"><i class="material-icons brand-colour">thumb_up</i></a></h2>
-            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a></h5>
+            <h2 class="center indigo-text"><a href="socialmedia.html"><i
+                  class="material-icons brand-colour">thumb_up</i></a></h2>
+            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a>
+            </h5>
             <a class="center black-text">We develop customized social media strategies aligned with your business goals,
               focusing on platforms that best reach your target audience and drive results.</a>
           </div>
         </div>
-        
-      </div>
+      </div> -->
     </div>
+  </div>
+
   </div>
   <div class="container">
     <div class="section">
