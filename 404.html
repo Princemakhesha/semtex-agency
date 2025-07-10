@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found | Semtex Agency</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <style>
+        /* Style for the dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 2px solid #64b5f6;
+            padding: 10px;
+            list-style: none;
+            margin-top: 5px;
+            width: 500px;
+            margin-top: -1px;
+            /* height: 540px; */
+        }
+
+        /* Reduce padding between dropdown items */
+        .dropdown .dropdown-menu li {
+            padding: 3px 0;
+            /* Adjust vertical padding here */
+        }
+
+        /* Reduce font size for menu items */
+        .dropdown .dropdown-menu li a {
+            font-size: 14px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems, {});
+        });
+    </script>
+    <style>
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .question {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .answer {
+            display: none;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HHYH36RY42');
+    </script>
+    <style>
+        #contactModal textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            /* Ensure padding doesn't affect width */
+            height: auto;
+            /* Allow the height to adjust automatically based on content */
+        }
+
+        /* Style the form container */
+        #contactModal {
+            /* padding: 20px;
+      border-radius: 10px; */
+
+
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Style input fields */
+        #contactModal input[type="text"],
+        #contactModal input[type="email"],
+        #contactModal textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Style the "Send" button */
+        #contactModal button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Add some hover effect to the button */
+        #contactModal button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Style for the search bar */
+        #search-bar {
+            background-color: #e3f2fd;
+            /* Light blue background */
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            /* Ensure it positions correctly */
+            top: 70px;
+            /* Increased from 60px to push it down */
+            left: 0;
+            /* Adjust based on your layout */
+            right: 0;
+            /* Adjust based on your layout */
+            z-index: 1000;
+            /* Ensure it appears above other elements */
+        }
+
+        /* Style for the search input */
+        #search-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Ensure padding doesn't affect width */
+        }
+
+        /* Style for the search results */
+        #search-results {
+            background-color: #ffffff;
+            /* White background for better readability */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            /* Position below the search input */
+            left: 0;
+            width: 100%;
+            /* Match the width of the search bar */
+            max-height: 300px;
+            /* Limit height for overflow */
+            overflow-y: auto;
+            /* Add scroll if too many results */
+            z-index: 1000;
+            /* Ensure it appears above other elements */
+        }
+
+        /* Style for each search result item */
+        #search-results li {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        #search-results li a {
+            color: #000;
+            /* Black text color */
+            text-decoration: none;
+            /* Remove underline */
+        }
+
+        #search-results li:hover {
+            background-color: #f0f0f0;
+            /* Highlight on hover */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <style>
+        .fly-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fly-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <!-- Custom JavaScript for Fly-In Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const flyInElements = document.querySelectorAll('.fly-in');
+
+            function checkPosition() {
+                flyInElements.forEach(function (element) {
+                    const positionFromTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    // Check if the element is within the viewport
+                    if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+                        element.classList.add('show');
+                    } else {
+                        element.classList.remove('show'); // Remove the show class when the element is out of view
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkPosition);
+            window.addEventListener('resize', checkPosition);
+            checkPosition(); // Initial check on page load
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="index.html" class="brand-logo"><img src="img/Semtex Email Logo.png"
+                        width="160"></a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i
+                        class="material-icons indigo-text">menu</i></a>
+                <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                                        class="material-icons left indigo-text">desktop_mac</i>Website
+                                    Development</a><span>
+                                    <a href="web-dev.html?#professional_packages"
+                                        class=" btn-flat indigo-text">professional packages<i
+                                            class="material-icons left indigo-text">language</i></a>
+                                    <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce
+                                        packages<i class="material-icons left indigo-text">shopping_cart</i></a>
+                                    <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                                            class="material-icons left indigo-text">email</i></a></span></li>
+                            <li class=""><a href="graphic-design.html"
+                                    class="waves-effect waves-light btn-flat indigo-text">Graphic
+                                    Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+                            <li class=""><a href="companyreg.html"
+                                    class="waves-effect waves-light btn-flat indigo-text">Company
+                                    Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+                            <li class="indigo-text right"><a href="services.html" class="indigo-text">View all
+                                    services<i class="material-icons left indigo-text">arrow_forward</i></a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="indigo-text"><strong>About Us</strong></a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="background.html"
+                                    class="waves-effect waves-light btn-flat indigo-text"><i
+                                        class="material-icons left indigo-text">local_florist</i>Our Story</a><span>
+                                    <br>
+
+                                    <a href="web-dev.html?#some_work" class=" btn-flat indigo-text">OUR PORTFOLIO<i
+                                            class="material-icons left indigo-text">burst_mode</i></a>
+
+                                    <a href="https://g.page/r/CcMJVhvYJKdVEBM/review" target="_blank"
+                                        class=" btn-flat indigo-text">Leave us a Feedback<i
+                                            class="material-icons left indigo-text">feedback</i></a>
+
+                                    <a href="payments.html" class=" btn-flat indigo-text">Payment Methods<i
+                                            class="material-icons left indigo-text">attach_money</i></a></span></li>
+                            <li class=""><a href="terms.html"
+                                    class="waves-effect waves-light btn-flat indigo-text">Terms and Conditions<i
+                                        class="material-icons left indigo-text">gavel</i></a></li>
+                            <li class=""><a href="faq.html"
+                                    class="waves-effect waves-light btn-flat indigo-text">Frequently Asked Questions <i
+                                        class="material-icons left indigo-text">question_answer</i></a></li>
+                            <!-- <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                          class="material-icons left indigo-text">arrow_forward</i></a></li> -->
+                        </ul>
+                    </li>
+                    <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
+                    <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+                    <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
+                </ul>
+                <div id="search-bar" class="hide">
+                    <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
+                    <ul id="search-results" class="search-results"></ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // Toggle search bar visibility
+        document.querySelector('.search-trigger').addEventListener('click', function (event) {
+            event.preventDefault();
+            var searchBar = document.getElementById('search-bar');
+            searchBar.classList.toggle('hide');
+        });
+
+        // Search function to filter results
+        function searchSite() {
+            let input = document.getElementById('search-input').value.toLowerCase();
+            let resultsList = document.getElementById('search-results');
+            resultsList.innerHTML = '';
+
+            let pages = [
+                { title: 'Home', url: 'index.html' },
+                { title: 'Our Services', url: 'services.html' },
+                { title: 'Web Development', url: 'web-dev.html' },
+                { title: 'Graphic Design', url: 'graphic-design.html' },
+                { title: 'Company Registration', url: 'companyreg.html' },
+                { title: 'Our Story', url: 'background.html' },
+                { title: 'Prince Makhesha', url: 'background.html?#prince' },
+                { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
+                { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+                { title: 'Email hosting', url: 'emailhost.html' },
+                { title: 'Social media Marketing packages', url: 'socialmedia.html' },
+                { title: 'Logo Design', url: 'graphic-design.html' },
+                { title: 'Flyer Design', url: 'graphic-design.html' },
+                { title: 'Poster Design', url: 'graphic-design.html' },
+                { title: 'Marketing Videos', url: 'graphic-design.html' },
+                { title: 'Business Cards', url: 'graphic-design.html' },
+                { title: 'Terms and Conditions', url: 'terms.html' },
+                { title: 'Ts&Cs', url: 'terms.html' },
+                { title: 'Banner Design', url: 'graphic-design.html' },
+                { title: 'Pamphlet Design', url: 'graphic-design.html' },
+                { title: 'Frequently Asked Questions', url: 'faq.html' },
+                { title: 'FAQs', url: 'faq.html' }
+            ];
+
+            pages.forEach(page => {
+                if (page.title.toLowerCase().includes(input)) {
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.href = page.url;
+                    a.textContent = page.title;
+                    li.appendChild(a);
+                    resultsList.appendChild(li);
+                }
+            });
+        }
+    </script>
+
+    <!-- Mobile Navigation Menu -->
+    <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
+        <div><a href="index.html"> <img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="100"></a></div>
+        <hr>
+        <li><a href="index.html" class="waves-effect waves-light btn-flat white-text">Home<i
+                    class="material-icons left white-text">home</i></a></li>
+        <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
+                    class="material-icons left white-text">store</i></a></li>
+        <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i
+                    class="material-icons left white-text">desktop_mac</i></a></li>
+        <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
+                    class="material-icons left white-text">color_lens</i></a></li>
+        <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i
+                    class="material-icons left white-text">email</i></a></li>
+        <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i
+                    class="material-icons left white-text">thumb_up</i></a></li>
+        <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
+                    class="material-icons left white-text">business_center</i></a></li>
+
+        <li><a href="background.html" class="waves-effect waves-light btn-flat white-text">Our Story<i
+                    class="material-icons left white-text">local_florist</i></a></li>
+        <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact Us<i
+                    class="material-icons left white-text">headset_mic</i></a></li>
+        <hr>
+        <li><a href="faq.html" class="waves-effect waves-light btn-flat white-text">FAQs<i
+                    class="material-icons left white-text">question_answer</i></a></li>
+        <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="waves-effect waves-light btn-flat white-text">Send
+                Feedback<i class="material-icons left white-text">feedback</i></a></li>
+        <li><a href="terms.html" class="waves-effect waves-light btn-flat white-text">Ts & Cs<i
+                    class="material-icons left white-text">gavel</i></a></li>
+        <li><a href="attributions.html" class="waves-effect waves-light btn-flat white-text">Attributions<i
+                    class="material-icons left white-text">favorite_border</i></a></li>
+
+        <br><br>
+
+    </ul>
+    <!-- Your existing navigation code here -->
+
+    <!-- Mobile Navigation Menu -->
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html" class="indigo-text">Home</a></li>
+        <!-- Other navigation items... -->
+    </ul>
+
+    <!-- Include Materialize CSS library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Initialize side navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems, {});
+        });
+    </script>
+    <div class="fixed-action-btn">
+        <a href="https://wa.me/+27766108815"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
+                alt="WhatsApp Button" width="70"></a>
+    </div>
+
+    <!-- new section by chat -->
+
+    <br id="contact"><br>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col s12 m8 l4">
+
+                    <div class="row">
+                        <div class="left-align col s12 m20 l12">
+                            <img src="notfound.jpg" width="400">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col s12 m20 l6 right">
+                    <div id="contactModal" class="">
+                        <div class="modal-content">
+                            <form method="post" action="your_script.php" id="contactModal">
+                                <h1 class="left-align blue-text">Page not found</h1>
+                                <h6>Looks like the page you’re searching for didn’t pass our design review.
+                                    But don’t worry we code better than we misdirect!</h6>
+
+                                <br>
+                                <button class="indigo"><a class="white-text" href="index.html">Go Back</a></button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testing counter session -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('count')
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <!-- testing ends here -->
+
+    <!-- //section by chat ends here -->
+
+
+
+    <!-- <section>
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div>
+            <div class="row">
+              <div class="col s12 m12 l4">
+                <div class="icon-block">
+                  <a href="tel:+27766108815">
+                    <h2 class="center indigo-text"><i class="material-icons">phone_iphone</i></h2>
+                  </a>
+                  <h5 class="center"><a class="black-text" href="tel:+27766108815">076 610 8815</a></h5>
+                </div>
+              </div>
+
+              <div class="col s12 m12 l4">
+                <div class="icon-block">
+                  <a href="mailto:info@semtexagency.co.za">
+                    <h2 class="center indigo-text"><i class="material-icons">email</i></h2>
+                  </a>
+                  <h5 class="center"><a class="black-text"
+                      href="mailto:info@semtexagency.co.za">info@semtexagency.co.za</a></h5>
+                </div>
+              </div>
+              <div class="col s12 m12 l4">
+                <div class="icon-block">
+                  <a>
+                    <h2 class="center indigo-text"><i class="material-icons">location_on</i></h2>
+                  </a>
+                  <h5 class="center"><a class="black-text">We offer services countrywide</a></h5>
+                </div>
+              </div>
+
+              <div>
+
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+        function toggleAnswer(question) {
+          const answer = question.nextElementSibling;
+          answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+      </script>
+
+
+
+    </div>
+  </section> -->
+
+    <section>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            var btn = document.getElementById('btn');
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var subject = document.getElementById('subject').value;
+                var message = document.getElementById('message').value;
+
+                // Check if any required fields are empty
+                if (!name || !email || !message) {
+                    alert("Please fill in all the required fields.");
+                    return; // Prevent sending the email if fields are missing
+                }
+
+                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
+                Email.send({
+                    // SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+                    // To: 'messages.semtexagency@outlook.com',
+                    // From: "semtexagency@gmail.com",
+                    // Subject: "New Contact Form Enquiry",
+                    SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
+                    To: 'messages.semtexagency@outlook.com',
+                    From: "messages.semtexagency@outlook.com",
+                    Subject: "Urgent: A client is trying to get in touch - From Contact page",
+                    Body: body
+                }).then(
+                    function (message) {
+                        alert("Thank you, we will be in touch shortly!");
+
+                        // Clear form fields after successful submission
+                        setTimeout(function () {
+                            document.getElementById('name').value = '';
+                            document.getElementById('email').value = '';
+                            document.getElementById('subject').value = '';
+                            document.getElementById('message').value = '';
+                        }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+                    }
+                ).catch(
+                    function (error) {
+                        console.log("Email sending error:", error);
+                    }
+                );
+            });
+        </script>
+
+        <!-- form ends here -->
+    </section>
+
+    <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
+        <div class="">
+            <div class="row">
+                <div class="col l3 s12">
+                    <ul>
+                        <li><a class="grey-text text-lighten-4"><img src="Semtex logo white for footer.png"
+                                    width="160"></a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="tel:+27766108815" class="white-text"><i
+                                    class="material-icons left white-text">call</i>076 610 8815</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i
+                                    class="material-icons left white-text">email</i>info@semtexagency.co.za</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="white-text"><i class="material-icons left white-text ">location_on</i>South
+                                Africa</a></li>
+                    </ul>
+                    <h5 class="white-text">Connect with us</h5>
+                    <ul>
+                        <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
+                                src="Brand Icons/Facebook Icon.png" width="40"></a>
+                        <a class="white-text" href="https://twitter.com/agencysemtex"><img src="Brand Icons/X Icon.png"
+                                width="40"></a>
+                        <a class="white-text" href="https://www.instagram.com/semtexagency"><img
+                                src="Brand Icons/Instagram Icon.png" width="40"></a>
+                        <a class="white-text" href="https://www.youtube.com/@semtexagency"><img
+                                src="Brand Icons/YouTube Icon.png" width="40"></a>
+                    </ul>
+                </div>
+
+                <div class="col l3 s12 hide-on-med-and-down">
+                    <h5 class="white-text">About</h5>
+                    <hr>
+                    <ul>
+                        <li><a href="background.html" class="white-text">Our Story</a></li>
+                        <li><a href="contact.html" class="white-text">Get in Touch</a></li>
+                        <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="white-text">Send Feedback</a></li>
+                        <li><a href="payments.html" class="white-text">Payments</a></li>
+                        <li><a href="attributions.html" class="white-text">Attributions</a></li>
+                        <li><a href="terms.html" class="white-text">Terms and Conditions</a></li>
+                        <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
+                    </ul>
+
+                </div>
+                <div class="col l3 s12 hide-on-med-and-down">
+                    <h5 class="white-text">What We Offer</h5>
+                    <hr>
+                    <ul>
+                        <li><a href="web-dev.html?#professional_packages" class="white-text">HTML & CSS Web Website
+                                Development</a></li>
+                        <li><a href="web-dev.html?#e-commerce_packages" class="white-text">E-Commerce Web
+                                Development</a></li>
+                        <li><a href="emailhost.html" class="white-text">Email Hosting</a></li>
+                        <li><a href="graphic-design.html" class="white-text">Graphic & Advertising Design</a></li>
+                        <li><a href="companyreg.html" class="white-text">Company Registrations</a></li>
+                        <li><a href="socialmedia.html" class="white-text">Social Media Marketing</a></li>
+                    </ul>
+
+                </div>
+                <div class="col l3 s12 hide-on-med-and-down">
+                    <h5 class="white-text">Sitemap</h5>
+                    <hr>
+                    <ul>
+                        <li><a href="services.html" class="white-text">Our Services</a></li>
+                        <li><a href="attributions.html" class="white-text">Attributions</a></li>
+                        <li><a href="terms.html" class="white-text">Terms & Conditions</a></li>
+                        <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
+                        <li><a href="payments.html" class="white-text">Payments</a></li>
+                        <li><a href="background.html" class="white-text">Our Story</a></li>
+                        <li><a href="contact.html" class="white-text">Contact Us</a></li>
+                        <li><a href="faq.html" class="white-text">FAQs</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Copyright © 2025 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4"
+                        href="terms.html">Terms and Conditions.</a>
+                    <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
+                </div>
+            </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+
+</html>
