@@ -1048,7 +1048,7 @@
     </div>
   </div>
   </div>
-  <div class="parallax-container valign-wrapper">
+  <!-- <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
@@ -1056,7 +1056,7 @@
       </div>
     </div>
     <div class="parallax"><img src="back1.png" alt="Unsplashed background img 2" width="30"></div>
-  </div>
+  </div> -->
 
   <br><br>
   <br>
@@ -1232,7 +1232,7 @@
 
 
   </div>
-  <div class="parallax-container valign-wrapper">
+  <!-- <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
 
@@ -1246,84 +1246,9 @@
 
     <div class="parallax"><img src="business-people-working-laptop.jpg" alt="Unsplashed background img 3" width="50">
     </div>
-  </div>
+  </div> -->
 
-  <!-- Counter Section -->
-  <footer class="page-footer #e3f2fd blue lighten-5" id="counter-section">
-    <!-- testing counter session -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- Waypoints -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-    <!-- Counter Up -->
-    <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-
-    <div class="container fly-in">
-      <div class="row">
-        <div class="col s12 m12 l4">
-          <div class="card1 center">
-            <div class="card-content">
-              <a class=""><img src="desktop icon.png" width="40"></a>
-              <span class="card-title black-text">Websites Designed</span>
-              <h5 class="counter" data-count="10">0+</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m12 l4">
-          <div class="card1 center">
-            <div class="card-content">
-              <a class=""><img src="logo icon.png" width="40"></a>
-              <span class="card-title black-text">Graphics Designed</span>
-              <h5 class="counter" data-count="500">0+</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m12 l4">
-          <div class="card1 center">
-            <div class="card-content">
-              <a class=""><img src="smiley face.png" width="40"></a>
-              <span class="card-title black-text">Happy Clients</span>
-              <h5 class="counter" data-count="150">0+</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      $(document).ready(function () {
-        // Initialize Waypoints
-        var counterSection = new Waypoint({
-          element: document.getElementById('counter-section'),
-          handler: function (direction) {
-            if (direction === 'down') {
-              // Reset counter values
-              $('.counter').each(function () {
-                var $this = $(this);
-                var countTo = $this.data('count');
-                $this.text('0+'); // Reset the counter text
-
-                $this.prop('Counter', 0).animate({
-                  Counter: countTo
-                }, {
-                  duration: 2000,
-                  easing: 'swing',
-                  step: function (now) {
-                    $this.text(Math.ceil(now) + '+');
-                  }
-                });
-              });
-            }
-          },
-          offset: '75%' // Adjust this value to trigger the counter earlier or later
-        });
-      });
-    </script>
-  </footer>
 
 
   <div class="client-carousel-wrapper col l5 m12 s4 fly-in">
@@ -1597,6 +1522,89 @@
     });
   </script>
 
+    <!-- Counter Section -->
+  <footer class="#e3f2fd blue lighten-5" id="counter-section">
+    <!-- testing counter session -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <div class="white background-section fly-in">
+      <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l4">
+          <div class="card1 center">
+            <div class="card-content">
+              <a class=""><img src="desktop icon.png" width="40"></a>
+              <span class="card-title black-text">Websites Designed</span>
+              <h5 class="counter" data-count="10">0+</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card1 center">
+            <div class="card-content">
+              <a class=""><img src="logo icon.png" width="40"></a>
+              <span class="card-title black-text">Graphics Designed</span>
+              <h5 class="counter" data-count="500">0+</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card1 center">
+            <div class="card-content">
+              <a class=""><img src="smiley face.png" width="40"></a>
+              <span class="card-title black-text">Happy Clients</span>
+              <h5 class="counter" data-count="150">0+</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    
+    <!-- counter script -->
+
+    <script>
+      $(document).ready(function () {
+        // Initialize Waypoints
+        var counterSection = new Waypoint({
+          element: document.getElementById('counter-section'),
+          handler: function (direction) {
+            if (direction === 'down') {
+              // Reset counter values
+              $('.counter').each(function () {
+                var $this = $(this);
+                var countTo = $this.data('count');
+                $this.text('0+'); // Reset the counter text
+
+                $this.prop('Counter', 0).animate({
+                  Counter: countTo
+                }, {
+                  duration: 2000,
+                  easing: 'swing',
+                  step: function (now) {
+                    $this.text(Math.ceil(now) + '+');
+                  }
+                });
+              });
+            }
+          },
+          offset: '75%' // Adjust this value to trigger the counter earlier or later
+        });
+      });
+    </script>
+  </footer>
+
   <div class="background-section fly-in">
     <div class="container">
       <div class="row">
@@ -1609,18 +1617,22 @@
         </div>
         <!-- Right Side: Form -->
         <div class="col l6 s12">
-          <form id="newsletterForm" method="post" class="row">
+          <form action="https://api.web3forms.com/submit" id="newsletterForm" method="post" class="row">
+            <input type="hidden" name="access_key" value="29db7c39-1945-4cb7-bd81-a52b1f84dc8f">
+            <input type="hidden" name="subject" value="New Newsletter Signup">
+            <input type="hidden" name="from_name" value="Newsletter Management">
+            <input type="hidden" name="redirect" value="https://www.semtexagency.co.za/thanks.html">
             <div class="input-field col s12 m5">
-              <input id="name" type="text" name="name" class="validate custom-input" placeholder="Your Name*" required>
+              <input type="text" name="name" class="validate custom-input" placeholder="Your Name*" required>
               <label for="name" class="white-text"></label>
             </div>
             <div class="input-field col s12 m5">
-              <input id="email" type="email" name="email" class="validate custom-input" placeholder="Your Email*"
+              <input type="email" name="email" class="validate custom-input" placeholder="Your Email*"
                 required>
               <label for="email" class="white-text"></label>
             </div>
             <div class="input-field col s12 m2">
-              <button id="btn" class="btn-large blue lighten-2 form-button"><strong>Submit</strong></button>
+              <button class="btn-large blue lighten-2 form-button"><strong>Submit</strong></button>
             </div>
           </form>
         </div>
@@ -1628,7 +1640,7 @@
     </div>
   </div>
 
-  <!-- Existing Script for SMTP -->
+  <!-- Existing Script for SMTP
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
     var btn = document.getElementById('btn');
@@ -1668,7 +1680,7 @@
         }
       );
     });
-  </script>
+  </script> -->
 
   <style>
     .background-section {
@@ -1863,6 +1875,64 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <!-- Cookie Notice -->
+<div id="cookie-notice" class="card-panel blue lighten-5" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: none; margin: 0; border-radius: 0;">
+  <div class="container">
+    <div class="row" style="margin: 0;">
+      <div class="col s12 m9">
+        <span class="black-text">
+          We use cookies to ensure you get the best experience on our website. 
+          <a href="privacy-policy.html" class="blue-text text-darken-2">Learn more</a>
+        </span>
+      </div>
+      <div class="col s12 m3 right-align">
+        <a class="waves-effect waves-light btn-small blue darken-2 white-text" onclick="acceptCookies()">Got it!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Set a cookie with 1 hour expiry
+  function setCookie(name, value, hours) {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+  }
+
+  // Get a cookie by name
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  // Show banner if cookie doesn't exist
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!getCookie("cookiesAccepted")) {
+      document.getElementById("cookie-notice").style.display = "block";
+    }
+  });
+
+  function acceptCookies() {
+    setCookie("cookiesAccepted", "true", 1); // expires in 1 hour
+    document.getElementById("cookie-notice").style.display = "none";
+  }
+</script>
+
+<style>
+  #cookie-notice .btn-small {
+    margin-top: 10px;
+  }
+
+  @media (min-width: 600px) {
+    #cookie-notice .btn-small {
+      margin-top: 0;
+    }
+  }
+</style>
+
 </body>
 
 </html>

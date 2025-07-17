@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Page not found | Semtex Agency</title>
+    <title>Thank You! | Semtex Agency</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,97 +44,7 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-    </style>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.carousel').carousel();
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems, {});
-        });
-    </script>
-    <style>
-        .faq-item {
-            margin-bottom: 10px;
-        }
 
-        .question {
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .answer {
-            display: none;
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-HHYH36RY42');
-    </script>
-    <style>
-        #contactModal textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-            /* Ensure padding doesn't affect width */
-            height: auto;
-            /* Allow the height to adjust automatically based on content */
-        }
-
-        /* Style the form container */
-        #contactModal {
-            /* padding: 20px;
-      border-radius: 10px; */
-
-
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Style input fields */
-        #contactModal input[type="text"],
-        #contactModal input[type="email"],
-        #contactModal textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-        /* Style the "Send" button */
-        #contactModal button {
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        /* Add some hover effect to the button */
-        #contactModal button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Style for the search bar */
         #search-bar {
             background-color: #e3f2fd;
             /* Light blue background */
@@ -209,44 +119,46 @@
             scroll-behavior: smooth;
         }
     </style>
-
-    <style>
-        .fly-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fly-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    <!-- Custom JavaScript for Fly-In Effect -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
+    </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const flyInElements = document.querySelectorAll('.fly-in');
-
-            function checkPosition() {
-                flyInElements.forEach(function (element) {
-                    const positionFromTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-
-                    // Check if the element is within the viewport
-                    if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
-                        element.classList.add('show');
-                    } else {
-                        element.classList.remove('show'); // Remove the show class when the element is out of view
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', checkPosition);
-            window.addEventListener('resize', checkPosition);
-            checkPosition(); // Initial check on page load
+        $(document).ready(function () {
+            $('.carousel').carousel();
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems, {});
+        });
+    </script>
+    <style>
+        .faq-item {
+            margin-bottom: 10px;
+        }
 
+        .question {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .answer.hidden {
+            display: none;
+        }
+
+        /* .answer {
+      display: none;
+    } */
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HHYH36RY42');
+    </script>
 </head>
 
 <body>
@@ -404,8 +316,8 @@
                 Feedback<i class="material-icons left white-text">feedback</i></a></li>
         <li><a href="terms.html" class="waves-effect waves-light btn-flat white-text">Ts & Cs<i
                     class="material-icons left white-text">gavel</i></a></li>
-        <li><a href="attributions.html" class="waves-effect waves-light btn-flat white-text">Attributions<i
-                    class="material-icons left white-text">favorite_border</i></a></li>
+        <li><a href="attributions.html" class="waves-effect waves-light btn-flat black-text">Attributions<i
+                    class="material-icons left black-text">favorite</i></a></li>
 
         <br><br>
 
@@ -435,190 +347,23 @@
                 alt="WhatsApp Button" width="70"></a>
     </div>
 
-    <!-- new section by chat -->
-
-    <br id="contact"><br>
-
-    <section>
+    <header>
         <div class="container">
-            <div class="row">
-                <!-- Contact Information -->
-                <div class="col s20 m20 l4">
+            <div class="row left-align">
+                <h1><i class="col s12 m6 l4 material-icons indigo-text larger"
+                        style="font-size: 100px;">check_circle</i></h1>
+            </div>
+            <div class="row left-align">
 
-                    <div class="row">
-                        <div class=" col s20 m20 l12 hide-on-med-and-down">
-                            <img src="notfound.jpg" width="400">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="col s12 m20 l6 right">
-                    <div id="contactModal" class="">
-                        <div class="modal-content">
-                            <form method="post" action="your_script.php" id="contactModal">
-                                <h1 class="left-align blue-text">Page not found</h1>
-                                <h6>Looks like the page you’re searching for didn’t pass our design review.
-                                    But don’t worry we code better than we misdirect!</h6>
-
-                                <br>
-                                <button class="indigo"><a class="white-text" href="index.html">Go Back</a></button>
-                            </form>
-
-                        </div>
-                    </div>
-
-                </div>
+                <h1 class="header col s12 light"><strong>Thank You!</strong></h1>
+                <p>We will be in touch with you shortly. Click <a href="https://www.semtexagency.co.za/">Here</a> to go
+                    back to Homepage.</p>
             </div>
         </div>
-    </section>
 
-    <!-- testing counter session -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- Waypoints -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-    <!-- Counter Up -->
-    <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    </header>
 
 
-    <script>
-        $(document).ready(function () {
-            $('.counter').each(function () {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).data('count')
-                }, {
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-        });
-    </script>
-
-
-    <!-- testing ends here -->
-
-    <!-- //section by chat ends here -->
-
-
-
-    <!-- <section>
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <div>
-            <div class="row">
-              <div class="col s12 m12 l4">
-                <div class="icon-block">
-                  <a href="tel:+27766108815">
-                    <h2 class="center indigo-text"><i class="material-icons">phone_iphone</i></h2>
-                  </a>
-                  <h5 class="center"><a class="black-text" href="tel:+27766108815">076 610 8815</a></h5>
-                </div>
-              </div>
-
-              <div class="col s12 m12 l4">
-                <div class="icon-block">
-                  <a href="mailto:info@semtexagency.co.za">
-                    <h2 class="center indigo-text"><i class="material-icons">email</i></h2>
-                  </a>
-                  <h5 class="center"><a class="black-text"
-                      href="mailto:info@semtexagency.co.za">info@semtexagency.co.za</a></h5>
-                </div>
-              </div>
-              <div class="col s12 m12 l4">
-                <div class="icon-block">
-                  <a>
-                    <h2 class="center indigo-text"><i class="material-icons">location_on</i></h2>
-                  </a>
-                  <h5 class="center"><a class="black-text">We offer services countrywide</a></h5>
-                </div>
-              </div>
-
-              <div>
-
-
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <script>
-        function toggleAnswer(question) {
-          const answer = question.nextElementSibling;
-          answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-        }
-      </script>
-
-
-
-    </div>
-  </section> -->
-
-    <section>
-
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script>
-            var btn = document.getElementById('btn');
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var subject = document.getElementById('subject').value;
-                var message = document.getElementById('message').value;
-
-                // Check if any required fields are empty
-                if (!name || !email || !message) {
-                    alert("Please fill in all the required fields.");
-                    return; // Prevent sending the email if fields are missing
-                }
-
-                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
-
-                Email.send({
-                    // SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
-                    // To: 'messages.semtexagency@outlook.com',
-                    // From: "semtexagency@gmail.com",
-                    // Subject: "New Contact Form Enquiry",
-                    SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
-                    To: 'messages.semtexagency@outlook.com',
-                    From: "messages.semtexagency@outlook.com",
-                    Subject: "Urgent: A client is trying to get in touch - From Contact page",
-                    Body: body
-                }).then(
-                    function (message) {
-                        alert("Thank you, we will be in touch shortly!");
-
-                        // Clear form fields after successful submission
-                        setTimeout(function () {
-                            document.getElementById('name').value = '';
-                            document.getElementById('email').value = '';
-                            document.getElementById('subject').value = '';
-                            document.getElementById('message').value = '';
-                        }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
-                    }
-                ).catch(
-                    function (error) {
-                        console.log("Email sending error:", error);
-                    }
-                );
-            });
-        </script>
-
-        <!-- form ends here -->
-    </section>
 
     <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
         <div class="">
