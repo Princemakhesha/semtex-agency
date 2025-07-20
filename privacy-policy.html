@@ -29,6 +29,7 @@
       margin-top: -1px;
       /* height: 540px; */
     }
+
     /* Reduce padding between dropdown items */
     .dropdown .dropdown-menu li {
       padding: 3px 0;
@@ -45,59 +46,76 @@
     }
 
     #search-bar {
-  background-color: #e3f2fd; /* Light blue background */
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  position: absolute; /* Ensure it positions correctly */
-  top: 70px; /* Increased from 60px to push it down */
-  left: 0; /* Adjust based on your layout */
-  right: 0; /* Adjust based on your layout */
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-  /* Style for the search input */
-  #search-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-  }
+      background-color: #e3f2fd;
+      /* Light blue background */
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      /* Ensure it positions correctly */
+      top: 70px;
+      /* Increased from 60px to push it down */
+      left: 0;
+      /* Adjust based on your layout */
+      right: 0;
+      /* Adjust based on your layout */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
 
-  /* Style for the search results */
-  #search-results {
-    background-color: #ffffff; /* White background for better readability */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: absolute;
-    top: 100%; /* Position below the search input */
-    left: 0;
-    width: 100%; /* Match the width of the search bar */
-    max-height: 300px; /* Limit height for overflow */
-    overflow-y: auto; /* Add scroll if too many results */
-    z-index: 1000; /* Ensure it appears above other elements */
-  }
+    /* Style for the search input */
+    #search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+    }
 
-  /* Style for each search result item */
-  #search-results li {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-  }
+    /* Style for the search results */
+    #search-results {
+      background-color: #ffffff;
+      /* White background for better readability */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      /* Position below the search input */
+      left: 0;
+      width: 100%;
+      /* Match the width of the search bar */
+      max-height: 300px;
+      /* Limit height for overflow */
+      overflow-y: auto;
+      /* Add scroll if too many results */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
 
-  #search-results li a {
-    color: #000; /* Black text color */
-    text-decoration: none; /* Remove underline */
-  }
+    /* Style for each search result item */
+    #search-results li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
 
-  #search-results li:hover {
-    background-color: #f0f0f0; /* Highlight on hover */
-  }
+    #search-results li a {
+      color: #000;
+      /* Black text color */
+      text-decoration: none;
+      /* Remove underline */
+    }
 
-  html {
+    #search-results li:hover {
+      background-color: #f0f0f0;
+      /* Highlight on hover */
+    }
+
+    html {
       scroll-behavior: smooth;
     }
   </style>
@@ -146,116 +164,118 @@
 <body>
   <div class="navbar-fixed">
     <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="index.html" class="brand-logo"><img src="img/Semtex Email Logo.png"
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo"><img src="img/Semtex Email Logo.png"
             width="160"></a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons indigo-text">menu</i></a>
-            <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
-                <li class="dropdown">
-                  <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
-                  <ul class="dropdown-menu">
-                    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
-                          class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
-                        <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
-                            class="material-icons left indigo-text">language</i></a>
-                        <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
-                            class="material-icons left indigo-text">shopping_cart</i></a>
-                        <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
-                            class="material-icons left indigo-text">email</i></a></span></li>
-                    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
-                        Design<i class="material-icons left indigo-text">color_lens</i></a></li>
-                    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
-                        Registration <i class="material-icons left indigo-text">business_center</i></a></li>
-                    <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
-                          class="material-icons left indigo-text">arrow_forward</i></a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="indigo-text"><strong>About Us</strong></a>
-                  <ul class="dropdown-menu">
-                    <li class=""><a href="background.html" class="waves-effect waves-light btn-flat indigo-text"><i
-                          class="material-icons left indigo-text">local_florist</i>Our Story</a><span>
-                            <br>
-      
-                            <a href="web-dev.html?#some_work" class=" btn-flat indigo-text">OUR PORTFOLIO<i
-                              class="material-icons left indigo-text">burst_mode</i></a>
-      
-                        <a href="https://g.page/r/CcMJVhvYJKdVEBM/review" target="_blank" class=" btn-flat indigo-text">Leave us a Feedback<i
-                            class="material-icons left indigo-text">feedback</i></a>
-      
-                        <a href="payments.html" class=" btn-flat indigo-text">Payment Methods<i
-                            class="material-icons left indigo-text">attach_money</i></a></span></li>
-                    <li class=""><a href="terms.html" class="waves-effect waves-light btn-flat indigo-text">Terms and Conditions<i class="material-icons left indigo-text">gavel</i></a></li>
-                    <li class=""><a href="faq.html" class="waves-effect waves-light btn-flat indigo-text">Frequently Asked Questions <i class="material-icons left indigo-text">question_answer</i></a></li>
-                    <!-- <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
-                          class="material-icons left indigo-text">arrow_forward</i></a></li> -->
-                  </ul>
-                </li>
-                <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
-                <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
-                <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons indigo-text">menu</i></a>
+        <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
+          <li class="dropdown">
+            <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+            <ul class="dropdown-menu">
+              <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                    class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                  <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                      class="material-icons left indigo-text">language</i></a>
+                  <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                      class="material-icons left indigo-text">shopping_cart</i></a>
+                  <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                      class="material-icons left indigo-text">email</i></a></span></li>
+              <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                  Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+              <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                  Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+              <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                    class="material-icons left indigo-text">arrow_forward</i></a></li>
             </ul>
-            <div id="search-bar" class="hide">
-                <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
-                <ul id="search-results" class="search-results"></ul>
-              </div>
-            </div>
-          </nav>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="indigo-text"><strong>About Us</strong></a>
+            <ul class="dropdown-menu">
+              <li class=""><a href="background.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                    class="material-icons left indigo-text">local_florist</i>Our Story</a><span>
+                  <br>
+
+                  <a href="web-dev.html?#some_work" class=" btn-flat indigo-text">OUR PORTFOLIO<i
+                      class="material-icons left indigo-text">burst_mode</i></a>
+
+                  <a href="https://g.page/r/CcMJVhvYJKdVEBM/review" target="_blank" class=" btn-flat indigo-text">Leave
+                    us a Feedback<i class="material-icons left indigo-text">feedback</i></a>
+
+                  <a href="payments.html" class=" btn-flat indigo-text">Payment Methods<i
+                      class="material-icons left indigo-text">attach_money</i></a></span></li>
+              <li class=""><a href="terms.html" class="waves-effect waves-light btn-flat indigo-text">Terms and
+                  Conditions<i class="material-icons left indigo-text">gavel</i></a></li>
+              <li class=""><a href="faq.html" class="waves-effect waves-light btn-flat indigo-text">Frequently Asked
+                  Questions <i class="material-icons left indigo-text">question_answer</i></a></li>
+              <!-- <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                          class="material-icons left indigo-text">arrow_forward</i></a></li> -->
+            </ul>
+          </li>
+          <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
+          <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+          <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
+        </ul>
+        <div id="search-bar" class="hide">
+          <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
+          <ul id="search-results" class="search-results"></ul>
         </div>
-  
-    <script>
-      // Toggle search bar visibility
-      document.querySelector('.search-trigger').addEventListener('click', function (event) {
-        event.preventDefault();
-        var searchBar = document.getElementById('search-bar');
-        searchBar.classList.toggle('hide');
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    // Toggle search bar visibility
+    document.querySelector('.search-trigger').addEventListener('click', function (event) {
+      event.preventDefault();
+      var searchBar = document.getElementById('search-bar');
+      searchBar.classList.toggle('hide');
+    });
+
+    // Search function to filter results
+    function searchSite() {
+      let input = document.getElementById('search-input').value.toLowerCase();
+      let resultsList = document.getElementById('search-results');
+      resultsList.innerHTML = '';
+
+      let pages = [
+        { title: 'Home', url: 'index.html' },
+        { title: 'Our Services', url: 'services.html' },
+        { title: 'Web Development', url: 'web-dev.html' },
+        { title: 'Graphic Design', url: 'graphic-design.html' },
+        { title: 'Company Registration', url: 'companyreg.html' },
+        { title: 'Our Story', url: 'background.html' },
+        { title: 'Prince Makhesha', url: 'background.html?#prince' },
+        { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
+        { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+        { title: 'Email hosting', url: 'emailhost.html' },
+        { title: 'Social media Marketing packages', url: 'socialmedia.html' },
+        { title: 'Logo Design', url: 'graphic-design.html' },
+        { title: 'Flyer Design', url: 'graphic-design.html' },
+        { title: 'Poster Design', url: 'graphic-design.html' },
+        { title: 'Marketing Videos', url: 'graphic-design.html' },
+        { title: 'Business Cards', url: 'graphic-design.html' },
+        { title: 'Terms and Conditions', url: 'terms.html' },
+        { title: 'Ts&Cs', url: 'terms.html' },
+        { title: 'Banner Design', url: 'graphic-design.html' },
+        { title: 'Pamphlet Design', url: 'graphic-design.html' },
+        { title: 'Frequently Asked Questions', url: 'faq.html' },
+        { title: 'FAQs', url: 'faq.html' }
+      ];
+
+      pages.forEach(page => {
+        if (page.title.toLowerCase().includes(input)) {
+          let li = document.createElement('li');
+          let a = document.createElement('a');
+          a.href = page.url;
+          a.textContent = page.title;
+          li.appendChild(a);
+          resultsList.appendChild(li);
+        }
       });
-  
-      // Search function to filter results
-      function searchSite() {
-        let input = document.getElementById('search-input').value.toLowerCase();
-        let resultsList = document.getElementById('search-results');
-        resultsList.innerHTML = '';
-  
-        let pages = [
-          { title: 'Home', url: 'index.html' },
-          { title: 'Our Services', url: 'services.html' },
-          { title: 'Web Development', url: 'web-dev.html' },
-          { title: 'Graphic Design', url: 'graphic-design.html' },
-          { title: 'Company Registration', url: 'companyreg.html' },
-          { title: 'Our Story', url: 'background.html' },
-          { title: 'Prince Makhesha', url: 'background.html?#prince' },
-          { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
-          { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
-          { title: 'Email hosting', url: 'emailhost.html' },
-          { title: 'Social media Marketing packages', url: 'socialmedia.html' },
-          { title: 'Logo Design', url: 'graphic-design.html' },
-          { title: 'Flyer Design', url: 'graphic-design.html' },
-          { title: 'Poster Design', url: 'graphic-design.html' },
-          { title: 'Marketing Videos', url: 'graphic-design.html' },
-          { title: 'Business Cards', url: 'graphic-design.html' },
-          { title: 'Terms and Conditions', url: 'terms.html' },
-          { title: 'Ts&Cs', url: 'terms.html' },
-          { title: 'Banner Design', url: 'graphic-design.html' },
-          { title: 'Pamphlet Design', url: 'graphic-design.html' },
-          { title: 'Frequently Asked Questions', url: 'faq.html' },
-          { title: 'FAQs', url: 'faq.html' }
-        ];
-  
-        pages.forEach(page => {
-          if (page.title.toLowerCase().includes(input)) {
-            let li = document.createElement('li');
-            let a = document.createElement('a');
-            a.href = page.url;
-            a.textContent = page.title;
-            li.appendChild(a);
-            resultsList.appendChild(li);
-          }
-        });
-      }
-    </script>
+    }
+  </script>
 
   <!-- Mobile Navigation Menu -->
   <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
@@ -269,10 +289,10 @@
           class="material-icons left white-text">desktop_mac</i></a></li>
     <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
           class="material-icons left white-text">color_lens</i></a></li>
-          <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i
-            class="material-icons left white-text">email</i></a></li>
-      <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i
-            class="material-icons left white-text">thumb_up</i></a></li>
+    <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i
+          class="material-icons left white-text">email</i></a></li>
+    <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i
+          class="material-icons left white-text">thumb_up</i></a></li>
     <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
           class="material-icons left white-text">business_center</i></a></li>
 
@@ -290,7 +310,7 @@
     <li><a href="attributions.html" class="waves-effect waves-light btn-flat black-text">Attributions<i
           class="material-icons left black-text">favorite</i></a></li>
 
-          <br><br>
+    <br><br>
 
   </ul>
   <!-- Your existing navigation code here -->
@@ -318,11 +338,26 @@
         alt="WhatsApp Button" width="70"></a>
   </div>
 
+  <footer class="page-footer #0d47a1 blue darken-4">
+    <div class="center ">
+      <div class="">
+        <div class="col l6 s12">
+          <div class="col l3 s12">
+            <h4 class="center">Privacy Policy</h4>
+
+            <br>
+
+  </footer>
+
   <!-- Start of Privacy Policy Section -->
   <section class="section white">
     <div class="container">
       <h4 class="blue-text text-darken-2">Privacy Policy</h4>
-      <p>This Privacy Policy describes how we collect, use, and protect your personal information when you use our website and services.</p>
+      <p><strong>Effective Date: </strong>19 July 2025</p>
+      <p>
+        Welcome to <strong>Semtex Agency</strong> ("we", "our", "us"). We value your privacy and are committed to protecting your
+        personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit
+        our website www.semtexagency.co.za ("Site").</p>
 
       <h5 class="blue-text text-darken-2">1. Information We Collect</h5>
       <p>We may collect the following types of personal information:</p>
@@ -345,13 +380,18 @@
       </ul>
 
       <h5 class="blue-text text-darken-2">3. Cookies</h5>
-      <p>Our website uses cookies to enhance your browsing experience. Cookies help us understand how you interact with our website and allow us to improve functionality. You can manage or disable cookies through your browser settings.</p>
+      <p>Our website uses cookies to enhance your browsing experience. Cookies help us understand how you interact with
+        our website and allow us to improve functionality. You can manage or disable cookies through your browser
+        settings.</p>
 
       <h5 class="blue-text text-darken-2">4. Sharing Your Information</h5>
-      <p>We do not sell, trade, or rent your personal information to third parties. We may share your data only with trusted service providers who assist us in operating our website and services, so long as they agree to keep your information confidential.</p>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share your data only with
+        trusted service providers who assist us in operating our website and services, so long as they agree to keep
+        your information confidential.</p>
 
       <h5 class="blue-text text-darken-2">5. Data Security</h5>
-      <p>We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+      <p>We implement industry-standard security measures to protect your personal information from unauthorized access,
+        alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
 
       <h5 class="blue-text text-darken-2">6. Your Rights</h5>
       <p>You have the right to:</p>
@@ -363,10 +403,12 @@
       </ul>
 
       <h5 class="blue-text text-darken-2">7. Updates to This Policy</h5>
-      <p>We may update this Privacy Policy from time to time. The latest version will always be posted on this page with the effective date.</p>
+      <p>We may update this Privacy Policy from time to time. The latest version will always be posted on this page with
+        the effective date.</p>
 
       <h5 class="blue-text text-darken-2">8. Contact Us</h5>
-      <p>If you have any questions or concerns about this Privacy Policy or how your information is handled, please contact us at:</p>
+      <p>If you have any questions or concerns about this Privacy Policy or how your information is handled, please
+        contact us at:</p>
       <ul class="browser-default">
         <li>Email: compliance@semtexagency.co.za</li>
         <li>Phone: +27 76 610 8815</li>
@@ -375,7 +417,7 @@
   </section>
   <!-- End of Privacy Policy Section -->
 
- <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
     <div class="">
       <div class="row">
         <div class="col l3 s12">
@@ -383,10 +425,12 @@
             <li><a class="grey-text text-lighten-4"><img src="Semtex logo white for footer.png" width="160"></a></li>
           </ul>
           <ul>
-            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left white-text">call</i>076 610 8815</a></li>
+            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left white-text">call</i>076 610
+                8815</a></li>
           </ul>
           <ul>
-            <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i class="material-icons left white-text">email</i>info@semtexagency.co.za</a></li>
+            <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i
+                  class="material-icons left white-text">email</i>info@semtexagency.co.za</a></li>
           </ul>
           <ul>
             <li><a class="white-text"><i class="material-icons left white-text ">location_on</i>South Africa</a></li>
@@ -394,15 +438,16 @@
           <h5 class="white-text">Connect with us</h5>
           <ul>
             <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
-                src="Brand Icons/Facebook Icon.png"
+                src="Brand Icons/Facebook Icon.png" width="40"></a>
+            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="Brand Icons/X Icon.png"
                 width="40"></a>
-            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="Brand Icons/X Icon.png" width="40"></a>
-            <a class="white-text" href="https://www.instagram.com/semtexagency"><img src="Brand Icons/Instagram Icon.png" width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/semtexagency"><img
+                src="Brand Icons/Instagram Icon.png" width="40"></a>
             <a class="white-text" href="https://www.youtube.com/@semtexagency"><img src="Brand Icons/YouTube Icon.png"
                 width="40"></a>
           </ul>
         </div>
-        
+
         <div class="col l3 s12 hide-on-med-and-down">
           <h5 class="white-text">About</h5>
           <hr>
@@ -414,14 +459,15 @@
             <li><a href="attributions.html" class="white-text">Attributions</a></li>
             <li><a href="terms.html" class="white-text">Terms and Conditions</a></li>
             <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
-          </ul>         
+          </ul>
 
         </div>
         <div class="col l3 s12 hide-on-med-and-down">
           <h5 class="white-text">What We Offer</h5>
           <hr>
           <ul>
-            <li><a href="web-dev.html?#professional_packages" class="white-text">HTML & CSS Web Website Development</a></li>
+            <li><a href="web-dev.html?#professional_packages" class="white-text">HTML & CSS Web Website Development</a>
+            </li>
             <li><a href="web-dev.html?#e-commerce_packages" class="white-text">E-Commerce Web Development</a></li>
             <li><a href="emailhost.html" class="white-text">Email Hosting</a></li>
             <li><a href="graphic-design.html" class="white-text">Graphic & Advertising Design</a></li>
@@ -458,62 +504,63 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
-   <!-- Cookie Notice -->
-<div id="cookie-notice" class="card-panel blue lighten-5" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: none; margin: 0; border-radius: 0;">
-  <div class="container">
-    <div class="row" style="margin: 0;">
-      <div class="col s12 m9">
-        <span class="black-text">
-          We use cookies to ensure you get the best experience on our website. 
-          <a href="privacy-policy.html" class="blue-text text-darken-2">Learn more</a>
-        </span>
-      </div>
-      <div class="col s12 m3 right-align">
-        <a class="waves-effect waves-light btn-small blue darken-2 white-text" onclick="acceptCookies()">Got it!</a>
+  <!-- Cookie Notice -->
+  <div id="cookie-notice" class="card-panel blue lighten-5"
+    style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: none; margin: 0; border-radius: 0;">
+    <div class="container">
+      <div class="row" style="margin: 0;">
+        <div class="col s12 m9">
+          <span class="black-text">
+            We use cookies to ensure you get the best experience on our website.
+            <a href="privacy-policy.html" class="blue-text text-darken-2">Learn more</a>
+          </span>
+        </div>
+        <div class="col s12 m3 right-align">
+          <a class="waves-effect waves-light btn-small blue darken-2 white-text" onclick="acceptCookies()">Got it!</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  // Set a cookie with 1 hour expiry
-  function setCookie(name, value, hours) {
-    const date = new Date();
-    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
-    document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
-  }
-
-  // Get a cookie by name
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-
-  // Show banner if cookie doesn't exist
-  document.addEventListener("DOMContentLoaded", function () {
-    if (!getCookie("cookiesAccepted")) {
-      document.getElementById("cookie-notice").style.display = "block";
+  <script>
+    // Set a cookie with 1 hour expiry
+    function setCookie(name, value, hours) {
+      const date = new Date();
+      date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+      document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
     }
-  });
 
-  function acceptCookies() {
-    setCookie("cookiesAccepted", "true", 1); // expires in 1 hour
-    document.getElementById("cookie-notice").style.display = "none";
-  }
-</script>
+    // Get a cookie by name
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
 
-<style>
-  #cookie-notice .btn-small {
-    margin-top: 10px;
-  }
+    // Show banner if cookie doesn't exist
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!getCookie("cookiesAccepted")) {
+        document.getElementById("cookie-notice").style.display = "block";
+      }
+    });
 
-  @media (min-width: 600px) {
+    function acceptCookies() {
+      setCookie("cookiesAccepted", "true", 1); // expires in 1 hour
+      document.getElementById("cookie-notice").style.display = "none";
+    }
+  </script>
+
+  <style>
     #cookie-notice .btn-small {
-      margin-top: 0;
+      margin-top: 10px;
     }
-  }
-</style>
+
+    @media (min-width: 600px) {
+      #cookie-notice .btn-small {
+        margin-top: 0;
+      }
+    }
+  </style>
 
 </body>
 

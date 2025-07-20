@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unsubscribe | Semtex Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #007BFF;
+      margin-top: 0;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    form {
+      margin-top: 20px;
+      text-align: left;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #dc3545;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+    .footer {
+      font-size: 14px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Unsubscribe</h2>
+    <p>Thanks for being part of our community. If you'd like to unsubscribe, please enter your email below:</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="subject" value="Newsletter Unsubscriber">
+        <input type="hidden" name="from_name" value="Newsletter Unsubscriber">
+        <input type="hidden" name="redirect" value="https://www.semtexagency.co.za/unsubscribed">
+        <input type="hidden" name="access_key" value="29db7c39-1945-4cb7-bd81-a52b1f84dc8f">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn">Unsubscribe</button>
+    </form>
+
+    <div class="footer">
+      &copy; 2025 Semtex Agency. All rights reserved.<br>
+      <a href="https://www.semtexagency.co.za " style="color: #007BFF;">Back to Website</a>
+    </div>
+  </div>
+
+</body>
+</html>
