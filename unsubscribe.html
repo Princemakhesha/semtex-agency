@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
   <meta charset="UTF-8">
   <title>Unsubscribe | Semtex Agency</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
+      background-image: url(/new\ background\ parallax.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
       color: #333;
     }
     .container {
       max-width: 500px;
       margin: 60px auto;
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.95);
       border-radius: 8px;
       padding: 30px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -51,11 +59,44 @@
       border-radius: 4px;
       border: none;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+    .btn:hover,
+    .btn:focus {
+      background-color: #c82333;
+    }
+
+    .logo-footer {
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      text-align: left;
+    }
+
+    .logo-footer img {
+      max-width: 130px;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .privacy {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+    }
+
     .footer {
       font-size: 14px;
       color: #777;
       margin-top: 40px;
+    }
+    .footer a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -66,17 +107,25 @@
     <p>Thanks for being part of our community. If you'd like to unsubscribe, please enter your email below:</p>
 
     <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="subject" value="Newsletter Unsubscriber">
-        <input type="hidden" name="from_name" value="Newsletter Unsubscriber">
-        <input type="hidden" name="redirect" value="https://www.semtexagency.co.za/unsubscribed">
-        <input type="hidden" name="access_key" value="29db7c39-1945-4cb7-bd81-a52b1f84dc8f">
+      <input type="hidden" name="subject" value="Newsletter Unsubscriber">
+      <input type="hidden" name="from_name" value="Newsletter Unsubscriber">
+      <input type="hidden" name="redirect" value="https://www.semtexagency.co.za/unsubscribed">
+      <input type="hidden" name="access_key" value="29db7c39-1945-4cb7-bd81-a52b1f84dc8f">
+      
       <input type="email" name="email" placeholder="Enter your email address" required>
       <button type="submit" class="btn">Unsubscribe</button>
     </form>
 
+    <div class="logo-footer">
+      <img src="img/Semtex Email Logo.png" width="100" alt="Semtex Agency Logo">
+      <p class="privacy">
+        We respect your privacy. Your email address will only be used to process your unsubscribe request and will not be shared or stored. If you have any concerns, feel free to contact us. <a style="color: blue;" href="privacy-policy.html">Privacy Policy</a>
+      </p>
+    </div>
+
     <div class="footer">
       &copy; 2025 Semtex Agency. All rights reserved.<br>
-      <a href="https://www.semtexagency.co.za " style="color: #007BFF;">Back to Website</a>
+      <a href="https://www.semtexagency.co.za">Back to Website</a>
     </div>
   </div>
 
