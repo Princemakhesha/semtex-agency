@@ -1,104 +1,2220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Monthly Performance Report</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f7f7f7; color: #333333;">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Develpment, Graphic Design & Social Media Marketing | Semtex Agency</title>
 
-  <!-- Main Container -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <style>
+    /* Style for the dropdown menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 2px solid #64b5f6;
+      padding: 10px;
+      list-style: none;
+      margin-top: 5px;
+      width: 500px;
+      margin-top: -1px;
+      /* height: 540px; */
+    }
+
+    /* Reduce padding between dropdown items */
+    .dropdown .dropdown-menu li {
+      padding: 3px 0;
+      /* Adjust vertical padding here */
+    }
+
+    /* Reduce font size for menu items */
+    .dropdown .dropdown-menu li a {
+      font-size: 14px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js">
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('.carousel').carousel();
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {});
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HHYH36RY42');
+  </script>
+  <style>
+    #contactModal textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+      height: auto;
+      /* Allow the height to adjust automatically based on content */
+    }
+
+    /* Style the form container */
+    #contactModal {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Style input fields */
+    #contactModal input[type="text"],
+    #contactModal input[type="email"],
+    #contactModal textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Style the "Send" button */
+    #contactModal button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Add some hover effect to the button */
+    #contactModal button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+  <style>
+    /* Keyframes animation for sliding from right to left */
+    @keyframes slideFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Apply the animation to the h1 element */
+    .slide-from-right {
+      animation: slideFromRight 1s ease-in-out;
+    }
+
+    /* Keyframes animation for sliding from left to right */
+    @keyframes slideFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Apply the animation to the h5 element */
+    .slide-from-left {
+      animation: slideFromLeft 1s ease-in-out;
+    }
+  </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <style>
+    /* Style for the search bar */
+    #search-bar {
+      background-color: #e3f2fd;
+      /* Light blue background */
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      /* Ensure it positions correctly */
+      top: 70px;
+      /* Increased from 60px to push it down */
+      left: 0;
+      /* Adjust based on your layout */
+      right: 0;
+      /* Adjust based on your layout */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
+
+    /* Style for the search input */
+    #search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+    }
+
+    /* Style for the search results */
+    #search-results {
+      background-color: #ffffff;
+      /* White background for better readability */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      /* Position below the search input */
+      left: 0;
+      width: 100%;
+      /* Match the width of the search bar */
+      max-height: 300px;
+      /* Limit height for overflow */
+      overflow-y: auto;
+      /* Add scroll if too many results */
+      z-index: 1000;
+      /* Ensure it appears above other elements */
+    }
+
+    /* Style for each search result item */
+    #search-results li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #search-results li a {
+      color: #000;
+      /* Black text color */
+      text-decoration: none;
+      /* Remove underline */
+    }
+
+    #search-results li:hover {
+      background-color: #f0f0f0;
+      /* Highlight on hover */
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* parallax */
+
+    .parallax-container {
+      position: relative;
+      height: 500px;
+      margin-bottom: -90px;
+      /* Adjust the height as needed */
+    }
+
+    .carousel.carousel-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .carousel .carousel-item img {
+      width: 100%;
+      height: 100%;
+      /* Ensures the images cover the entire carousel */
+      object-fit: cover;
+    }
+
+    .carousel-nav {
+      /*mostly for the left and right buttons*/
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      cursor: pointer;
+      font-size: 48px;
+      /* Increase font size for larger buttons */
+      color: white;
+      /* Button color */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Semi-transparent background */
+      border-radius: 50%;
+      /* Round buttons */
+      padding: 10px;
+      /* Space around icons */
+    }
+
+    .carousel-nav.left {
+      left: 10px;
+    }
+
+    .carousel-nav.right {
+      right: 10px;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      top: 20%;
+      /* Higher on the page */
+      left: 10%;
+      /* Aligned to the left */
+      text-align: left;
+      color: white;
+    }
+
+    .carousel-caption h3,
+    .carousel-caption h1 {
+      margin: 0;
+      /* Remove default margin */
+      padding: 0;
+      /* Remove default padding */
+    }
+
+    .carousel-caption h3 {
+      font-size: 2rem;
+      /* Adjust the size as needed */
+      margin-bottom: 0;
+      /* Remove margin bottom */
+    }
+
+    .carousel-caption h1 {
+      font-size: 2.5rem;
+      /* Adjust the size as needed */
+    }
+
+    .carousel-caption a {
+      margin-top: 20px;
+      /* Adjust spacing between text and button */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid white;
+      /* Thicker dark green outline */
+      background-color: transparent;
+      /* Transparent background */
+      color: #64b5f6;
+      /* Dark green text color */
+      font-size: 1.2rem;
+      /* Adjust the font size as needed */
+      padding: 10px 20px;
+      /* Adjust padding as needed */
+      border-radius: 12px;
+      /* Rounded corners */
+      text-align: center;
+      /* Center text */
+      transition: background-color 0.3s, color 0.3s;
+      /* Smooth transition for hover effects */
+    }
+
+    .carousel-caption a:hover {
+      background-color: #64b5f6;
+      /* Dark green background on hover */
+      color: white;
+      /* White text on hover */
+    }
+  </style>
+
+  <style>
+    .brand-colour {
+      color: black;
+    }
+
+    .brand-colour:hover {
+      color: #64b5f6;
+    }
+  </style>
+
+  <style>
+    .fly-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fly-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <style>
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .counter {
+      font-size: 2.5rem;
+      color: #2196F3;
+      text-align: center;
+    }
+
+    .card1 {
+      background-color: transparent;
+      border: none;
+      /* Optional: Remove border if needed */
+      box-shadow: none;
+      /* Optional: Remove box-shadow if needed */
+    }
+
+    .card-content {
+      padding: 24px;
+      /* Optional: Adjust padding as needed */
+    }
+  </style>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Simulate content loading (replace this with your actual loading logic)
+      setTimeout(function () {
+        document.getElementById("loading-container").style.display = "none";
+      }, 2000); // Adjust the timeout based on your content loading time
+    });
+  </script>
+
+  <!-- Custom JavaScript for Fly-In Effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const flyInElements = document.querySelectorAll('.fly-in');
+
+      function checkPosition() {
+        flyInElements.forEach(function (element) {
+          const positionFromTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          // Check if the element is within the viewport
+          if (positionFromTop - windowHeight <= -100) {  // Adjust the -100 to control when the animation starts
+            element.classList.add('show');
+          } else {
+            element.classList.remove('show'); // Remove the show class when the element is out of view
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkPosition);
+      window.addEventListener('resize', checkPosition);
+      checkPosition(); // Initial check on page load
+    });
+  </script>
+
+  <!-- Import Materialize JavaScript and Initialize Components -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elemsParallax = document.querySelectorAll('.parallax');
+      M.Parallax.init(elemsParallax);
+
+      var elemsCarousel = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elemsCarousel, {
+        fullWidth: true,
+        indicators: true,
+        duration: 200
+      });
+
+      // Autoplay functionality
+      setInterval(function () {
+        instances[0].next();
+      }, 7000); // Change slide every 7 seconds
+
+      // Navigation buttons
+      document.getElementById('carousel-prev').addEventListener('click', function () {
+        instances[0].prev();
+      });
+
+      document.getElementById('carousel-next').addEventListener('click', function () {
+        instances[0].next();
+      });
+    });
+  </script>
+
+  <style>
+    .card-hover {
+      transition: background-color 0.3s ease-in-out;
+      box-sizing: border-box;
+      overflow: hidden;
+      height: 300px;
+      /* Fixed height for the card */
+      width: 100%;
+      /* Maintain card width */
+      position: relative;
+      border-radius: 10px;
+      /* Rounded corners for the card */
+    }
+
+    .card-hover:hover {
+      background-color: #3f51b5;
+      /* Indigo background color */
+    }
+
+    .card-hover .card-content {
+      position: absolute;
+      top: -10px;
+      /* Move content up to improve display before hover */
+      transition: top 0.3s ease-in-out;
+      height: 100%;
+      /* Ensure content height is within the card */
+    }
+
+    .card-hover:hover .card-content {
+      top: -120px;
+      /* Adjust to control how much the content moves up */
+    }
+
+    .card-hover:hover .card-title,
+    .card-hover:hover .card-description,
+    .card-hover:hover .learn-more-btn {
+      display: block;
+      color: white;
+    }
+
+    .learn-more-btn {
+      display: none;
+      margin-top: 15px;
+      border-radius: 10px;
+      /* Rounded corners for the button */
+    }
+
+    .icon-block h2 {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .card-hover:hover .icon-block h2 {
+      opacity: 0;
+    }
+
+    .custom-hr {
+            border: none;
+            /* Remove the default border */
+            height: 2px;
+            /* Set the height of the line */
+            /* background-color: #ff4081; Set your desired color */
+            background-color: red;
+            width: 50%;
+            /* Set the width to 50% of the parent element */
+            margin: 0 auto;
+            /* Center the line horizontally */
+        }
+  </style>
+
+  <!-- style for pop up form -->
+
+  <!-- <style>
+@keyframes flyIn {
+  from {
+    transform: translateY(100%); /* Start from below the screen */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.contact-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  background-color: #3f51b5;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+  transform: translateY(100%); /* Start below the screen */
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.contact-form.show {
+  display: block;
+  animation: flyIn 0.5s ease-out forwards;
+}
+
+
+    .contact-form .form-header {
+      text-align: right;
+    }
+
+    .contact-form .close-btn {
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+    }
+
+    .contact-form .form-content h6 {
+      color: white;
+      margin-top: -35px;
+    }
+
+    .contact-form .input-field label {
+      color: white;
+    }
+
+    .contact-form .input-field input,
+    .contact-form .input-field select {
+      color: black;
+      background-color: white;
+      /* Fill text boxes with white */
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .contact-form .input-field select {
+      display: block;
+    }
+
+    .contact-form p {
+      color: white;
+      font-size: 5px;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      background-color: white;
+      color: #3f51b5;
+      border-radius: 5px;
+      padding: -10px;
+      cursor: pointer;
+      /* text-align: center; */
+      display: flex;
+      /* Flexbox to center text */
+      justify-content: center;
+      /* Center text horizontally */
+    }
+    .contact-form .btn :hover {
+      color: white;
+    }
     
-    <!-- Header -->
-    <tr>
-      <td style="padding: 30px 20px 10px; text-align: center; background-color: #0056b3; color: #ffffff;">
-        <h1 style="margin: 0; font-size: 24px;">Monthly Performance Report</h1>
-        <p style="margin: 10px 0 0; font-size: 16px; opacity: 0.9;">From Your Digital Insights Team</p>
-      </td>
-    </tr>
+  </style>
 
-    <!-- Intro Section -->
-    <tr>
-      <td style="padding: 20px 30px;">
-        <p style="font-size: 16px; line-height: 1.6;">
-          Hi <strong>[Client Name]</strong>,<br><br>
-          Here’s a quick overview of your website performance for <strong>[Month, Year]</strong> based on Google Analytics data. We're excited to share your progress and key insights.
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var popupForm = document.getElementById("popupForm");
+      var closeForm = document.getElementById("closeForm");
+
+      // Show the form when the page loads
+      popupForm.style.display = "block";
+
+      // Close the form when the close button is clicked
+      closeForm.onclick = function () {
+        popupForm.style.display = "none";
+      };
+    });
+
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      const form = document.getElementById('popupForm');
+      form.style.display = 'block'; // Ensure the form is displayed
+      form.classList.add('show'); // Add the class to trigger animation
+    }, 5000); // 5000 milliseconds = 5 seconds
+  });
+</script> -->
+
+
+<!-- new pop-up style -->
+
+  <style>
+    @keyframes flyIn {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .contact-form {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 90%;
+      max-width: 400px;
+      background-color: #3f51b5;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px 10px 0 0;
+      display: none;
+      z-index: 1000;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: all 0.5s ease-out;
+    }
+
+    .contact-form.show {
+      display: block;
+      animation: flyIn 0.5s ease-out forwards;
+    }
+
+    .contact-form .form-header {
+      text-align: right;
+    }
+
+    .contact-form .close-btn {
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+    }
+
+    .contact-form h6,
+    .contact-form p,
+    .contact-form label,
+    .contact-form span {
+      color: white;
+    }
+
+    .contact-form .input-field input,
+    .contact-form .input-field select {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      background-color: white;
+      color: #3f51b5;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .contact-form .btn:hover {
+      background-color: #2c387e;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .contact-form {
+        width: 95%;
+        left: 2.5%;
+      }
+    }
+
+    .minimized-icon {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #3f51b5;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      z-index: 1001;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .minimized-icon i {
+      line-height: 50px;
+      font-size: 28px;
+      text-align: center;
+      display: block;
+      color: white;
+    }
+  </style>
+
+
+
+
+
+</head>
+
+<body>
+
+  <!-- pop-up form -->
+
+  <!-- <div id="popupForm" class="contact-form">
+    <div class="form-header">
+      <span id="closeForm" class="close-btn">&times;</span>
+    </div>
+    <div class="form-content">
+      <h6 class="white-text">Let's Talk About Improving Your <strong>Brand!</strong></h6>
+      <h9 class="white-text">Fill in your details and we'll contact you shortly</h9>
+      <form id="contactForm">
+        <div class="input-field">
+          <input id="name" type="text" class="validate" required>
+          <label for="name">Your Name</label>
+        </div>
+        <div class="input-field">
+          <input id="email" type="email" class="validate" required>
+          <label for="email">Your Email</label>
+        </div>
+        <div class="input-field">
+          <select id="services" required>
+            <option value="" disabled selected>Choose your service</option>
+            <option value="web-development">Web Development</option>
+            <option value="email-hosting">Email Hosting</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="company-registration">Company Registration</option>
+            <option value="social-media-marketing">Social Media Marketing</option>
+          </select>
+          <label for="services">Services</label>
+        </div>
+        <p class="white-text">
+          <label>
+            <input type="checkbox" class="" id="consent" required />
+            <span>I consent to receive emails about Semtex Agency's products and promotions</span>
+          </label>
         </p>
-      </td>
-    </tr>
+        <button id="btn" type="submit" class="btn"><strong>Submit</strong></button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const form = document.getElementById('popupForm');
+        form.style.display = 'block'; // Ensure the form is displayed
+        form.classList.add('show'); // Add the class to trigger animation
+      }, 5000); // 5000 milliseconds = 5 seconds
+    });
+  
+    document.getElementById('btn').addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const services = document.getElementById('services').value;
+      const consent = document.getElementById('consent').checked;
+  
+      // Check if any required fields are empty or if the checkbox is not ticked
+      if (!name || !email || !services || !consent) {
+        alert("Please fill in all the required fields and consent to receive emails.");
+        return; // Prevent sending the email if fields are missing or consent is not given
+      }
+  
+      const body = `Name: ${name}<br>Email: ${email}<br>Service: ${services}`;
+  
+      Email.send({
+        SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", // for messages.semtexagency@outlook.com
+        To: 'messages.semtexagency@outlook.com',
+        From: "messages.semtexagency@outlook.com",
+        Subject: "Urgent: A client is trying to get in touch - From Home page",
+        Body: body
+      }).then(
+        function (message) {
+          alert("Thank you, we will be in touch shortly!");
+  
+          // Clear form fields after successful submission
+          setTimeout(function () {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('services').value = '';
+            document.getElementById('consent').checked = false;
+          }, 2000); // Delay clearing fields by 2000 milliseconds (2 seconds)
+        }
+      ).catch(
+        function (error) {
+          console.log("Email sending error:", error);
+        }
+      );
+    });
+  </script> -->
 
-    <!-- Key Metrics -->
-    <tr>
-      <td style="padding: 10px 30px;">
-        <h2 style="color: #0056b3; font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 8px;">Key Metrics</h2>
-      </td>
-    </tr>
 
-    <tr>
-      <td style="padding: 0 30px;">
-        <table width="100%" cellpadding="12" cellspacing="0" style="border-collapse: collapse;">
-          <tr>
-            <td width="50%" style="border: 1px solid #eeeeee; border-radius: 6px; padding: 12px; background-color: #f9f9f9;">
-              <strong style="font-size: 14px; color: #555;">Users</strong>
-              <div style="font-size: 20px; font-weight: bold; color: #0056b3; margin-top: 4px;">[Total Users]</div>
-              <small style="color: #00a651;">↑ [X]% vs last month</small>
-            </td>
-            <td width="50%" style="border: 1px solid #eeeeee; border-radius: 6px; padding: 12px; background-color: #f9f9f9;">
-              <strong style="font-size: 14px; color: #555;">Pageviews</strong>
-              <div style="font-size: 20px; font-weight: bold; color: #0056b3; margin-top: 4px;">[Total Pageviews]</div>
-              <small style="color: #00a651;">↑ [X]% vs last month</small>
-            </td>
-          </tr>
-          <tr>
-            <td width="50%" style="border: 1px solid #eeeeee; border-radius: 6px; padding: 12px; background-color: #f9f9f9;">
-              <strong style="font-size: 14px; color: #555;">Avg. Session Duration</strong>
-              <div style="font-size: 20px; font-weight: bold; color: #0056b3; margin-top: 4px;">[Time]</div>
-              <small style="color: #d9534f;">↓ [X]% vs last month</small>
-            </td>
-            <td width="50%" style="border: 1px solid #eeeeee; border-radius: 6px; padding: 12px; background-color: #f9f9f9;">
-              <strong style="font-size: 14px; color: #555;">Bounce Rate</strong>
-              <div style="font-size: 20px; font-weight: bold; color: #0056b3; margin-top: 4px;">[X]%</div>
-              <small style="color: #00a651;">↓ [X]% vs last month</small>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
+<!-- new pop-up -->
 
-    <!-- Highlights Section -->
-    <tr>
-      <td style="padding: 20px 30px;">
-        <h2 style="color: #0056b3; font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 8px;">Highlights</h2>
-        <ul style="font-size: 15px; line-height: 1.6; color: #333;">
-          <li>Your top traffic source was <strong>[Source]</strong>.</li>
-          <li>The most popular page was <strong>[Page URL]</strong> with [X] views.</li>
-          <li>[Any notable trend, e.g., "Mobile traffic increased by 25%."]</li>
+ <!-- Contact Pop-Up Form -->
+  <div id="popupForm" class="contact-form">
+    <div class="form-header">
+      <span id="closeForm" class="close-btn">&times;</span>
+    </div>
+    <div class="form-content">
+      <h6>Let's Talk About Improving Your <strong>Brand!</strong></h6>
+      <p>Fill in your details and we'll contact you shortly</p>
+
+      <form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="redirect" value="https://www.semtexagency.co.za/thanks">
+        <input type="hidden" name="subject" value="A client is trying to get in touch">
+        <input type="hidden" name="from_name" value="Potential Client">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="29db7c39-1945-4cb7-bd81-a52b1f84dc8f">
+
+        <div class="input-field">
+          <input id="name" name="name" type="text" class="validate" required>
+          <label for="name">Your Name</label>
+        </div>
+
+        <div class="input-field">
+          <input id="email" name="email" type="email" class="validate" required>
+          <label for="email">Your Email</label>
+        </div>
+
+        <div class="input-field">
+          <select id="services" name="service" class="browser-default" required>
+            <option value="" disabled selected>Choose your service</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Email Hosting">Email Hosting</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Company Registration">Company Registration</option>
+            <option value="Social Media Marketing">Social Media Marketing</option>
+          </select>
+        </div>
+
+        <p>
+          <label>
+            <input type="checkbox" id="consent" name="consent" required />
+            <span>I consent to receive emails about Semtex Agency's products and promotions</span>
+          </label>
+        </p>
+
+        <!-- Success message (invisible by default) -->
+        <div id="successMessage" style="display:none; color:white; text-align:center; margin-bottom:10px;">
+          Thank you, we will be in touch shortly!
+        </div>
+
+        <button type="submit" class="btn"><strong>Submit</strong></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Minimized Icon -->
+  <div id="minimizedIcon" class="minimized-icon tooltipped" data-tooltip="Contact Us">
+    <i class="material-icons">chat</i>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const formContainer = document.getElementById("popupForm");
+      const closeForm = document.getElementById("closeForm");
+      const minimizedIcon = document.getElementById("minimizedIcon");
+      const form = document.getElementById("contactForm");
+      const successMessage = document.getElementById("successMessage");
+
+      // Show form after delay
+      setTimeout(() => {
+        formContainer.classList.add("show");
+        formContainer.style.display = "block";
+      }, 5000);
+
+      // Close (minimize)
+      closeForm.onclick = function () {
+        formContainer.classList.remove("show");
+        setTimeout(() => {
+          formContainer.style.display = "none";
+          minimizedIcon.style.display = "flex";
+        }, 500);
+      };
+
+      // Reopen
+      minimizedIcon.onclick = function () {
+        formContainer.style.display = "block";
+        setTimeout(() => {
+          formContainer.classList.add("show");
+        }, 10);
+        minimizedIcon.style.display = "none";
+      };
+
+      // Initialize tooltips
+      const tooltips = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(tooltips);
+
+      // Handle Web3Forms submit success
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!document.getElementById('consent').checked) {
+          alert("Please tick the consent checkbox.");
+          return;
+        }
+
+        const formData = new FormData(form);
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            successMessage.style.display = "block";
+            form.reset();
+            setTimeout(() => {
+              successMessage.style.display = "none";
+            }, 3000);
+          } else {
+            alert("Error sending message. Please try again.");
+          }
+        })
+        .catch(error => {
+          console.error("Web3Forms Error:", error);
+          alert("Thank you! We will be in touch with you shortly.");
+        });
+      });
+    });
+  </script>
+
+
+
+
+
+
+  <div id="loading-container">
+    <div class="loader"></div>
+  </div>
+  <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo"><img src="img/Semtex Email Logo.png"
+            width="160"></a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger indigo-text"><i
+            class="material-icons left">menu</i></a>
+        <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html" class="purple-text"><strong>Home</strong></a></li>
+          <li class="dropdown">
+            <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+            <ul class="dropdown-menu">
+              <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                    class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                  <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i
+                      class="material-icons left indigo-text">language</i></a>
+                  <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i
+                      class="material-icons left indigo-text">shopping_cart</i></a>
+                  <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i
+                      class="material-icons left indigo-text">email</i></a></span></li>
+              <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic
+                  Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+              <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat indigo-text">Company
+                  Registration <i class="material-icons left indigo-text">business_center</i></a></li>
+              <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                    class="material-icons left indigo-text">arrow_forward</i></a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="indigo-text"><strong>About Us</strong></a>
+            <ul class="dropdown-menu">
+              <li class=""><a href="background.html" class="waves-effect waves-light btn-flat indigo-text"><i
+                    class="material-icons left indigo-text">local_florist</i>Our Story</a><span>
+                      <br>
+
+                      <a href="web-dev.html?#some_work" class=" btn-flat indigo-text">OUR PORTFOLIO<i
+                        class="material-icons left indigo-text">burst_mode</i></a>
+
+                  <a href="https://g.page/r/CcMJVhvYJKdVEBM/review" target="_blank" class=" btn-flat indigo-text">Leave us a Feedback<i
+                      class="material-icons left indigo-text">feedback</i></a>
+
+                  <a href="payments.html" class=" btn-flat indigo-text">Payment Methods<i
+                      class="material-icons left indigo-text">attach_money</i></a></span></li>
+              <li class=""><a href="terms.html" class="waves-effect waves-light btn-flat indigo-text">Terms and Conditions<i class="material-icons left indigo-text">gavel</i></a></li>
+              <li class=""><a href="faq.html" class="waves-effect waves-light btn-flat indigo-text">Frequently Asked Questions <i class="material-icons left indigo-text">question_answer</i></a></li>
+              <!-- <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i
+                    class="material-icons left indigo-text">arrow_forward</i></a></li> -->
+            </ul>
+          </li>
+
+          <!-- <li><a href="background.html" class="indigo-text"><strong>Our Story</strong></a></li> -->
+          <!-- <li><a href="team.html" class="indigo-text">Team</a></li> -->
+          <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+          <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
         </ul>
-      </td>
-    </tr>
 
-    <!-- CTA Section -->
-    <tr>
-      <td style="padding: 10px 30px 20px; text-align: center;">
-        <a href="[Full Report Link]" 
-           style="background-color: #0056b3; color: #ffffff; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 6px; display: inline-block; font-size: 16px;">
-           View Full Report
-        </a>
-        <p style="margin-top: 15px; font-size: 14px; color: #777;">
-          Or <a href="#" style="color: #0056b3; text-decoration: underline;">contact us</a> for a detailed review.
-        </p>
-      </td>
-    </tr>
+        <div id="search-bar" class="hide">
+          <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-    <!-- Footer -->
-    <tr>
-      <td style="padding: 20px 30px; text-align: center; font-size: 13px; color: #999; background-color: #f7f7f7; border-top: 1px solid #eee;">
-        &copy; 2024 <strong>[Your Company Name]</strong>. All rights reserved.<br>
-        Helping you grow with data-driven insights.
-      </td>
-    </tr>
-  </table>
+  <script>
+    // Toggle search bar visibility
+    document.querySelector('.search-trigger').addEventListener('click', function (event) {
+      event.preventDefault();
+      var searchBar = document.getElementById('search-bar');
+      searchBar.classList.toggle('hide');
+    });
+
+    // Search function to filter results
+    function searchSite() {
+      let input = document.getElementById('search-input').value.toLowerCase();
+      let resultsList = document.getElementById('search-results');
+      resultsList.innerHTML = '';
+
+      let pages = [
+        { title: 'Home', url: 'index.html' },
+        { title: 'Our Services', url: 'services.html' },
+        { title: 'Web Development', url: 'web-dev.html' },
+        { title: 'Graphic Design', url: 'graphic-design.html' },
+        { title: 'Company Registration', url: 'companyreg.html' },
+        { title: 'Our Story', url: 'background.html' },
+        { title: 'Prince Makhesha', url: 'background.html?#prince' },
+        { title: 'Professsional Website development packages', url: 'web-dev.html?#professional_packages' },
+        { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+        { title: 'Email hosting', url: 'emailhost.html' },
+        { title: 'Social media Marketing packages', url: 'socialmedia.html' },
+        { title: 'Logo Design', url: 'graphic-design.html' },
+        { title: 'Flyer Design', url: 'graphic-design.html' },
+        { title: 'Poster Design', url: 'graphic-design.html' },
+        { title: 'Marketing Videos', url: 'graphic-design.html' },
+        { title: 'Business Cards', url: 'graphic-design.html' },
+        { title: 'Terms and Conditions', url: 'terms.html' },
+        { title: 'Ts&Cs', url: 'terms.html' },
+        { title: 'Banner Design', url: 'graphic-design.html' },
+        { title: 'Pamphlet Design', url: 'graphic-design.html' },
+        { title: 'Frequently Asked Questions', url: 'faq.html' },
+        { title: 'FAQs', url: 'faq.html' }
+      ];
+
+      pages.forEach(page => {
+        if (page.title.toLowerCase().includes(input)) {
+          let li = document.createElement('li');
+          let a = document.createElement('a');
+          a.href = page.url;
+          a.textContent = page.title;
+          li.appendChild(a);
+          resultsList.appendChild(li);
+        }
+      });
+    }
+  </script>
+
+  <!-- Mobile Navigation Menu -->
+  <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
+    <div><a href="index.html"> <img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="100"></a></div>
+    <hr>
+    <li><a href="index.html" class="waves-effect waves-light btn-flat black-text">Home<i
+          class="material-icons left black-text">home</i></a></li>
+
+    <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
+          class="material-icons left white-text">store</i></a></li>
+    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i
+          class="material-icons left white-text">desktop_mac</i></a></li>
+    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i
+          class="material-icons left white-text">color_lens</i></a></li>
+    <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i
+          class="material-icons left white-text">email</i></a></li>
+    <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i
+          class="material-icons left white-text">thumb_up</i></a></li>
+    <li class=""><a href="companyreg.html" class="waves-effect waves-light btn-flat white-text">Company Reg<i
+          class="material-icons left white-text">business_center</i></a></li>
+
+    <li><a href="background.html" class="waves-effect waves-light btn-flat white-text">Our Story<i
+          class="material-icons left white-text">local_florist</i></a></li>
+    <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact Us<i
+          class="material-icons left white-text">headset_mic</i></a></li>
+    <hr>
+    <li><a href="faq.html" class="waves-effect waves-light btn-flat white-text">FAQs<i
+          class="material-icons left white-text">question_answer</i></a></li>
+    <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="waves-effect waves-light btn-flat white-text">Send
+        Feedback<i class="material-icons left white-text">feedback</i></a></li>
+    <li><a href="terms.html" class="waves-effect waves-light btn-flat white-text">Ts & Cs<i
+          class="material-icons left white-text">gavel</i></a></li>
+    <li><a href="attributions.html" class="waves-effect waves-light btn-flat white-text">Attributions<i
+          class="material-icons left white-text">favorite_border</i></a></li>
+
+    <br><br>
+
+  </ul>
+
+  <!-- Mobile Navigation Menu -->
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="index.html" class="indigo-text">Home</a></li>
+    <!-- Other navigation items... -->
+  </ul>
+
+  <!-- Include Materialize CSS library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Initialize side navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {});
+    });
+  </script>
+
+  <div class="fixed-action-btn">
+    <a href="https://wa.me/+27766108815"><img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
+        alt="WhatsApp Button" width="70"></a>
+  </div>
+  <!-- old parallax was here -->
+
+  <div id="index-banner" class="parallax-container">
+    <div class="carousel carousel-slider">
+      <div class="carousel-item">
+        <img src="Images/Homepage/new background parallax.png" alt="1st background">
+        <div class="carousel-caption">
+          <h3>Our clients are more</h3>
+          <h3>than just clients,</h3>
+          <h1>They're <strong>our Partners.</strong></h1>
+          <a href="contact.html?#contact" class="btn-large waves-effect waves-light carousel-buttons white-text">Get In
+            Touch</a>
+        </div>
+      </div>
+      <div class="carousel-item col s10">
+        <img src="Images/Homepage/approvedbackground.png" alt="2nd background">
+        <div class="carousel-caption">
+          <h3>Working to empower</h3>
+          <h1>
+            Your <strong>Digital Presence.</strong>
+          </h1>
+          <a href="digital-creations.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn More</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Images/Homepage/modern-office-building-facade copy.png" alt="3rd background">
+        <div class="carousel-caption">
+          <h3>We embarked on a mission</h3>
+          <h1>To breathe life into ideas.</h1>
+          <a href="background.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn
+            More</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-nav left" id="carousel-prev"><i class="material-icons">chevron_left</i></a>
+    <a class="carousel-nav right" id="carousel-next"><i class="material-icons">chevron_right</i></a>
+  </div>
+
+
+  <!-- <h3 class="center indigo-text">Why Choose Us</h3> -->
+  <div class="container col s12 m4 l4">
+    <div class="">
+      <h3 class="center indigo-text fly-in">Why Choose Us</h3>
+      <div class="row">
+        <!-- <h3 class="center indigo-text">Why Choose Us</h3> -->
+        <div class="col s12 m4 fly-in">
+          <div class="icon-block">
+            <h2 class="center indigo-text"><i class="material-icons">color_lens</i></h2>
+            <h5 class="center indigo-text">Creative Excellence</h5>
+            <a class="center black-text">Our team of talented graphic designers brings forth a blend of creativity and
+              expertise, ensuring every design is a masterpiece.</a>
+          </div>
+        </div>
+
+        <div class="col s12 m4 fly-in">
+          <div class="icon-block">
+            <h2 class="center indigo-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center indigo-text">Tailored Solutions</h5>
+            <a class="center black-text">We understand that each project is unique. That's why we collaborate closely
+              with you to develop customized design strategies that align with your brand identity and objectives.</a>
+          </div>
+        </div>
+        <div class="col s12 m4 fly-in">
+          <div class="icon-block">
+            <h2 class="center indigo-text"><i class="material-icons">lightbulb_outline</i></h2>
+            <h5 class="center indigo-text">Strategic Approach</h5>
+            <a class="center black-text">Our designs are not just visually appealing; they are strategically crafted to
+              resonate with your target audience and deliver the intended message effectively.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="back1.png" alt="Unsplashed background img 2" width="30"></div>
+  </div> -->
+
+  <br><br>
+  <br>
+
+  <!-- Section with Fly-In Effect -->
+  <div class="section container">
+    <div class="row">
+      <div class="row">
+        <h3 class="center fly-in white"><a href="services.html" class="indigo-text">Our Services</a></h3>
+
+        <div class="">
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">language</i></h2>
+                <h5 class="center card-title"><strong>HTML & CSS Web Development</strong></h5>
+                <p class="center card-description">We build responsive and visually stunning websites that adapt
+                  seamlessly to any device, from desktops to mobile phones.</p>
+                <div class="center learn-more-btn">
+                  <a href="web-dev.html?#professional_packages"
+                    class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">shopping_cart</i></h2>
+                <h5 class="center card-title"><strong>E-Commerce Web Development</strong></h5>
+                <p class="center card-description">Partner with us to build a powerful e-commerce platform that
+                  showcases your
+                  products and also drives sales and growth.</p>
+                <div class="center learn-more-btn">
+                  <a href="web-dev.html?#e-commerce_packages"
+                    class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">email</i></h2>
+                <h5 class="center card-title"><strong>Email Hosting</strong></h5>
+                <p class="center card-description">We create custom email addresses using your own domain to enhance
+                  your brand’s
+                  professionalism and credibility.</p>
+                <div class="center learn-more-btn">
+                  <a href="emailhost.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">color_lens</i></h2>
+                <h5 class="center card-title"><strong>Graphic & Advertising Design</strong></h5>
+                <p class="center card-description">We create cohesive and memorable brand identities, including logos,
+                  color
+                  schemes, and typography, to establish a recognizable presence in the market.</p>
+                <div class="center learn-more-btn">
+                  <a href="graphic-design.html"
+                    class="btn-large indigo waves-effect waves-light white indigo-text">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">work</i></h2>
+                <h5 class="center card-title"><strong>Company Registrations</strong></h5>
+                <p class="center card-description">Secure your desired business name with our assistance, ensuring it
+                  complies
+                  with legal requirements and is unique to your industry.</p>
+                <div class="center learn-more-btn">
+                  <a href="companyreg.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4 fly-in">
+            <div class=" card-hover">
+              <div class="card-content icon-block">
+                <h2 class="center"><i class="material-icons indigo-text">thumb_up</i></h2>
+                <h5 class="center card-title"><strong>Social Media Marketing</strong></h5>
+                <p class="center card-description">We develop customized social media strategies aligned with your
+                  business goals,
+                  focusing on platforms that best reach your target audience and drive results.</p>
+                <div class="center learn-more-btn">
+                  <a href="socialmedia.html" class="btn-large indigo waves-effect waves-light white indigo-text">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+        <!-- <div class="col s12 m6 l4 fly-in">
+          <div class="icon-block">
+            <h2 class="center"><a href="web-dev.html?#professional_packages"><i
+                  class="material-icons brand-colour">language</i></a></h2>
+            <h5 class="center brand-colour"><a href="web-dev.html?#professional_packages" class="brand-colour">HTML &
+                CSS Web Development</a></h5>
+            <a class="center black-text">We build responsive and visually stunning websites that adapt seamlessly to any
+              device, from desktops to mobile phones.</a>
+          </div>
+        </div>
+        <div class="col s12 m6 l4 fly-in">
+          <div class="icon-block">
+            <h2 class="center"><a href="web-dev.html?#e-commerce_packages"><i
+                  class="material-icons brand-colour">shopping_cart</i></a></h2>
+            <h5 class="center"><a href="web-dev.html?#e-commerce_packages" class="brand-colour">E-Commerce Web
+                Development</a></h5>
+            <a class="center black-text">Partner with us to build a powerful e-commerce platform that showcases your
+              products and also drives sales and growth.</a>
+          </div>
+        </div>
+        <div class="col s12 m6 l4 fly-in">
+          <div class="icon-block">
+            <h2 class="center"><a href="emailhost.html"><i class="material-icons brand-colour">email</i></a></h2>
+            <h5 class="center"><a href="emailhost.html" class="brand-colour">Email Hosting</a></h5>
+            <a class="center black-text">We create custom email addresses using your own domain to enhance your brand’s
+              professionalism and credibility.</a>
+          </div>
+        </div>
+        <div class="col s12 m6 l4 fly-in">
+          <div class="icon-block">
+            <h2 class="center"><a href="graphic-design.html"><i class="material-icons brand-colour">color_lens</i></a>
+            </h2>
+            <h5 class="center"><a href="graphic-design.html" class="brand-colour">Graphic & Advertising Design</a></h5>
+            <a class="center black-text">We create cohesive and memorable brand identities, including logos, color
+              schemes, and typography, to establish a strong and recognizable presence in the market.</a>
+          </div>
+        </div>
+        <div class="col s12 m6 l4 fly-in">
+          <div class="icon-block">
+            <h2 class="center"><a href="companyreg.html"><i class="material-icons brand-colour">work</i></a></h2>
+            <h5 class="center indigo-text"><a href="companyreg.html" class="brand-colour">Company Registrations</a></h5>
+            <a class="center black-text">Secure your desired business name with our assistance, ensuring it complies
+              with legal requirements and is unique to your industry.</a>
+          </div>
+        </div>
+        <div class="col s12 m6 l4 fly-in">
+          <div class="icon-block">
+            <h2 class="center indigo-text"><a href="socialmedia.html"><i
+                  class="material-icons brand-colour">thumb_up</i></a></h2>
+            <h5 class="center indigo-text"><a href="socialmedia.html" class="brand-colour">Social Media Marketing</a>
+            </h5>
+            <a class="center black-text">We develop customized social media strategies aligned with your business goals,
+              focusing on platforms that best reach your target audience and drive results.</a>
+          </div>
+        </div>
+      </div> -->
+      </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  </div>
+  <!-- <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+
+        <div class="row center">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="parallax"><img src="business-people-working-laptop.jpg" alt="Unsplashed background img 3" width="50">
+    </div>
+  </div> -->
+
+
+
+
+  <div class="client-carousel-wrapper col l5 m12 s4 fly-in">
+    <h4 class="indigo-text center">Some of our clients</h4>
+    <div class="client-carousel">
+      <div class="client-carousel-inner">
+        <!-- Carousel Items -->
+        <div class="client-carousel-item">
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="230" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="160"
+              alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="230" alt="Vhukhudo Travel"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/rich skills cleaning.png" width="230" alt="Rich Skills Cleaning"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/beapearl logo black.png" width="230" alt="Beapearl"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/color logo.png" width="230" alt="Color Logo"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/fluvial.png" width="230" alt="Fluvial"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="230" alt="Ndaa Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="180"
+              alt="Mitana Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="170" alt="Moata School"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="230" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="160"
+              alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="230" alt="Vhukhudo Travel"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/rich skills cleaning.png" width="230" alt="Rich Skills Cleaning"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/beapearl logo black.png" width="253" alt="Beapearl"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/color logo.png" width="250" alt="Color Logo"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="200"
+              alt="Mitana Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="190" alt="Moata School"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="250" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="180"
+              alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/beapearl logo black.png" width="250" alt="Beapearl"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/color logo.png" width="250" alt="Color Logo"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="200"
+              alt="Mitana Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="190" alt="Moata School"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.imaammasangabookrestoration.co.za" target="_blank"><img src="clientlogos/masanga.png"
+              width="250" alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.localhalaalboard.org" target="_blank"><img src="clientlogos/LHB.png" width="180"
+              alt="Imaam Masanga"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.vhukhudotravelandtourism.co.za" target="_blank"><img
+              src="clientlogos/vhukhudotravel_logo.png" width="250" alt="Vhukhudo Travel"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/rich skills cleaning.png" width="250" alt="Rich Skills Cleaning"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/beapearl logo black.png" width="250" alt="Beapearl"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/color logo.png" width="250" alt="Color Logo"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a><img src="clientlogos/fluvial.png" width="250" alt="Fluvial"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://ndaatrainingconsultants.co.za/" target="_blank"><img
+              src="clientlogos/Ndaa training logo_semtex2020.png.png" width="250" alt="Ndaa Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.mitanatraining.co.za" target="_blank"><img src="clientlogos/mitana.png" width="200"
+              alt="Mitana Training"></a>
+        </div>
+        <div class="client-carousel-item">
+          <a href="https://www.moataschool.co.za" target="_blank"><img src="clientlogos/Moata School Logo.png"
+              width="190" alt="Moata School"></a>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <a class="client-carousel-prev" href="#"><i class="material-icons">chevron_left</i></a>
+      <a class="client-carousel-next" href="#"><i class="material-icons">chevron_right</i></a>
+    </div>
+  </div>
+
+
+
+  <style>
+    .client-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .client-carousel {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+
+    .client-carousel-inner {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .client-carousel-item {
+      flex: 0 0 auto;
+      margin: 0 10px;
+      /* Adjust margin as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .client-carousel img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .client-carousel-prev,
+    .client-carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 24px;
+    }
+
+    .client-carousel-prev {
+      left: 10px;
+    }
+
+    .client-carousel-next {
+      right: 10px;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carouselInner = document.querySelector('.client-carousel-inner');
+      const prevBtn = document.querySelector('.client-carousel-prev');
+      const nextBtn = document.querySelector('.client-carousel-next');
+      const items = document.querySelectorAll('.client-carousel-item');
+      let index = 1; // Start from the first original item
+      const itemWidth = items[0].offsetWidth + 20; // Account for margin
+      const itemCount = items.length;
+
+      function showSlide(n) {
+        if (n >= itemCount) {
+          index = 1; // Jump to the first original item
+          carouselInner.style.transition = 'none'; // Disable transition for instant jump
+          carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+          setTimeout(() => {
+            carouselInner.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            showSlide(index + 1);
+          }, 50);
+        } else if (n < 0) {
+          index = itemCount - 2; // Jump to the last original item
+          carouselInner.style.transition = 'none'; // Disable transition for instant jump
+          carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+          setTimeout(() => {
+            carouselInner.style.transition = 'transform 0.5s ease-in-out'; // Re-enable transition
+            showSlide(index - 1);
+          }, 50);
+        } else {
+          index = n;
+          carouselInner.style.transform = `translateX(${-index * itemWidth}px)`;
+        }
+      }
+
+      function nextSlide() {
+        showSlide(index + 1);
+      }
+
+      function prevSlide() {
+        showSlide(index - 1);
+      }
+
+      prevBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        prevSlide();
+      });
+
+      nextBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        nextSlide();
+      });
+
+      // Automatic scroll every 3 seconds
+      setInterval(nextSlide, 4000);
+    });
+  </script>
+
+    <!-- Counter Section -->
+  <footer class="#e3f2fd blue lighten-5" id="counter-section">
+    <!-- testing counter session -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="https://cdn.rawgit.com/bfintal/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <div class="white background-section fly-in">
+      <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l4">
+          <div class="card1 center">
+            <div class="card-content">
+              <a class=""><img src="Brand Icons/Miscellaneous/desktop icon.png" width="40"></a>
+              <span class="card-title black-text">Websites Designed</span>
+              <h5 class="counter" data-count="10">0+</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card1 center">
+            <div class="card-content">
+              <a class=""><img src="Brand Icons/Miscellaneous/logo icon.png" width="40"></a>
+              <span class="card-title black-text">Graphics Designed</span>
+              <h5 class="counter" data-count="500">0+</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l4">
+          <div class="card1 center">
+            <div class="card-content">
+              <a class=""><img src="Brand Icons/Miscellaneous/smiley face.png" width="40"></a>
+              <span class="card-title black-text">Happy Clients</span>
+              <h5 class="counter" data-count="150">0+</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    
+    <!-- counter script -->
+
+    <script>
+      $(document).ready(function () {
+        // Initialize Waypoints
+        var counterSection = new Waypoint({
+          element: document.getElementById('counter-section'),
+          handler: function (direction) {
+            if (direction === 'down') {
+              // Reset counter values
+              $('.counter').each(function () {
+                var $this = $(this);
+                var countTo = $this.data('count');
+                $this.text('0+'); // Reset the counter text
+
+                $this.prop('Counter', 0).animate({
+                  Counter: countTo
+                }, {
+                  duration: 2000,
+                  easing: 'swing',
+                  step: function (now) {
+                    $this.text(Math.ceil(now) + '+');
+                  }
+                });
+              });
+            }
+          },
+          offset: '75%' // Adjust this value to trigger the counter earlier or later
+        });
+      });
+    </script>
+  </footer>
+
+  <div class="background-section fly-in">
+    <div class="container">
+      <div class="row">
+        <!-- Left Side: Text -->
+        <div class="col l4 s12 l3">
+          <div class="left-align">
+            <h5 class="white-text">Keep up with Semtex Agency</h5>
+            <p class="white-text">Sign up for our Newsletter:</p>
+          </div>
+        </div>
+        <!-- Right Side: Form -->
+        <div class="col l6 s12">
+      <form action="https://formspree.io/f/mgvldryd" method="POST" id="newsletterForm" class="row">
+    <div class="input-field col s12 m5">
+        <input type="text" name="name" class="validate custom-input" placeholder="Your Name*" required>
+        <label for="name" class="white-text"></label>
+    </div>
+    <div class="input-field col s12 m5">
+        <input type="email" name="email" class="validate custom-input" placeholder="Your Email*" required>
+        <label for="email" class="white-text"></label>
+    </div>
+    <div class="input-field col s12 m2">
+        <button type="submit" class="btn-large blue lighten-2 form-button"><strong>Submit</strong></button>
+    </div>
+</form>
+
+<script>
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+    const form = e.target;
+    const button = form.querySelector('button');
+    button.disabled = true;
+    button.innerHTML = 'Sending...';
+
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            alert('Thank you! Check your inbox for a welcome email.');
+            form.reset();
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = '/thanks.html';
+            }, 2000);
+        } else {
+            response.json().then(data => {
+                alert('Error: ' + (data.error || 'Something went wrong'));
+            });
+        }
+    }).catch(error => {
+        alert('Error: ' + error.message);
+    }).finally(() => {
+        button.disabled = false;
+        button.innerHTML = '<strong>Submit</strong>';
+    });
+});
+</script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Existing Script for SMTP
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+
+      // Check if any required fields are empty
+      if (!name || !email) {
+        alert("Please fill in all the required fields.");
+        return; // Prevent sending the email if fields are missing
+      }
+
+      var body = 'name: ' + name + '<br/> email: ' + email;
+
+      Email.send({
+        SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175",
+        To: 'messages.semtexagency@outlook.com',
+        From: "messages.semtexagency@outlook.com",
+        Subject: "Newsletter Signup - From Semtex Agency",
+        Body: body
+      }).then(
+        function (message) {
+          alert("Thank you for signing up!");
+
+          // Clear form fields after successful submission
+          setTimeout(function () {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+          }, 2000);
+        }
+      ).catch(
+        function (error) {
+          console.log("Email sending error:", error);
+        }
+      );
+    });
+  </script> -->
+
+  <style>
+    .background-section {
+      background-color: #0d47a1;
+      /* Dark blue background */
+      padding: 20px 0;
+      /* Adjust padding as needed */
+    }
+
+    .input-field {
+      display: flex;
+      align-items: center;
+    }
+
+    .input-field input.custom-input {
+      color: #000;
+      /* Black text color */
+      background-color: #fff;
+      /* White background */
+      border: 2px solid #ddd;
+      /* Light gray border */
+      border-radius: 4px;
+      /* Rounded corners */
+      padding: 10px;
+      /* Padding inside input */
+      box-sizing: border-box;
+      /* Include padding and border in element's total width and height */
+      height: 56px;
+    }
+
+    .input-field input.custom-input:focus {
+      border-color: #64b5f6;
+      /* Change border color on focus */
+      box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.3);
+      /* Add shadow on focus */
+    }
+
+    .form-button {
+      /* height: 50px; */
+      width: 500px;
+      /* padding: 10px; Match height with input fields */
+      font-size: 1rem;
+      /* Larger font size */
+      display: flex;
+      /* Flexbox to center text */
+      justify-content: center;
+      /* Center text horizontally */
+      align-items: center;
+      /* Center text vertically */
+      border: 2px solid #ddd;
+      /* Light gray border */
+      border-radius: 4px;
+      /* Rounded corners */
+      padding: 10px;
+      /* Padding inside input */
+      /* box-sizing: border-box; Include padding and border in element's total width and height */
+    }
+
+    .form-button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
+    <div class="">
+      <div class="row">
+        <div class="col l3 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-4"><img src="Semtex logo white for footer.png" width="160"></a></li>
+          </ul>
+          <ul>
+            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left white-text">call</i>076 610 8815</a></li>
+          </ul>
+          <ul>
+            <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i class="material-icons left white-text">email</i>info@semtexagency.co.za</a></li>
+          </ul>
+          <ul>
+            <li><a class="white-text"><i class="material-icons left white-text ">location_on</i>South Africa</a></li>
+          </ul>
+          <h5 class="white-text">Connect with us</h5>
+          <ul>
+            <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
+                src="Brand Icons/Facebook Icon.png"
+                width="40"></a>
+            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="Brand Icons/X Icon.png" width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/semtexagency"><img src="Brand Icons/Instagram Icon.png" width="40"></a>
+            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img src="Brand Icons/YouTube Icon.png"
+                width="40"></a>
+          </ul>
+        </div>
+        
+        <div class="col l3 s12 hide-on-med-and-down">
+          <h5 class="white-text">About</h5>
+          <hr>
+          <ul>
+            <li><a href="background.html" class="white-text">Our Story</a></li>
+            <li><a href="contact.html" class="white-text">Get in Touch</a></li>
+            <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="white-text">Send Feedback</a></li>
+            <li><a href="payments.html" class="white-text">Payments</a></li>
+            <li><a href="attributions.html" class="white-text">Attributions</a></li>
+            <li><a href="terms.html" class="white-text">Terms and Conditions</a></li>
+            <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
+          </ul>         
+
+        </div>
+        <div class="col l3 s12 hide-on-med-and-down">
+          <h5 class="white-text">What We Offer</h5>
+          <hr class="">
+          <ul>
+            <li><a href="web-dev.html?#professional_packages" class="white-text">HTML & CSS Web Website Development</a></li>
+            <li><a href="web-dev.html?#e-commerce_packages" class="white-text">E-Commerce Web Development</a></li>
+            <li><a href="emailhost.html" class="white-text">Email Hosting</a></li>
+            <li><a href="graphic-design.html" class="white-text">Graphic & Advertising Design</a></li>
+            <li><a href="companyreg.html" class="white-text">Company Registrations</a></li>
+            <li><a href="socialmedia.html" class="white-text">Social Media Marketing</a></li>
+          </ul>
+
+        </div>
+        <div class="col l3 s12 hide-on-med-and-down">
+          <h5 class="white-text">Sitemap</h5>
+          <hr>
+          <ul>
+            <li><a href="services.html" class="white-text">Our Services</a></li>
+            <li><a href="attributions.html" class="white-text">Attributions</a></li>
+            <li><a href="terms.html" class="white-text">Terms & Conditions</a></li>
+            <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
+            <li><a href="payments.html" class="white-text">Payments</a></li>
+            <li><a href="background.html" class="white-text">Our Story</a></li>
+            <li><a href="contact.html" class="white-text">Contact Us</a></li>
+            <li><a href="faq.html" class="white-text">FAQs</a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Copyright © 2025 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4"
+            href="terms.html">Terms and Conditions.</a>
+          <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
+        </div>
+      </div>
+  </footer>
+
+
+
+  <!-- <footer class="page-footer #64b5f6 blue lighten-2 fly-in">
+    <div class="container ">
+      <div class="row">
+        <div class="col l6 s12">
+          <div class="col l3 s12">
+            <h5><img src="Semtex logo white for footer.png" width="160"></h5>
+          </div>
+          <br><br>
+          <br><br>
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4">At Semtex Agency we transform ideas into results, by blending innovation,
+            strategy, and creativity to craft the best business solutions that drive business success.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <ul>
+            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left">call</i>076 610 8815</a>
+            </li>
+          </ul>
+          <ul>
+            <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i
+                  class="material-icons left">email</i>info@semtexagency.co.za</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect with us</h5>
+          <ul>
+            <a class="white-text" href="https://www.facebook.com/semtexofficial"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png"
+                width="37"></a>
+            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="twitter_x.png" width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/semtexagency"><img src="insta.png" width="40"></a>
+            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img src="youtube_black.png"
+                width="40"></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Copyright © 2023-2024 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4"
+          href="terms.html">Terms and Conditions.</a>
+        <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
+      </div>
+    </div>
+  </footer> -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <!-- Cookie Notice -->
+<div id="cookie-notice" class="card-panel blue lighten-5" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: none; margin: 0; border-radius: 0;">
+  <div class="container">
+    <div class="row" style="margin: 0;">
+      <div class="col s12 m9">
+        <span class="black-text">
+          We use cookies to ensure you get the best experience on our website. 
+          <a href="privacy-policy.html" class="blue-text text-darken-2">Learn more</a>
+        </span>
+      </div>
+      <div class="col s12 m3 right-align">
+        <a class="waves-effect waves-light btn-small blue darken-2 white-text" onclick="acceptCookies()">Got it!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Set a cookie with 1 hour expiry
+  function setCookie(name, value, hours) {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+  }
+
+  // Get a cookie by name
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  // Show banner if cookie doesn't exist
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!getCookie("cookiesAccepted")) {
+      document.getElementById("cookie-notice").style.display = "block";
+    }
+  });
+
+  function acceptCookies() {
+    setCookie("cookiesAccepted", "true", 1); // expires in 1 hour
+    document.getElementById("cookie-notice").style.display = "none";
+  }
+</script>
+
+<style>
+  #cookie-notice .btn-small {
+    margin-top: 10px;
+  }
+
+  @media (min-width: 600px) {
+    #cookie-notice .btn-small {
+      margin-top: 0;
+    }
+  }
+</style>
 
 </body>
+
 </html>
