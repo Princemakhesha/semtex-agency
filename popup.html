@@ -1,0 +1,137 @@
+<!-- new pop-up -->
+
+ <!-- Contact Pop-Up Form -->
+  <div id="popupForm" class="contact-form">
+    <div class="form-header">
+      <span id="closeForm" class="close-btn">&times;</span>
+    </div>
+    <div class="form-content">
+      <h6>Let's Talk About Improving Your <strong>Brand!</strong></h6>
+      <p>Fill in your details and we'll contact you shortly</p>
+
+      <form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="redirect" value="https://www.semtexagency.co.za/thanks">
+        <input type="hidden" name="subject" value="A client is trying to get in touch">
+        <input type="hidden" name="from_name" value="Potential Client">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="29db7c39-1945-4cb7-bd81-a52b1f84dc8f">
+
+        <div class="input-field">
+          <input id="name" name="name" type="text" class="validate" required>
+          <label for="name">Your Name</label>
+        </div>
+
+        <div class="input-field">
+          <input id="email" name="email" type="email" class="validate" required>
+          <label for="email">Your Email</label>
+        </div>
+
+        <div class="input-field">
+          <select id="services" name="service" class="browser-default" required>
+            <option value="" disabled selected>Choose your service</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Email Hosting">Email Hosting</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <!-- <option value="Company Registration">Company Registration</option> -->
+            <option value="Social Media Marketing">Social Media Marketing</option>
+          </select>
+        </div>
+
+        <p>
+          <label>
+            <input type="checkbox" id="consent" name="consent" required />
+            <span>I consent to receive emails about Semtex Agency's products and promotions</span>
+          </label>
+        </p>
+
+        <!-- Success message (invisible by default) -->
+        <div id="successMessage" style="display:none; color:white; text-align:center; margin-bottom:10px;">
+          Thank you, we will be in touch shortly!
+        </div>
+
+        <button type="submit" class="btn"><strong>Submit</strong></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Minimized Icon -->
+  <div id="minimizedIcon" class="minimized-icon tooltipped" data-tooltip="Contact Us">
+    <i class="material-icons">chat</i>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const formContainer = document.getElementById("popupForm");
+      const closeForm = document.getElementById("closeForm");
+      const minimizedIcon = document.getElementById("minimizedIcon");
+      const form = document.getElementById("contactForm");
+      const successMessage = document.getElementById("successMessage");
+
+      // Show form after delay
+      setTimeout(() => {
+        formContainer.classList.add("show");
+        formContainer.style.display = "block";
+      }, 5000);
+
+      // Close (minimize)
+      closeForm.onclick = function () {
+        formContainer.classList.remove("show");
+        setTimeout(() => {
+          formContainer.style.display = "none";
+          minimizedIcon.style.display = "flex";
+        }, 500);
+      };
+
+      // Reopen
+      minimizedIcon.onclick = function () {
+        formContainer.style.display = "block";
+        setTimeout(() => {
+          formContainer.classList.add("show");
+        }, 10);
+        minimizedIcon.style.display = "none";
+      };
+
+      // Initialize tooltips
+      const tooltips = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(tooltips);
+
+      // Handle Web3Forms submit success
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!document.getElementById('consent').checked) {
+          alert("Please tick the consent checkbox.");
+          return;
+        }
+
+        const formData = new FormData(form);
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            successMessage.style.display = "block";
+            form.reset();
+            setTimeout(() => {
+              successMessage.style.display = "none";
+            }, 3000);
+          } else {
+            alert("Error sending message. Please try again.");
+          }
+        })
+        .catch(error => {
+          console.error("Web3Forms Error:", error);
+          alert("Thank you! We will be in touch with you shortly.");
+        });
+      });
+    });
+  </script>
+
+
+
+
