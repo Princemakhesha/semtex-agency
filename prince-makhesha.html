@@ -5,14 +5,70 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Our Story | Semtex Agency</title>
 
-    <!-- CSS  -->
+    <!-- SEO -->
+    <title>Prince Makhesha | Founder & MD of Semtex Agency | Digital Marketing Expert South Africa</title>
+    <meta name="description"
+        content="Prince Makhesha founded Semtex Agency to revolutionize digital marketing in South Africa. Visionary leader in web development, branding & digital strategy." />
+    <meta name="keywords"
+        content="Prince Makhesha, Semtex Agency founder, digital marketing leader South Africa, web development expert" />
+         <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://semtexagency.co.za/prince-makhesha.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Prince Makhesha | Founder & CEO | Semtex Agency" />
+    <meta property="og:description" content="Visionary founder transforming brands through digital innovation" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://semtexagency.co.za/prince-makhesha.html" />
+    <meta property="og:image" content="https://semtexagency.co.za/Images/story/IMG_0431%20copy.JPG" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Prince Makhesha",
+      "alternateName": "Thizwilondi Prince Makhesha",
+      "jobTitle": "Founder & CEO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Semtex Agency",
+        "url": "https://semtexagency.co.za"
+      },
+      "url": "https://semtexagency.co.za/prince-makhesha.html",
+      "image": "https://semtexagency.co.za/Images/story/IMG_0431 copy.JPG",
+      "description": "Prince Makhesha is the founder of Semtex Agency, a digital marketing expert specializing in web development, graphic design, and strategic brand growth in South Africa.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+27-76-610-8815",
+        "contactType": "business",
+        "email": "prince@semtexagency.co.za"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/prince-makhesha/",
+        "https://semtexagency.co.za"
+      ]
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
     <style>
-        /* Style for the dropdown menu */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
         .dropdown {
             position: relative;
         }
@@ -26,48 +82,374 @@
             list-style: none;
             margin-top: 5px;
             width: 500px;
-            margin-top: -1px;
-            /* height: 540px; */
-        }
-
-        /* Reduce padding between dropdown items */
-        .dropdown .dropdown-menu li {
-            padding: 3px 0;
-            /* Adjust vertical padding here */
-        }
-
-        /* Reduce font size for menu items */
-        .dropdown .dropdown-menu li a {
-            font-size: 14px;
+            z-index: 1001;
         }
 
         .dropdown:hover .dropdown-menu {
             display: block;
         }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems, {});
-        });
-    </script>
-    <style>
-        .icon-block img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-HHYH36RY42');
-    </script>
-    <style>
-        /* Style for the search bar */
+        /* Hero Section - Bold & Dramatic */
+        .founder-hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(100,181,246,0.05)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-accent {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: -30px;
+            bottom: -30px;
+            border: 3px solid #64b5f6;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .hero-text .title {
+            font-size: 1.5rem;
+            color: #64b5f6;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #64b5f6;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Vision Section */
+        .vision-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .vision-text {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1.4;
+            color: #1a1a2e;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vision-text strong {
+            color: #64b5f6;
+            font-weight: 600;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            color: #64b5f6;
+            margin-bottom: 20px;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+
+        .expertise-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 50px;
+            font-size: 400px;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 2.2rem;
+            color: white;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-author {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: #0a0a0a;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .contact-info>p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 15px 25px;
+            background: rgba(100, 181, 246, 0.1);
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(100, 181, 246, 0.2);
+            border-color: #64b5f6;
+            transform: translateX(5px);
+        }
+
+        .contact-link i {
+            color: #64b5f6;
+            font-size: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 18px 40px;
+            background: #64b5f6;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(100, 181, 246, 0.4);
+        }
+
+        /* Footer */
+        footer.page-footer {
+            background: #0a0a0a !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                height: 400px;
+                max-width: 100%;
+            }
+
+            .vision-text {
+                font-size: 1.8rem;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
         #search-bar {
             background-color: #e3f2fd;
             /* Light blue background */
@@ -137,12 +519,21 @@
             background-color: #f0f0f0;
             /* Highlight on hover */
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
-    <script></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HHYH36RY42');
+    </script>
 </head>
 
 <body>
@@ -315,122 +706,147 @@
         <!-- Other navigation items... -->
     </ul>
 
-    <!-- Include Materialize CSS library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- Initialize side navigation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems, {});
-        });
-    </script>
-    <div class="fixed-action-btn">
-        <a href="https://wa.me/+27766108815"><img src="WhatsApp.png" alt="WhatsApp Button" width="70"></a>
-    </div>
-    <div class="parallax-container">
-        <div class="parallax"><img src="Images/story/modern-office-building-facade copy.jpg"></div>
-        <div class="row" style="position: relative; top: 55%; transform: translateY(-50%);">
-            <div class="col s12 m12 l4">
-                <div class="icon-block">
-                    <a class="white-text text-center" style="margin-top: 20px; display: block; width: 100%;">Our
-                        Story</a>
-                    <strong>
-                        <h5 class="white-text" style="margin-top: 10px; display: block; width: 100%;">SEMTEX AGENCY</h5>
-                    </strong>
+    <!-- Hero Section -->
+    <section class="founder-hero">
+        <div class="container hero-content">
+            <div class="hero-grid">
+                <div class="hero-image-container fade-in">
+                    <div class="hero-image-accent"></div>
+                    <img src="Images/story/IMG_0431 copy.JPG" alt="Prince Makhesha - Founder & CEO Semtex Agency"
+                        class="hero-image">
                 </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="icon-block">
-                    <h6 class="flow-text white-text">It all started with a spark – a shared vision to revolutionize the
-                        way brands connect with their audiences. Founded in 2020, Semtex Agency embarked on
-                        a mission to breathe life into ideas and transform them into impactful marketing
-                        campaigns. What began as a small team of dedicated individuals soon blossomed into a
-                        powerhouse of innovation, collaboration, and strategic thinking.</h6>
-                </div>
-            </div>
-            <div class="col s12 m12 l4">
-                <div class="icon-block">
-                    <h6 class="flow-text white-text">Our early clients were more than just clients; they were partners
-                        who believed in our vision and trusted us to bring their visions to life. This
-                        mutual trust and collaboration fueled our determination to consistently raise the
-                        bar and deliver exceptional results.</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br id="prince"><br>
+                <div class="hero-text fade-in">
+                    <h1>Prince Makhesha</h1>
+                    <div class="title">Founder & CEO</div>
+                    <p class="tagline">
+                        Visionary leader transforming how brands connect in the digital age.
+                        Combining strategic innovation with creative excellence to build
+                        market-defining campaigns.
+                    </p>
 
-
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div>
-                    <div class="row">
-                        <div class="col s12 m12 l8">
-                            <div class="icon-block">
-                                <a class="center"><img src="Images/story/IMG_0431 copy.JPG" width="400"></a>
-                            </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">2020</span>
+                            <div class="stat-label">Founded Semtex</div>
                         </div>
-
-                        <div class="col s12 m4">
-                            <div class="icon-block">
-                            </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <div class="stat-label">Brands Transformed</div>
                         </div>
-                        <div class="col s12 m12 l4">
-                            <div class="icon-block">
-                                <h4 class="center indigo-text">Prince Makhesha</h4>
-                                <a class="black-text">Prince Makhesha is the founder of Semtex Agency, With a passion
-                                    for both artistry and strategy, Prince embarked on this journey with a vision to
-                                    reshape the way brands communicate and connect with their audiences. A seasoned
-                                    expert in marketing and advertising, he brought to the table a unique blend of
-                                    graphic design, web development and marketing. Prince's story is one of audacity and
-                                    dedication, he championed the fusion of creativity and data-driven insights, setting
-                                    a
-                                    precedent for the agency's approach to delivering impactful results.</a>
-                                <br><br>
-                                <!-- <a class="black-text">Prince Makhesha's story is one of audacity and dedication. Drawing
-                                    from his strong ambition in seeing the success of the agency, he leveraged his
-                                    expertise to carve a distinct niche in the competitive world of marketing. From the
-                                    outset, he championed the fusion of creativity and data-driven insights, setting a
-                                    precedent for the agency's approach to delivering impactful results.
-                                </a> -->
-                            </div>
-                            <h5 class="left indigo-text"> Connect with Prince</h5>
-                            <br><br>
-                            <ul>
-                                <li><a href="tel:+27766108815" class="indigo-text"><i
-                                            class="material-icons left">phone_iphone</i>076 610
-                                        8815</a></li>
-                            </ul>
-                            <ul>
-                                <li><a href="mailto:prince@semtexagency.co.za" class="indigo-text"><i
-                                            class="material-icons left">email</i>prince@semtexagency.co.za</a></li>
-                            </ul>
-
-                            <ul>
-                                <a href="https://www.linkedin.com/in/prince-makhesha/"><img class="left"
-                                        src="Images/story/LinkedIn_icon.svg.webp" width="20"></a>
-                                <a href="https://www.linkedin.com/in/prince-makhesha/"><img class="left"
-                                        src="Images/story/Screenshot (383).png" width="19"></a>
-                                <li><a href="https://www.linkedin.com/in/prince-makhesha/"
-                                        class="indigo-text right-align">Thizwilondi Prince Makhesha</a></li>
-                            </ul>
-
+                        <div class="stat">
+                            <span class="stat-number">4+</span>
+                            <div class="stat-label">Years Excellence</div>
                         </div>
-
-                        <div class="" style="margin-top: 20px;">
-                            <a href="prince-makhesha.html" class="btn-flat indigo-text"><strong>Learn more about Prince</strong>  <i
-                                    class="material-icons">arrow_forward</i></a>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="container">
+            <p class="vision-text">
+                "Great brands aren't built on trends—they're built on <strong>authentic connections</strong>,
+                <strong>strategic thinking</strong>, and <strong>relentless execution</strong>.
+                At Semtex Agency, we don't just create campaigns; we craft legacies."
+            </p>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <h2 class="section-title">Core Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon"><i class="material-icons">code</i></div>
+                    <h3>Web Development</h3>
+                    <p>Building high-performance digital experiences that convert visitors into customers through clean
+                        code and intuitive design.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon"><i class="material-icons">palette</i></div>
+                    <h3>Brand Strategy</h3>
+                    <p>Crafting distinctive brand identities that resonate with target audiences and stand out in
+                        crowded markets.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon"><i class="material-icons">trending_up</i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Data-driven campaigns that maximize ROI through SEO, social media, and targeted advertising
+                        strategies.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon"><i class="material-icons">graphic_eq</i></div>
+                    <h3>Graphic Design</h3>
+                    <p>Creating visual narratives that communicate brand values and drive engagement across all
+                        touchpoints.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon"><i class="material-icons">shopping_cart</i></div>
+                    <h3>E-Commerce</h3>
+                    <p>Building scalable online stores that deliver seamless shopping experiences and drive revenue
+                        growth.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon"><i class="material-icons">lightbulb</i></div>
+                    <h3>Innovation</h3>
+                    <p>Pioneering new approaches to digital challenges, staying ahead of trends to future-proof your
+                        brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-text">
+                The future belongs to brands that dare to be different.
+                We're here to make sure you're not just part of the conversation—
+                you're leading it.
+            </div>
+            <div class="quote-author">— Prince Makhesha</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Build Something Remarkable</h3>
+                    <p>
+                        Ready to transform your brand's digital presence?
+                        Let's discuss how we can help you achieve extraordinary results.
+                    </p>
+                    <a href="contact.html" class="cta-button">Start a Project</a>
+                </div>
+                <div class="contact-links">
+                    <a href="tel:+27766108815" class="contact-link">
+                        <i class="material-icons">phone</i>
+                        <span>+27 76 610 8815</span>
+                    </a>
+                    <a href="mailto:prince@semtexagency.co.za" class="contact-link">
+                        <i class="material-icons">email</i>
+                        <span>prince@semtexagency.co.za</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prince-makhesha/" target="_blank" class="contact-link">
+                        <i class="material-icons">work</i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://wa.me/+27766108815" target="_blank" class="contact-link">
+                        <i class="material-icons">message</i>
+                        <span>WhatsApp Direct</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+       <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
         <div class="">
             <div class="row">
                 <div class="col l3 s12">
@@ -440,14 +856,14 @@
                     </ul>
                     <ul>
                         <li><a href="tel:+27766108815" class="white-text"><i
-                                    class="material-icons left white-text">call</i>076 610 8815</a></li>
+                                    class="material-icons white-text">call</i>076 610 8815</a></li>
                     </ul>
                     <ul>
                         <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i
-                                    class="material-icons left white-text">email</i>info@semtexagency.co.za</a></li>
+                                    class="material-icons  white-text">email</i>info@semtexagency.co.za</a></li>
                     </ul>
                     <ul>
-                        <li><a class="white-text"><i class="material-icons left white-text ">location_on</i>South
+                        <li><a class="white-text"><i class="material-icons white-text ">location_on</i>South
                                 Africa</a></li>
                     </ul>
                     <h5 class="white-text">Connect with us</h5>
@@ -516,10 +932,16 @@
                 </div>
             </div>
     </footer>
+    <!-- WhatsApp Float -->
+    <div class="fixed-action-btn">
+        <a href="https://wa.me/+27766108815">
+            <img src="WhatsApp.png" alt="WhatsApp" width="70">
+        </a>
+    </div>
+
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-
 </body>
 
 </html>

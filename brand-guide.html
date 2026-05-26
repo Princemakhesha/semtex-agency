@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="brand-guide/logos/favicon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand Guide | Semtex Agency</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  
+  <style>
+    /* === GLOBAL STYLES === */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px; /* Account for fixed navbar + TOC */
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* === DROPDOWN MENU === */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 2px solid #64b5f6;
+      padding: 10px;
+      list-style: none;
+      margin-top: 5px;
+      width: 500px;
+      margin-top: -1px;
+    }
+
+    .dropdown .dropdown-menu li {
+      padding: 3px 0;
+    }
+
+    .dropdown .dropdown-menu li a {
+      font-size: 14px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* === SEARCH BAR === */
+    #search-bar {
+      background-color: #e3f2fd;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    #search-results {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    #search-results li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #search-results li a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    #search-results li:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* === FAQ STYLES === */
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .question {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .answer.hidden {
+      display: none;
+    }
+
+    /* === BRAND GUIDE SPECIFIC STYLES === */
+    
+    /* Layout fix: Prevent TOC overlay */
+    @media only screen and (min-width: 993px) {
+      .brand-guide-layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 2.5rem;
+        align-items: start;
+      }
+      
+      .brand-guide-content {
+        min-width: 0;
+      }
+      
+      .brand-guide-toc {
+        position: sticky;
+        top: 110px;
+        align-self: start;
+        z-index: 50;
+      }
+    }
+    
+    /* Card hover effects */
+    .logo-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 12px !important;
+      overflow: hidden;
+    }
+    
+    .logo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(11, 18, 32, 0.12) !important;
+    }
+    
+    .logo-card img {
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-card:hover img {
+      transform: scale(1.03);
+    }
+    
+    /* Color swatch interactions */
+    .color-swatch-wrapper {
+      position: relative;
+    }
+    
+    .color-swatch {
+      position: relative;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .color-swatch:hover {
+      transform: scale(1.05);
+    }
+    
+    .color-swatch-wrapper:hover .color-swatch::after {
+      content: "Click to copy";
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0B1220;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      opacity: 0;
+      animation: fadeIn 0.2s forwards;
+      z-index: 10;
+    }
+    
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    
+    .contrast-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    
+    .copyable-hex {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .copyable-hex:hover {
+      color: #2563FF !important;
+    }
+    
+    /* TOC link styles */
+    .toc-list a {
+      text-decoration: none;
+      transition: color 0.2s, font-weight 0.2s;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .toc-list a:hover {
+      color: #2563FF !important;
+    }
+    
+    .toc-list a.active {
+      color: #2563FF !important;
+      font-weight: 600 !important;
+    }
+    
+    .toc-list a.active span {
+      background: #2563FF !important;
+    }
+    
+    /* Dark preview area */
+    #dark-preview-area {
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+    
+    #dark-preview-area img {
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Section anchor spacing */
+    section[id], h5[id] {
+      scroll-margin-top: 130px;
+    }
+    
+    /* Print optimization */
+    @media print {
+      .navbar-fixed, .fixed-action-btn, #cookie-notice, .brand-guide-toc, .btn-small, .btn-large, .search-trigger {
+        display: none !important;
+      }
+      
+      .brand-guide-section {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      .card, .color-swatch {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+      }
+      
+      .blue-gradient {
+        background: #0B1220 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      a {
+        text-decoration: none !important;
+        color: #000 !important;
+      }
+      
+      .copyable-hex::after {
+        content: " (" attr(data-hex) ")";
+        font-weight: normal;
+        font-size: 0.9em;
+        color: #666;
+      }
+      
+      body {
+        font-size: 11pt;
+        line-height: 1.4;
+      }
+    }
+  </style>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.carousel').carousel();
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {});
+    });
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHYH36RY42"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HHYH36RY42');
+  </script>
+</head>
+
+<body>
+  <!-- Fixed Navbar -->
+  <div class="navbar-fixed">
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo"><img src="brand-guide/logos/Horizontal_Logo.png" width="160"></a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons indigo-text">menu</i></a>
+        <a href="#" class="indigo-text right search-trigger"><i class="material-icons right">search</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html" class="indigo-text"><strong>Home</strong></a></li>
+          <li class="dropdown">
+            <a href="services.html" class="indigo-text"><strong>Our Services</strong></a>
+            <ul class="dropdown-menu">
+              <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat indigo-text"><i class="material-icons left indigo-text">desktop_mac</i>Website Development</a><span>
+                  <a href="web-dev.html?#professional_packages" class=" btn-flat indigo-text">professional packages<i class="material-icons left indigo-text">language</i></a>
+                  <a href="web-dev.html?#e-commerce_packages" class=" btn-flat indigo-text">E-Commerce packages<i class="material-icons left indigo-text">shopping_cart</i></a>
+                  <a href="emailhost.html" class=" btn-flat indigo-text">Email Hosting<i class="material-icons left indigo-text">email</i></a></span></li>
+              <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat indigo-text">Graphic Design<i class="material-icons left indigo-text">color_lens</i></a></li>
+              <li class="indigo-text right"><a href="services.html" class="indigo-text">View all services<i class="material-icons left indigo-text">arrow_forward</i></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="indigo-text"><strong>About Us</strong></a>
+            <ul class="dropdown-menu">
+              <li class=""><a href="background.html" class="waves-effect waves-light btn-flat indigo-text"><i class="material-icons left indigo-text">local_florist</i>Our Story</a><span>
+                  <br>
+                  <a href="web-dev.html?#some_work" class=" btn-flat indigo-text">OUR PORTFOLIO<i class="material-icons left indigo-text">burst_mode</i></a>
+                  <a href="https://g.page/r/CcMJVhvYJKdVEBM/review" target="_blank" class=" btn-flat indigo-text">Leave us a Feedback<i class="material-icons left indigo-text">feedback</i></a>
+                  <a href="payments.html" class=" btn-flat indigo-text">Payment Methods<i class="material-icons left indigo-text">attach_money</i></a></span></li>
+              <li class=""><a href="terms.html" class="waves-effect waves-light btn-flat indigo-text">Terms and Conditions<i class="material-icons left indigo-text">gavel</i></a></li>
+              <li class=""><a href="faq.html" class="waves-effect waves-light btn-flat indigo-text">Frequently Asked Questions <i class="material-icons left indigo-text">question_answer</i></a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" class="indigo-text"><strong>Contact Us</strong></a></li>
+          <li><a href="faq.html" class="indigo-text"><strong>FAQs</strong></a></li>
+        </ul>
+        <div id="search-bar" class="hide">
+          <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSite()" />
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Search & Navigation Scripts -->
+  <script>
+    document.querySelector('.search-trigger').addEventListener('click', function (event) {
+      event.preventDefault();
+      var searchBar = document.getElementById('search-bar');
+      searchBar.classList.toggle('hide');
+    });
+
+    function searchSite() {
+      let input = document.getElementById('search-input').value.toLowerCase();
+      let resultsList = document.getElementById('search-results');
+      resultsList.innerHTML = '';
+
+      let pages = [
+        { title: 'Home', url: 'index.html' },
+        { title: 'Our Services', url: 'services.html' },
+        { title: 'Web Development', url: 'web-dev.html' },
+        { title: 'Graphic Design', url: 'graphic-design.html' },
+        { title: 'Our Story', url: 'background.html' },
+        { title: 'Prince Makhesha', url: 'background.html?#prince' },
+        { title: 'Professional Website development packages', url: 'web-dev.html?#professional_packages' },
+        { title: 'E-Commerce Website development packages', url: 'web-dev.html?#e-commerce_packages' },
+        { title: 'Email hosting', url: 'emailhost.html' },
+        { title: 'Social media Marketing packages', url: 'socialmedia.html' },
+        { title: 'Logo Design', url: 'graphic-design.html' },
+        { title: 'Flyer Design', url: 'graphic-design.html' },
+        { title: 'Poster Design', url: 'graphic-design.html' },
+        { title: 'Terms and Conditions', url: 'terms.html' },
+        { title: 'Frequently Asked Questions', url: 'faq.html' }
+      ];
+
+      pages.forEach(page => {
+        if (page.title.toLowerCase().includes(input)) {
+          let li = document.createElement('li');
+          let a = document.createElement('a');
+          a.href = page.url;
+          a.textContent = page.title;
+          li.appendChild(a);
+          resultsList.appendChild(li);
+        }
+      });
+    }
+  </script>
+
+  <!-- Mobile Navigation -->
+  <ul class="sidenav #64b5f6 blue lighten-2" id="mobile-nav">
+    <div><a href="index.html"> <img src="SEMTEX LOGO FOR NAV.png" alt="" srcset="" width="100"></a></div>
+    <hr>
+    <li><a href="index.html" class="waves-effect waves-light btn-flat white-text">Home<i class="material-icons left white-text">home</i></a></li>
+    <li class=""><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i class="material-icons left white-text">store</i></a></li>
+    <li class=""><a href="web-dev.html" class="waves-effect waves-light btn-flat white-text">Website Dev<i class="material-icons left white-text">desktop_mac</i></a></li>
+    <li class=""><a href="graphic-design.html" class="waves-effect waves-light btn-flat white-text">Graphic Design<i class="material-icons left white-text">color_lens</i></a></li>
+    <li class=""><a href="emailhost.html" class="waves-effect waves-light btn-flat white-text">EMAIL HOSTING<i class="material-icons left white-text">email</i></a></li>
+    <li class=""><a href="socialmedia.html" class="waves-effect waves-light btn-flat white-text">MARKETING<i class="material-icons left white-text">thumb_up</i></a></li>
+    <li><a href="background.html" class="waves-effect waves-light btn-flat white-text">Our Story<i class="material-icons left white-text">local_florist</i></a></li>
+    <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact Us<i class="material-icons left white-text">headset_mic</i></a></li>
+    <hr>
+    <li><a href="faq.html" class="waves-effect waves-light btn-flat white-text">FAQs<i class="material-icons left white-text">question_answer</i></a></li>
+    <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="waves-effect waves-light btn-flat white-text">Send Feedback<i class="material-icons left white-text">feedback</i></a></li>
+    <li><a href="terms.html" class="waves-effect waves-light btn-flat white-text">Ts & Cs<i class="material-icons left white-text">gavel</i></a></li>
+    <li><a href="attributions.html" class="waves-effect waves-light btn-flat black-text">Attributions<i class="material-icons left black-text">favorite</i></a></li>
+    <br><br>
+  </ul>
+
+  <!-- Materialize Init -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {});
+    });
+  </script>
+  
+  <!-- WhatsApp Button -->
+  <div class="fixed-action-btn">
+    <a href="https://wa.me/+27766108815"><img src="WhatsApp.png" alt="WhatsApp Button" width="70"></a>
+  </div>
+
+  <!-- Footer Preview (Brand Guide page has minimal footer) -->
+  <footer class="page-footer #0d47a1 blue darken-4">
+    <div class="center">
+      <div class="">
+        <div class="col l6 s12">
+          <div class="col l3 s12">
+            <h4 class="center">Brand Guide</h4>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ START OF BRAND GUIDE SECTION ============ -->
+  <section class="section white brand-guide-section" style="font-family: 'Montserrat', sans-serif;">
+    
+    <!-- Hero Banner -->
+    <div class="container">
+      <div class="row blue-gradient white-text" style="background: linear-gradient(135deg, #0B1220 0%, #2563FF 100%); border-radius: 12px; padding: 2.5rem 2rem; margin: 2rem 0 2.5rem; box-shadow: 0 4px 20px rgba(11, 18, 32, 0.15);">
+        <div class="col s12 m8">
+          <h4 class="white-text" style="font-weight: 700; margin-bottom: 0.5rem;">Semtex Agency Brand Guide</h4>
+          <p class="white-text" style="opacity: 0.95; font-size: 1.1rem; margin: 0;">Visual identity standards for consistent, professional brand expression across all touchpoints.</p>
+        </div>
+        <div class="col s12 m4 right-align hide-on-small-only" style="display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#download-assets" class="btn-small waves-effect waves-light white blue-text text-darken-2" style="font-weight: 600;">
+            <i class="material-icons left" style="font-size: 1rem;">download</i>Download Assets
+          </a>
+          <button class="btn-small waves-effect waves-light blue lighten-3 blue-text text-darken-3" onclick="window.print()" style="font-weight: 600;">
+            <i class="material-icons left" style="font-size: 1rem;">print</i>Print Guide
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Layout: Content + Sticky TOC -->
+    <div class="container brand-guide-layout">
+      
+      <!-- Left Column: Brand Guide Content -->
+      <div class="brand-guide-content">
+        <p class="grey-text" style="margin-bottom: 2rem;"><em>Effective: 26 May 2026 • Version 2.1</em></p>
+        
+        <!-- Logo Variants -->
+        <h5 class="blue-text text-darken-2" id="logos" style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">1. Logo Variants</h5>
+        <p class="grey-text">Select the appropriate logo variant for your context. Always maintain clear space (Section 3) and use approved file formats.</p>
+        
+        <div class="row" style="margin-top: 1.5rem;">
+          <!-- Primary Logo -->
+          <div class="col s12 m6 l4">
+            <div class="card hoverable logo-card">
+              <div class="card-image center" style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #F9FAFB 0%, #fff 100%); border-radius: 12px 12px 0 0;">
+                <img src="brand-guide/logos/Primary_Logo.png" alt="Primary Logo" class="responsive-img" style="max-width: 180px; max-height: 100px;">
+              </div>
+              <div class="card-content center" style="padding: 1.2rem 1.5rem 1.5rem;">
+                <span class="card-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem;">Primary Logo</span>
+                <p class="grey-text" style="font-size: 0.9rem; margin-bottom: 1rem;">Default usage on light backgrounds</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <a href="brand-guide/logos/Primary_Logo.svg" download class="btn-small waves-effect waves-light blue lighten-4 blue-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">SVG</a>
+                  <a href="brand-guide/logos/Primary_Logo.png" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">PNG</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Horizontal Logo -->
+          <div class="col s12 m6 l4">
+            <div class="card hoverable logo-card">
+              <div class="card-image center" style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #F9FAFB 0%, #fff 100%); border-radius: 12px 12px 0 0;">
+                <img src="brand-guide/logos/Horizontal_Logo.png" alt="Horizontal Logo" class="responsive-img" style="max-width: 180px; max-height: 80px;">
+              </div>
+              <div class="card-content center" style="padding: 1.2rem 1.5rem 1.5rem;">
+                <span class="card-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem;">Horizontal Logo</span>
+                <p class="grey-text" style="font-size: 0.9rem; margin-bottom: 1rem;">For headers, wide layouts</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <a href="brand-guide/logos/Horizontal_Logo.svg" download class="btn-small waves-effect waves-light blue lighten-4 blue-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">SVG</a>
+                  <a href="brand-guide/logos/Horizontal_Logo.png" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">PNG</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Stacked Logo -->
+          <div class="col s12 m6 l4">
+            <div class="card hoverable logo-card">
+              <div class="card-image center" style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #F9FAFB 0%, #fff 100%); border-radius: 12px 12px 0 0;">
+                <img src="brand-guide/logos/Stacked_Logo.png" alt="Stacked Logo" class="responsive-img" style="max-width: 120px; max-height: 120px;">
+              </div>
+              <div class="card-content center" style="padding: 1.2rem 1.5rem 1.5rem;">
+                <span class="card-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem;">Stacked Logo</span>
+                <p class="grey-text" style="font-size: 0.9rem; margin-bottom: 1rem;">For square/vertical spaces</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <a href="brand-guide/logos/Stacked_Logo.svg" download class="btn-small waves-effect waves-light blue lighten-4 blue-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">SVG</a>
+                  <a href="brand-guide/logos/Stacked_Logo.png" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">PNG</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Icon/Monogram -->
+          <div class="col s12 m6 l4">
+            <div class="card hoverable logo-card">
+              <div class="card-image center" style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #F9FAFB 0%, #fff 100%); border-radius: 12px 12px 0 0;">
+                <img src="brand-guide/logos/Icon.png" alt="Icon/Monogram" class="responsive-img" style="max-width: 100px; max-height: 100px;">
+              </div>
+              <div class="card-content center" style="padding: 1.2rem 1.5rem 1.5rem;">
+                <span class="card-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem;">Icon / Monogram</span>
+                <p class="grey-text" style="font-size: 0.9rem; margin-bottom: 1rem;">For favicons, app icons, social</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <a href="brand-guide/logos/Icon.svg" download class="btn-small waves-effect waves-light blue lighten-4 blue-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">SVG</a>
+                  <a href="brand-guide/logos/Icon.png" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">PNG</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- App/Social Icon -->
+          <div class="col s12 m6 l4">
+            <div class="card hoverable logo-card">
+              <div class="card-image center" style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #F9FAFB 0%, #fff 100%); border-radius: 12px 12px 0 0;">
+                <img src="brand-guide/logos/favicon.png" alt="App/Social Icon" class="responsive-img" style="max-width: 100px; max-height: 100px;">
+              </div>
+              <div class="card-content center" style="padding: 1.2rem 1.5rem 1.5rem;">
+                <span class="card-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem;">App / Social Icon</span>
+                <p class="grey-text" style="font-size: 0.9rem; margin-bottom: 1rem;">Optimized for circular/square crops</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <a href="brand-guide/logos/App_Icon.png" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">PNG</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Favicon -->
+          <div class="col s12 m6 l4">
+            <div class="card hoverable logo-card">
+              <div class="card-image center" style="padding: 2rem 1.5rem; background: linear-gradient(180deg, #F9FAFB 0%, #fff 100%); border-radius: 12px 12px 0 0;">
+                <img src="brand-guide/logos/favicon.png" alt="Favicon" style="width: 48px; height: 48px;">
+              </div>
+              <div class="card-content center" style="padding: 1.2rem 1.5rem 1.5rem;">
+                <span class="card-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem;">Favicon</span>
+                <p class="grey-text" style="font-size: 0.9rem; margin-bottom: 1rem;">32×32px & 16×16px exports</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                  <a href="brand-guide/logos/favicon.ico" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">ICO</a>
+                  <a href="brand-guide/logos/favicon.png" download class="btn-small waves-effect waves-light grey lighten-3 grey-text text-darken-3" style="font-size: 0.8rem; font-weight: 500;">PNG</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monochrome Variants -->
+        <h5 class="blue-text text-darken-2" id="monochrome" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">2. Monochrome Variants</h5>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card blue darken-4" style="border-radius: 12px; overflow: hidden;">
+              <div class="card-content white-text center" style="padding: 2rem 1.5rem;">
+                <div style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 1.5rem; display: inline-block;">
+                  <img src="brand-guide/logos/White_Logo.png" alt="White Logo" style="max-width: 150px; filter: brightness(0) invert(1);">
+                </div>
+                <span class="card-title white-text" style="font-size: 1.2rem; font-weight: 600; margin: 1.2rem 0 0.8rem;">White Logo</span>
+                <p style="opacity: 0.95;">Use on dark or saturated backgrounds (#0B1220, brand colors)</p>
+                <div style="margin-top: 1rem;">
+                  <span class="chip white blue-text text-darken-2" style="font-weight: 500; margin-right: 0.3rem;">
+                    <i class="material-icons left" style="font-size: 1rem; margin: 3px 4px 0 -4px;">check_circle</i>Dark UI
+                  </span>
+                  <span class="chip white blue-text text-darken-2" style="font-weight: 500;">
+                    <i class="material-icons left" style="font-size: 1rem; margin: 3px 4px 0 -4px;">check_circle</i>Video Overlays
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card hoverable" style="border-radius: 12px; overflow: hidden;">
+              <div class="card-content center" style="padding: 2rem 1.5rem;">
+                <div style="background: #F9FAFB; border-radius: 10px; padding: 1.5rem; display: inline-block;">
+                  <img src="brand-guide/logos/Black_Logo.png" alt="Black Logo" style="max-width: 150px; filter: brightness(0);">
+                </div>
+                <span class="card-title" style="font-size: 1.2rem; font-weight: 600; margin: 1.2rem 0 0.8rem;">Black Logo</span>
+                <p class="grey-text">Use on light or neutral backgrounds (#fff, #E5E7EB)</p>
+                <div style="margin-top: 1rem;">
+                  <span class="chip grey lighten-3 grey-text text-darken-3" style="font-weight: 500; margin-right: 0.3rem;">
+                    <i class="material-icons left" style="font-size: 1rem; margin: 3px 4px 0 -4px;">check_circle</i>White Paper
+                  </span>
+                  <span class="chip grey lighten-3 grey-text text-darken-3" style="font-weight: 500;">
+                    <i class="material-icons left" style="font-size: 1rem; margin: 3px 4px 0 -4px;">check_circle</i>Light Mode UI
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clear Space & Minimum Size -->
+        <h5 class="blue-text text-darken-2" id="clearspace" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">3. Clear Space & Minimum Size</h5>
+        <div class="card grey lighten-5" style="border-radius: 12px; overflow: hidden;">
+          <div class="card-content" style="padding: 1.8rem;">
+            <div class="center" style="padding: 1.5rem 0;">
+              <div style="display: inline-block; padding: 4rem; border: 2px dashed #39A8FF; border-radius: 12px; background: #fff; position: relative; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                <img src="brand-guide/logos/Horizontal_Logo.png" alt="Logo with clear space" style="max-width: 180px; position: relative; z-index: 2;">
+                <span style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 0.7rem; color: #2563FF; background: #fff; padding: 3px 8px; border-radius: 20px; font-weight: 600; border: 1px solid #39A8FF;">X</span>
+                <span style="position: absolute; left: -36px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-size: 0.7rem; color: #2563FF; background: #fff; padding: 3px 8px; border-radius: 20px; font-weight: 600; border: 1px solid #39A8FF;">X</span>
+              </div>
+            </div>
+            <p style="margin-bottom: 1.2rem;"><strong style="color: #0B1220;">Clear Space Rule:</strong> Maintain a minimum clear space equal to the height of the logo's tallest element ("X") on all sides. This ensures visual breathing room and brand integrity.</p>
+            
+            <div class="row" style="margin: 0 -0.5rem;">
+              <div class="col s12 m4" style="padding: 0 0.5rem;">
+                <div class="card white" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                  <div class="card-content center" style="padding: 1.2rem;">
+                    <i class="material-icons blue-text text-darken-2" style="font-size: 2rem;">desktop_windows</i>
+                    <p style="font-weight: 600; margin: 0.5rem 0 0.3rem;">Digital</p>
+                    <p class="grey-text" style="margin: 0; font-size: 0.95rem;">120px min width</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4" style="padding: 0 0.5rem;">
+                <div class="card white" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                  <div class="card-content center" style="padding: 1.2rem;">
+                    <i class="material-icons blue-text text-darken-2" style="font-size: 2rem;">print</i>
+                    <p style="font-weight: 600; margin: 0.5rem 0 0.3rem;">Print</p>
+                    <p class="grey-text" style="margin: 0; font-size: 0.95rem;">25mm min width</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4" style="padding: 0 0.5rem;">
+                <div class="card white" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                  <div class="card-content center" style="padding: 1.2rem;">
+                    <i class="material-icons blue-text text-darken-2" style="font-size: 2rem;">apps</i>
+                    <p style="font-weight: 600; margin: 0.5rem 0 0.3rem;">Icon-Only</p>
+                    <p class="grey-text" style="margin: 0; font-size: 0.95rem;">24×24px minimum</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Colors with Copy Functionality -->
+        <h5 class="blue-text text-darken-2" id="colors" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">4. Brand Colors</h5>
+        <p class="grey-text">Use these colors consistently. Primary blue (#2563FF) should dominate UI elements and CTAs. Click any hex code to copy.</p>
+        
+        <div class="row" style="margin-top: 1rem;">
+          <div class="col s6 m4 l2 center color-swatch-wrapper">
+            <div class="color-swatch" style="width: 85px; height: 85px; background-color: #2563FF; border-radius: 12px; margin: 0 auto 0.8rem; border: 2px solid rgba(255,255,255,0.9); box-shadow: 0 4px 12px rgba(37, 99, 255, 0.25);" onclick="copyToClipboard('#2563FF', this)">
+              <span class="contrast-badge" style="background: #0B1220; color: #fff;">AAA</span>
+            </div>
+            <p class="grey-text copyable-hex" style="font-weight: 700; font-size: 0.95rem; margin: 0.3rem 0;" onclick="copyToClipboard('#2563FF', this)" data-hex="#2563FF">#2563FF</p>
+            <small class="grey-text" style="font-weight: 500;">Primary Blue</small>
+          </div>
+          
+          <div class="col s6 m4 l2 center color-swatch-wrapper">
+            <div class="color-swatch" style="width: 85px; height: 85px; background-color: #39A8FF; border-radius: 12px; margin: 0 auto 0.8rem; border: 2px solid rgba(255,255,255,0.9); box-shadow: 0 4px 12px rgba(57, 168, 255, 0.25);" onclick="copyToClipboard('#39A8FF', this)">
+              <span class="contrast-badge" style="background: #0B1220; color: #fff;">AAA</span>
+            </div>
+            <p class="grey-text copyable-hex" style="font-weight: 700; font-size: 0.95rem; margin: 0.3rem 0;" onclick="copyToClipboard('#39A8FF', this)" data-hex="#39A8FF">#39A8FF</p>
+            <small class="grey-text" style="font-weight: 500;">Sky Blue</small>
+          </div>
+          
+          <div class="col s6 m4 l2 center color-swatch-wrapper">
+            <div class="color-swatch" style="width: 85px; height: 85px; background-color: #0B1220; border-radius: 12px; margin: 0 auto 0.8rem; border: 2px solid rgba(255,255,255,0.3); box-shadow: 0 4px 12px rgba(11, 18, 32, 0.3);" onclick="copyToClipboard('#0B1220', this)">
+              <span class="contrast-badge" style="background: #fff; color: #0B1220;">AAA</span>
+            </div>
+            <p class="grey-text copyable-hex" style="font-weight: 700; font-size: 0.95rem; margin: 0.3rem 0;" onclick="copyToClipboard('#0B1220', this)" data-hex="#0B1220">#0B1220</p>
+            <small class="grey-text" style="font-weight: 500;">Deep Navy</small>
+          </div>
+          
+          <div class="col s6 m4 l2 center color-swatch-wrapper">
+            <div class="color-swatch" style="width: 85px; height: 85px; background-color: #6B7280; border-radius: 12px; margin: 0 auto 0.8rem; border: 2px solid rgba(255,255,255,0.9); box-shadow: 0 4px 12px rgba(107, 114, 128, 0.2);" onclick="copyToClipboard('#6B7280', this)">
+              <span class="contrast-badge" style="background: #fff; color: #6B7280;">AA</span>
+            </div>
+            <p class="grey-text copyable-hex" style="font-weight: 700; font-size: 0.95rem; margin: 0.3rem 0;" onclick="copyToClipboard('#6B7280', this)" data-hex="#6B7280">#6B7280</p>
+            <small class="grey-text" style="font-weight: 500;">Slate Gray</small>
+          </div>
+          
+          <div class="col s6 m4 l2 center color-swatch-wrapper">
+            <div class="color-swatch" style="width: 85px; height: 85px; background-color: #E5E7EB; border-radius: 12px; margin: 0 auto 0.8rem; border: 2px solid rgba(0,0,0,0.1); box-shadow: 0 4px 12px rgba(229, 231, 235, 0.3);" onclick="copyToClipboard('#E5E7EB', this)">
+              <span class="contrast-badge" style="background: #0B1220; color: #fff;">AAA</span>
+            </div>
+            <p class="grey-text copyable-hex" style="font-weight: 700; font-size: 0.95rem; margin: 0.3rem 0;" onclick="copyToClipboard('#E5E7EB', this)" data-hex="#E5E7EB">#E5E7EB</p>
+            <small class="grey-text" style="font-weight: 500;">Cloud Gray</small>
+          </div>
+        </div>
+        
+        <div class="card blue lighten-5" style="border-radius: 12px; margin-top: 1rem;">
+          <div class="card-content" style="padding: 1.2rem 1.5rem;">
+            <p class="mb-0" style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <i class="material-icons blue-text text-darken-2" style="font-size: 1.3rem; margin-top: 2px;">accessibility_new</i>
+              <span><strong>Accessibility Note:</strong> All color combinations meet WCAG 2.1 AA standards. Use #0B1220 or #2563FF for text on #E5E7EB; use #fff for text on #0B1220. Test critical UI elements with a contrast checker.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <h5 class="blue-text text-darken-2" id="typography" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">5. Typography</h5>
+        <div class="card grey lighten-5" style="border-radius: 12px; overflow: hidden;">
+          <div class="card-content" style="padding: 1.8rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="background: #2563FF; color: #fff; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.3rem;">M</div>
+              <div>
+                <h6 class="blue-text text-darken-2" style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin: 0;">Montserrat</h6>
+                <p class="grey-text" style="margin: 0.2rem 0 0; font-size: 0.95rem;">Google Fonts • Variable weights 300-700</p>
+              </div>
+            </div>
+            
+            <p>Our primary typeface. Use for all headings, UI elements, and body copy across digital and print.</p>
+            
+            <div style="background: #fff; padding: 1.8rem; border-radius: 12px; margin-top: 1.2rem; border: 1px solid #E5E7EB;">
+              <p style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2.1rem; margin: 0.6rem 0; color: #0B1220;">Heading 1 – Bold (700)</p>
+              <p style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.6rem; margin: 0.6rem 0; color: #0B1220;">Heading 2 – SemiBold (600)</p>
+              <p style="font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1.2rem; margin: 0.6rem 0; color: #0B1220;">Subheading – Medium (500)</p>
+              <p style="font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.05rem; line-height: 1.65; margin: 0.8rem 0; color: #6B7280;">Body text uses Regular (400). Line height: 1.65 for optimal readability. Primary text: #0B1220 • Secondary text: #6B7280 • Links: #2563FF</p>
+            </div>
+            
+            <div style="background: #F9FAFB; padding: 1rem 1.3rem; border-radius: 10px; margin-top: 1.3rem; border-left: 4px solid #2563FF;">
+              <p class="grey-text" style="margin: 0; font-size: 0.95rem;"><strong style="color: #0B1220;">Font Loading:</strong><br>
+              <code style="background: #fff; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.85rem; display: block; margin-top: 0.5rem; overflow-x: auto;">&lt;link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"&gt;</code></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Background Usage with Toggle -->
+        <h5 class="blue-text text-darken-2" id="darkbg" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">6. Logo Usage on Dark Backgrounds</h5>
+        
+        <div class="card blue darken-4" style="border-radius: 12px; overflow: hidden;">
+          <div class="card-content white-text" style="padding: 1.8rem;">
+            <p style="margin-bottom: 1.5rem;">Always use the <strong>white or light variant</strong> of the logo on dark or saturated backgrounds. Maintain contrast ratios ≥ 4.5:1 for accessibility. Never overlay primary blue or black logos on dark surfaces.</p>
+            
+            <!-- Interactive Preview Toggle -->
+            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.8rem;">
+                <span style="font-weight: 500;">Preview Context:</span>
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn-small waves-effect waves-light white blue-text text-darken-2" style="font-weight: 500; font-size: 0.85rem;" onclick="toggleDarkPreview('dark', event)">
+                    <i class="material-icons left" style="font-size: 1rem; margin-right: -4px;">dark_mode</i>Dark UI
+                  </button>
+                  <button class="btn-small waves-effect waves-light blue lighten-3 blue-text text-darken-3" style="font-weight: 500; font-size: 0.85rem;" onclick="toggleDarkPreview('gradient', event)">
+                    <i class="material-icons left" style="font-size: 1rem; margin-right: -4px;">palette</i>Gradient
+                  </button>
+                  <button class="btn-small waves-effect waves-light blue lighten-3 blue-text text-darken-3" style="font-weight: 500; font-size: 0.85rem;" onclick="toggleDarkPreview('image', event)">
+                    <i class="material-icons left" style="font-size: 1rem; margin-right: -4px;">image</i>Photo
+                  </button>
+                </div>
+              </div>
+              
+              <div id="dark-preview-area" style="background: #0B1220; padding: 2rem;">
+                <img src="brand-guide/logos/White_Logo.png" id="preview-logo" alt="White Logo Preview" style="max-width: 150px; filter: brightness(0) invert(1);">
+              </div>
+            </div>
+            
+            <div class="row center" style="margin-top: 1rem;">
+              <div class="col s6">
+                <div style="background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; display: inline-block;">
+                  <img src="brand-guide/logos/White_Logo.png" alt="White Logo" style="max-width: 110px; filter: brightness(0) invert(1);">
+                </div>
+                <p style="margin-top: 0.7rem; font-size: 0.95rem; font-weight: 500;">Primary (White)</p>
+              </div>
+              <div class="col s6">
+                <div style="background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.2rem; display: inline-block;">
+                  <img src="brand-guide/logos/White_Icon.png" alt="White Icon" style="max-width: 55px; filter: brightness(0) invert(1);">
+                </div>
+                <p style="margin-top: 0.7rem; font-size: 0.95rem; font-weight: 500;">Icon (White)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Usage Guidelines with Do/Don't Visuals -->
+        <h5 class="blue-text text-darken-2" id="guidelines" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid #E5E7EB;">7. Usage Guidelines</h5>
+        <div class="card hoverable" style="border-radius: 12px; overflow: hidden;">
+          <div class="card-content" style="padding: 1.8rem;">
+            <div class="row">
+              <div class="col s12 m6">
+                <h6 class="blue-text text-darken-2" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                  <i class="material-icons green-text text-darken-2" style="font-size: 1.4rem;">check_circle</i>
+                  Do This
+                </h6>
+                <ul class="browser-default" style="padding-left: 1.4rem;">
+                  <li style="margin-bottom: 0.7rem;">Use approved logo variants for context</li>
+                  <li style="margin-bottom: 0.7rem;">Maintain minimum clear space (Section 3)</li>
+                  <li style="margin-bottom: 0.7rem;">Use SVG for digital, high-res PNG for print</li>
+                  <li style="margin-bottom: 0.7rem;">Test contrast ratios for accessibility</li>
+                  <li>Use Primary Blue (#2563FF) for key CTAs</li>
+                </ul>
+              </div>
+              <div class="col s12 m6">
+                <h6 class="red-text text-darken-2" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                  <i class="material-icons red-text text-darken-2" style="font-size: 1.4rem;">cancel</i>
+                  Avoid This
+                </h6>
+                <ul class="browser-default" style="padding-left: 1.4rem;">
+                  <li style="margin-bottom: 0.7rem;">Stretching, skewing, or rotating the logo</li>
+                  <li style="margin-bottom: 0.7rem;">Placing logo on busy backgrounds without padding</li>
+                  <li style="margin-bottom: 0.7rem;">Using unapproved colors or effects</li>
+                  <li style="margin-bottom: 0.7rem;">Reducing logo below minimum size</li>
+                  <li>Using primary logo on dark backgrounds</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Visual Do/Don't Examples -->
+            <div class="row" style="margin-top: 1.5rem; background: #F9FAFB; border-radius: 12px; padding: 1.3rem;">
+              <div class="col s12 m6 center">
+                <div style="background: #fff; border-radius: 10px; padding: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                  <img src="brand-guide/logos/Primary_Logo.png" alt="Correct Usage" style="max-width: 140px; margin-bottom: 0.8rem;">
+                  <p style="font-weight: 600; color: #0B1220; margin: 0;">✓ Proper clear space</p>
+                  <p class="grey-text" style="margin: 0.3rem 0 0; font-size: 0.9rem;">Light background, approved variant</p>
+                </div>
+              </div>
+              <div class="col s12 m6 center">
+                <div style="background: #fff; border-radius: 10px; padding: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: relative;">
+                  <div style="position: absolute; top: -8px; right: -8px; background: #EF4444; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">✕</div>
+                  <img src="brand-guide/logos/Primary_Logo.png" alt="Incorrect Usage" style="max-width: 140px; margin-bottom: 0.8rem; opacity: 0.7; filter: grayscale(1);">
+                  <p style="font-weight: 600; color: #0B1220; margin: 0;">✗ No clear space</p>
+                  <p class="grey-text" style="margin: 0.3rem 0 0; font-size: 0.9rem;">Crowded background, poor contrast</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card blue lighten-5" style="border-radius: 12px; margin-top: 1.8rem;">
+              <div class="card-content" style="padding: 1.3rem 1.5rem;">
+                <p class="mb-0" style="display: flex; align-items: flex-start; gap: 0.8rem;">
+                  <i class="material-icons blue-text text-darken-2" style="font-size: 1.4rem; margin-top: 2px;">support_agent</i>
+                  <span><strong>Need assets or have questions?</strong><br>
+                  Contact <a href="mailto:design@semtexagency.co.za" class="blue-text text-darken-2" style="font-weight: 500;">design@semtexagency.co.za</a> or <a href="tel:+27766108815" class="blue-text text-darken-2" style="font-weight: 500;">+27 76 610 8815</a>.<br>
+                  <span class="grey-text" style="font-size: 0.95rem;">Asset library: <code style="background: #fff; padding: 0.2rem 0.5rem; border-radius: 5px; font-size: 0.85rem;">/brand-guide/logos/</code></span></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download All Assets Anchor -->
+        <div id="download-assets" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #E5E7EB; text-align: center;">
+          <h5 class="blue-text text-darken-2" style="margin-bottom: 1rem;">Download Complete Brand Kit</h5>
+          <p class="grey-text" style="max-width: 600px; margin: 0 auto 1.5rem;">Get all approved logo variants, color palettes, typography specs, and usage guidelines in one package.</p>
+          <a href="brand-guide/Semtex_Brand_Kit_v2.1.zip" class="btn-large waves-effect waves-light blue darken-2 white-text" style="font-weight: 600; border-radius: 10px; padding: 0 2.5rem;">
+            <i class="material-icons left" style="margin-right: 8px; font-size: 1.3rem;">download</i>Download ZIP (24.3 MB)
+          </a>
+          <p class="grey-text" style="margin-top: 0.8rem; font-size: 0.9rem;">Includes: SVG/PNG logos • Color swatches (.ase, .clr) • Font files • PDF guide • Social media templates</p>
+        </div>
+
+      </div> <!-- End brand-guide-content -->
+      
+      <!-- Right Column: Sticky Table of Contents -->
+      <div class="brand-guide-toc">
+        <div class="card hoverable" style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div class="card-content" style="padding: 1.2rem 1.5rem;">
+            <p class="grey-text" style="font-weight: 600; margin-bottom: 0.8rem; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="material-icons blue-text text-darken-2" style="font-size: 1.1rem;">menu_book</i>
+              QUICK NAVIGATION
+            </p>
+            <ul class="toc-list" style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 0.5rem;"><a href="#logos" class="blue-text text-darken-2 active" style="font-weight: 600; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #2563FF; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Logo Variants</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="#monochrome" class="grey-text text-darken-3 toc-link" style="font-weight: 400; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #E5E7EB; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Monochrome</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="#clearspace" class="grey-text text-darken-3 toc-link" style="font-weight: 400; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #E5E7EB; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Clear Space</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="#colors" class="grey-text text-darken-3 toc-link" style="font-weight: 400; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #E5E7EB; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Brand Colors</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="#typography" class="grey-text text-darken-3 toc-link" style="font-weight: 400; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #E5E7EB; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Typography</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="#darkbg" class="grey-text text-darken-3 toc-link" style="font-weight: 400; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #E5E7EB; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Dark Backgrounds</a></li>
+              <li><a href="#guidelines" class="grey-text text-darken-3 toc-link" style="font-weight: 400; font-size: 0.95rem;"><span style="width: 6px; height: 6px; background: #E5E7EB; border-radius: 50%; margin-right: 10px; display: inline-block;"></span>Usage Guidelines</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div> <!-- End container brand-guide-layout -->
+  </section>
+  <!-- ============ END OF BRAND GUIDE SECTION ============ -->
+
+  <!-- Full Footer -->
+  <footer class="page-footer #64b5f6 blue lighten-2 fly-in" id="contact-footer">
+    <div class="">
+      <div class="row">
+        <div class="col l3 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-4"><img src="brand-guide/logos/White_Logo.png" width="160"></a></li>
+          </ul>
+          <ul>
+            <li><a href="tel:+27766108815" class="white-text"><i class="material-icons left white-text">call</i>076 610 8815</a></li>
+          </ul>
+          <ul>
+            <li><a href="mailto:info@semtexagency.co.za" class="white-text"><i class="material-icons left white-text">email</i>info@semtexagency.co.za</a></li>
+          </ul>
+          <ul>
+            <li><a class="white-text"><i class="material-icons left white-text ">location_on</i>South Africa</a></li>
+          </ul>
+          <h5 class="white-text">Connect with us</h5>
+          <ul>
+            <a class="white-text" href="https://www.facebook.com/semtexofficial"><img src="Brand Icons/Facebook Icon.png" width="40"></a>
+            <a class="white-text" href="https://twitter.com/agencysemtex"><img src="Brand Icons/X Icon.png" width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/semtexagency"><img src="Brand Icons/Instagram Icon.png" width="40"></a>
+            <a class="white-text" href="https://www.youtube.com/@semtexagency"><img src="Brand Icons/YouTube Icon.png" width="40"></a>
+          </ul>
+        </div>
+
+        <div class="col l3 s12 hide-on-med-and-down">
+          <h5 class="white-text">About</h5>
+          <hr>
+          <ul>
+            <li><a href="background.html" class="white-text">Our Story</a></li>
+            <li><a href="contact.html" class="white-text">Get in Touch</a></li>
+            <li><a href="https://g.page/r/CcMJVhvYJKdVEBM/review" class="white-text">Send Feedback</a></li>
+            <li><a href="payments.html" class="white-text">Payments</a></li>
+            <li><a href="attributions.html" class="white-text">Attributions</a></li>
+            <li><a href="terms.html" class="white-text">Terms and Conditions</a></li>
+            <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12 hide-on-med-and-down">
+          <h5 class="white-text">What We Offer</h5>
+          <hr>
+          <ul>
+            <li><a href="web-dev.html?#professional_packages" class="white-text">HTML & CSS Web Website Development</a></li>
+            <li><a href="web-dev.html?#e-commerce_packages" class="white-text">E-Commerce Web Development</a></li>
+            <li><a href="emailhost.html" class="white-text">Email Hosting</a></li>
+            <li><a href="graphic-design.html" class="white-text">Graphic & Advertising Design</a></li>
+            <li><a href="socialmedia.html" class="white-text">Social Media Marketing</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12 hide-on-med-and-down">
+          <h5 class="white-text">Sitemap</h5>
+          <hr>
+          <ul>
+            <li><a href="services.html" class="white-text">Our Services</a></li>
+            <li><a href="attributions.html" class="white-text">Attributions</a></li>
+            <li><a href="terms.html" class="white-text">Terms & Conditions</a></li>
+            <li><a href="faq.html" class="white-text">Frequently Asked Questions</a></li>
+            <li><a href="payments.html" class="white-text">Payments</a></li>
+            <li><a href="background.html" class="white-text">Our Story</a></li>
+            <li><a href="contact.html" class="white-text">Contact Us</a></li>
+            <li><a href="faq.html" class="white-text">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Copyright © 2026 Semtex Agency. All Rights Reserved. <a class="brown-text text-indigo-darken-4" href="terms.html">Terms and Conditions.</a>
+          <a class="brown-text text-indigo-darken-4" href="attributions.html">Attributions.</a>
+        </div>
+      </div>
+  </footer>
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <!-- Cookie Notice -->
+  <div id="cookie-notice" class="card-panel blue lighten-5" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: none; margin: 0; border-radius: 0;">
+    <div class="container">
+      <div class="row" style="margin: 0;">
+        <div class="col s12 m9">
+          <span class="black-text">
+            We use cookies to ensure you get the best experience on our website.
+            <a href="privacy-policy.html" class="blue-text text-darken-2">Learn more</a>
+          </span>
+        </div>
+        <div class="col s12 m3 right-align">
+          <a class="waves-effect waves-light btn-small blue darken-2 white-text" onclick="acceptCookies()">Got it!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Cookie functions
+    function setCookie(name, value, hours) {
+      const date = new Date();
+      date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+      document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    }
+
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!getCookie("cookiesAccepted")) {
+        document.getElementById("cookie-notice").style.display = "block";
+      }
+    });
+
+    function acceptCookies() {
+      setCookie("cookiesAccepted", "true", 1);
+      document.getElementById("cookie-notice").style.display = "none";
+    }
+
+    // Copy to Clipboard Function
+    function copyToClipboard(text, element) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Visual feedback for hex text
+        if (element.classList.contains('copyable-hex')) {
+          const originalText = element.textContent;
+          element.textContent = '✓ Copied!';
+          element.style.color = '#10B981';
+          element.style.fontWeight = '700';
+          setTimeout(() => {
+            element.textContent = originalText;
+            element.style.color = '';
+            element.style.fontWeight = '';
+          }, 1500);
+        } 
+        // Visual feedback for color swatch badge
+        else {
+          const badge = element.querySelector('.contrast-badge');
+          if (badge) {
+            const originalContent = badge.textContent;
+            const originalBg = badge.style.background;
+            const originalColor = badge.style.color;
+            badge.textContent = '✓';
+            badge.style.background = '#10B981';
+            badge.style.color = '#fff';
+            setTimeout(() => {
+              badge.textContent = originalContent;
+              badge.style.background = originalBg;
+              badge.style.color = originalColor;
+            }, 1500);
+          }
+        }
+      }).catch(err => {
+        console.error('Copy failed:', err);
+        M.toast({html: 'Failed to copy. Please copy manually.', classes: 'red rounded'});
+      });
+    }
+
+    // Dark Background Preview Toggle
+    function toggleDarkPreview(type, event) {
+      const previewArea = document.getElementById('dark-preview-area');
+      const logo = document.getElementById('preview-logo');
+      
+      // Reset all button styles
+      const buttons = event.currentTarget.parentElement.querySelectorAll('.btn-small');
+      buttons.forEach(btn => {
+        btn.classList.remove('white', 'blue-text', 'text-darken-2');
+        btn.classList.add('blue', 'lighten-3', 'blue-text', 'text-darken-3');
+      });
+      
+      // Set active button style
+      event.currentTarget.classList.remove('blue', 'lighten-3', 'blue-text', 'text-darken-3');
+      event.currentTarget.classList.add('white', 'blue-text', 'text-darken-2');
+      
+      // Update preview area
+      if (type === 'dark') {
+        previewArea.style.background = '#0B1220';
+        previewArea.style.boxShadow = '';
+        logo.style.filter = 'brightness(0) invert(1)';
+      } else if (type === 'gradient') {
+        previewArea.style.background = 'linear-gradient(135deg, #2563FF 0%, #0B1220 100%)';
+        previewArea.style.boxShadow = '';
+        logo.style.filter = 'brightness(0) invert(1)';
+      } else if (type === 'image') {
+        // Fallback if image doesn't exist
+        previewArea.style.background = 'linear-gradient(135deg, #1e3a5f 0%, #0B1220 100%)';
+        previewArea.style.boxShadow = 'inset 0 0 0 100vmax rgba(11, 18, 32, 0.6)';
+        logo.style.filter = 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.4))';
+      }
+    }
+
+    // Smooth Scroll + Active TOC Highlighting
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocLinks = document.querySelectorAll('.toc-list a');
+      const sections = document.querySelectorAll('h5[id]');
+      
+      // Smooth scroll for TOC links
+      tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            const headerOffset = 120;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Highlight active section on scroll using Intersection Observer
+      const observerOptions = {
+        rootMargin: '-150px 0px -60% 0px',
+        threshold: 0.1
+      };
+      
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            
+            // Update TOC active state
+            tocLinks.forEach(link => {
+              link.classList.remove('active', 'blue-text', 'text-darken-2');
+              link.classList.add('grey-text', 'text-darken-3');
+              link.style.fontWeight = '400';
+              
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.remove('grey-text', 'text-darken-3');
+                link.classList.add('active', 'blue-text', 'text-darken-2');
+                link.style.fontWeight = '600';
+              }
+            });
+          }
+        });
+      }, observerOptions);
+      
+      // Observe each section header
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+    });
+  </script>
+
+</body>
+</html>
