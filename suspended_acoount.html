@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Suspended</title>
 
+    <!-- Modern Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* --- CSS VARIABLES FOR EASY THEMING --- */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --danger-bg: #fef2f2;
+            --danger-text: #ef4444;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* --- RESET & BASE --- */
         * {
             margin: 0;
             padding: 0;
@@ -13,112 +35,207 @@
         }
 
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 50px 20px;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            width: 100%;
+            padding: 48px 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
             text-align: center;
         }
 
-        /* HEADER */
-        .header {
-            color: #8f8f8f;
-            font-size: 45px;
-            font-weight: 700; /* bold */
+        /* --- ICON & PULSE ANIMATION --- */
+        .icon-wrapper {
+            width: 64px;
+            height: 64px;
+            background-color: var(--danger-bg);
+            color: var(--danger-text);
+            border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 40px;
+            margin: 0 auto 24px;
+
+            /* Apply the pulse animation */
+            animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
-        .header svg {
-            width: 50px;
-            height: 50px;
-            opacity: 0.75;
-        }
-
-        /* FULL-WIDTH DARK BLUE SECTION */
-        .box {
-            width: 100%;                /* FULL WIDTH */
-            background-color: #243447;   /* Dark blue */
-            color: white;
-            padding: 50px 20px;
-        }
-
-        .box-inner {
-            max-width: 850px;           /* Centered content */
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .box h2 {
-            font-size: 32px;
-            font-weight: 700; /* bold */
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .box h2 svg {
+        .icon-wrapper svg {
             width: 32px;
             height: 32px;
         }
 
-        .box p {
-            font-size: 20px;
-            font-weight: 600; /* bold */
+        /* Keyframes for the expanding shadow ripple */
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(239, 68, 68, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
         }
 
-        .box a {
-            color: #4db2ff;
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .message {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- BUTTON / CTA --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary);
+            color: white;
             text-decoration: none;
-            font-weight: 700; /* bold */
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
-        .box a:hover {
-            text-decoration: underline;
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .header {
-                font-size: 32px;
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn .arrow {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 480px) {
+            .card {
+                padding: 32px 20px;
             }
-            .box h2 {
-                font-size: 24px;
+
+            h1 {
+                font-size: 1.5rem;
             }
-            .box p, .box a {
-                font-size: 18px;
+
+            .message {
+                font-size: 1rem;
+            }
+        }
+
+        /* --- ACCESSIBILITY: Respect user motion preferences --- */
+        @media (prefers-reduced-motion: reduce) {
+            .icon-wrapper {
+                animation: none;
+                /* Disables the pulse for users sensitive to motion */
+                box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+                /* Static subtle ring instead */
+            }
+
+            .btn,
+            .btn .arrow {
+                transition: none;
+                /* Disables button hover transitions */
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <div class="header">
-        <svg fill="#8f8f8f" viewBox="0 0 24 24">
-            <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-        </svg>
-        Service Suspended
-    </div>
-
-    <!-- FULL-WIDTH DARK SECTION -->
-    <div class="box">
-        <div class="box-inner">
-
-            <h2>
-                <svg fill="white" viewBox="0 0 24 24">
-                    <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+    <main class="container">
+        <div class="card">
+            <!-- Icon -->
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                        clip-rule="evenodd" />
                 </svg>
-                This service has been suspended.
-            </h2>
+            </div>
 
-            <p><a href="https://www.semtexagency.co.za/suspended-service" target="_blank">Click here</a> for more information.</p>
+            <!-- Content -->
+            <h1>Service Suspended</h1>
+            <p class="message">
+                This website has been temporarily suspended. If you are the site owner, please resolve the outstanding
+                account issue to restore service.
+            </p>
 
+            <!-- Call to Action Button -->
+            <a href="https://www.semtexagency.co.za/suspended-service" class="btn" target="_blank"
+                rel="noopener noreferrer">
+                More Information
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow">
+                    <path fill-rule="evenodd"
+                        d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
         </div>
-    </div>
+
+        <footer class="footer">
+            <img src="https://www.dropbox.com/scl/fi/2vu0dc8xr49h57edcmyt2/semtex-email-logo-brown.png?rlkey=xbsqwmy9wlsozs0scjg1jmfrd&st=ites534p&raw=1"
+                width="100" alt="Semtex Agency Logo">
+            <p>&copy; 2026 Semtex Agency (Pty) Ltd. All rights reserved.</p>
+        </footer>
+    </main>
 
 </body>
+
 </html>

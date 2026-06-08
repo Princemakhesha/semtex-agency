@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Suspended</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* HEADER */
+        .header {
+            color: #8f8f8f;
+            font-size: 45px;
+            font-weight: 700; /* bold */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .header svg {
+            width: 50px;
+            height: 50px;
+            opacity: 0.75;
+        }
+
+        /* FULL-WIDTH DARK BLUE SECTION */
+        .box {
+            width: 100%;                /* FULL WIDTH */
+            background-color: #243447;   /* Dark blue */
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .box-inner {
+            max-width: 850px;           /* Centered content */
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .box h2 {
+            font-size: 32px;
+            font-weight: 700; /* bold */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .box h2 svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .box p {
+            font-size: 20px;
+            font-weight: 600; /* bold */
+        }
+
+        .box a {
+            color: #4db2ff;
+            text-decoration: none;
+            font-weight: 700; /* bold */
+        }
+
+        .box a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .header {
+                font-size: 32px;
+            }
+            .box h2 {
+                font-size: 24px;
+            }
+            .box p, .box a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <svg fill="#8f8f8f" viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+        </svg>
+        Service Suspended
+    </div>
+
+    <!-- FULL-WIDTH DARK SECTION -->
+    <div class="box">
+        <div class="box-inner">
+
+            <h2>
+                <svg fill="white" viewBox="0 0 24 24">
+                    <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                </svg>
+                This service has been suspended.
+            </h2>
+
+            <p><a href="https://www.semtexagency.co.za/suspended-service" target="_blank">Click here</a> for more information.</p>
+
+        </div>
+    </div>
+
+</body>
+</html>
